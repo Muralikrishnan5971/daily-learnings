@@ -28,3 +28,5 @@ example: [ -e /etc/passwd]   --> this checks whether /etc/passwd file exists or 
 
 Every command executed by the shell has a exit code. That exit code is an integer.
 Commond that exits with an o exit status has succeeded, A non zero exit status indicates a failure (1-255)
+If a command is not found, the child process created to execute it returns a status of 127. 
+If a command is found but is not executable, the return status is 126

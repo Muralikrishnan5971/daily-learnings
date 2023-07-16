@@ -1,0 +1,36 @@
+
+User setup 
+
+How Internal user, ARC user, Employee, Employee Role ? how they corelate
+
+site id column missing
+
+Creating test user with email authentication for test purposes
+Roles -- Whate role are given to Internal and ARC user?
+How secondary are allowed
+
+Is OEM related to dealer or roles?
+
+
+New user with the following details has been created:
+Login: spaceman001@gmail.com
+Password: e0QYc9FczGcr
+
+Enable session capture getting checked automatically after new user is created
+
+
+Dealer Config
+
+
+--> view vehicle details(pre prod), view dealer details permission for BCDSuperAdmin role
+--> Exception criteria in Communication address 
+--> bank holidays ? is related to employee overtime ?
+
+--> privacy policy 
+--> media upload usage
+--> OEM and make code
+
+
+
+
+user sentiment -- satisfied and very satisfied
