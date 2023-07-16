@@ -1,0 +1,25 @@
+
+DOCS
+https://docs.python.org/3/tutorial/floatingpoint.html
+
+https://docs.python.org/3/tutorial/datastructures.html
+
+Dunder Methods - (also sometimes refered as magic methods)
+https://mathspp.com/blog/pydonts/dunder-methods#:~:text=What%20are%20dunder%20methods%3F,__%20or%20__add__%20.
+
+n Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and operators of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start and end with two underscores, for example __str__ or __add__.
+
+If you have defined classes in Python, you are bound to have crossed paths with a dunder method: __init__. The dunder method __init__ is responsible for initialising your instance of the class, which is why it is in there that you usually set a bunch of attributes related to arguments the class received.
+
+Dunder methods are not called magically, though. They are just called implicitly by the language, at specific times that are well-defined, and that depend on the dunder method in question.
+
+All Python operators, like +, ==, and in, rely on dunder methods to implement their behaviour.
+
+***********
+
+All Sequences are Iterables, but Not all Iterables are Sequences.
+
+
+pip freeze --local > requirements.txt
+
+

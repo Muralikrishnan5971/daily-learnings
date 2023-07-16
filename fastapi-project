@@ -1,0 +1,10 @@
+creating virtuale environment
+
+python3 -m venv mkenv
+
+cd fastapi_project
+
+pip install 'fastapi[all]'
+
+pip freeze
+

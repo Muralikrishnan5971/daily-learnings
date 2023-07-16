@@ -1,0 +1,458 @@
+
+
+https://distrowatch.com/
+
+web terminal built based on Java script
+https://www.masswerk.at/jsuix/
+
+
+Components of UNIX:
+ 
+Two components of Unix:e
+
+1. Shell
+
+It is the outer layer of the Unix operating system
+User communicates using the shell only
+
+Shell reads the command provided by the end user
+Shell checks a whether command valid or not
+Shell checks whethr the command is user properly
+If everything is proper, then shell interprets (converts) the user entered command into kernel understandable form and handover that to kernel
+up to this job of the shell is completed
+Shell acts as interface between user and kernel
+
+Now kernel is responsible to execute those commands and provide  the result
+
+
+2. Kernel
+
+It is the core component of the Unix operating system
+Kernel is responsible to execute our commands with the help of hardware components
+Memory allocation, processor allocation low level activities are carried out by Kernel
+Kernel acts as a interface between shell and hardware components
+
+**********************************************************
+
+In Linux there are two tyoes of user
+
+Normal user  --- displays a $ prompt
+Super user or Roor user --- displays a # prompt
+
+
+
+
+**************** linux commands **************************
+
+whoami
+ls        ---> list out all files and directory
+ls -l	  ---> lists all files with size, (ls -l sunny.jpg) (long list)
+ls -author---> lists all files with author name
+ls -a     ---> lists all hiding files
+file      ---> gives the file type
+
+
+
+pwd       ---> print working directory
+mkdir     ---> create a directory
+
+With the help of mkdir -p command you can create sub-directories of a directory. It will create parent directory first, if it doesn't exist. But if it already exists, then it will not print an error message and will move further to create sub-directories.
+
+cd        ---> change directory
+touch     ---> create a empty file
+rmdir     ---> remove a directory
+rm        ---> remove a file (mostly should be used to remove directory also)
+rm -rf    ---> to remove a directory with sub directory and files, -r is recursive, -f force 
+
+date      ---> display current date
+cal       ---> display current month calendar
+
+chmod u+x sample.sh   -----> giving execute permission for the script (change mode)
+
+sudo -i   ---> to switch to super user (superuser do)
+tty       ---> prints the filename of the terminal (located in the root/dev/ location (teletype )
+which cd  ---> displays the binary executable PATH of the given commands eg; cd
+
+
+**********************************************************
+
+Linux file system
+
+In python everything is treated as a Obejct.
+Similarly, In linux everything is treated as a file, even device and directories are treated as files.
+
+In linux, file extension is not important. Based on our content linux can identify the file type.
+
+All files in the Linux are divided into three types.
+
+1. Normal or Ordinary files
+2. Directory files
+3. Device files
+
+Normal Files
+------------
+These file contains data. 
+These files can be normal text files or binary files (image, audio, video files)
+
+adb.txt
+script.sh
+test.py
+image.jpg
+flyingmonkey.mp4
+
+Directory Files
+---------------
+These files represent directories
+As we use folder terminology, in Linux we use Directory terminlology.
+Directories contains files and sub directories 
+
+Linux identifies the file type by the data present in the file.
+If a empty file is present, linux can identify the type.
+
+** Example, if we create .jpg file and write text data into it, 
+linux will identify it as a text file and not a image file **
+
+Device Files
+------------
+In Linux, every device is represented as a file.
+Devces like Keyboard, terminal etc.
+Using this file we can communicate with that device
+these file are present in the root/dev directory.
+
+Example, Terminal is also a device treated as file.
+
+tty ---> The tty command of terminal basically prints the file name of the terminal connected to standard input
+example: /dev/ttys000
+
+echo i luv monke > /dev/ttys001       ---> communicating from one terminal to another
+
+blue color represents directories,
+
+
+ls -l command list all files and directories
+starting with '-' ---> normal files
+starting with 'd' ---> directory files
+
+
+******************************************************************
+
+File System Navigation
+
+For every user a seperate directory will be created, that is called User home directory.  
+
+/    ---> root directory
+
+Inside root directory, there  are multiple sub diorectories, eg: bin, etc, opt, dev, User...
+
+There are some hidden files and directories.
+
+ls           ---> won't display hidden files.
+ls -a	     ---> displays ALL (hidden) files and directories
+
+Every directory contain two hidden files.
+
+First hidden file is '.'    ---> represents current directory
+
+Second hidden file is '..'  ---> represents parent directory
+
+cd .         ---> change directory to CURRENT directory (we will be in the same directory) (useless command)
+cd ..        ---> change directory to PARENT directory
+
+cd ~         ---> change directory to USER HOME directory
+cd           ---> Also changes directory to USER HOME directory
+cd -         ---> change directory to PREVIOUS directory
+
+******************************************************************
+
+Linux file system hierarchy
+
+Linux file system has TREE like structure
+
+It starts with root (/)
+/ is the TOP most directory, it can contain multiple sub directories.
+
+Sub Directories:
+----------------
+
+bin      ---> contains all (Binaries Executables) related to linux commands (like touch, cd, mv, cat etc.,)
+              all commands available for NORMAL USER is present in bin directory
+
+in latest linux version, /usr/bin also contains the binary executables
+
+Using Shell scripting we can create owr own commands (Binary Executables)
+
+sbin     ---> System Binaries
+			  commands to do high level activities disk partition, networking management used by SUPER USER
+
+etc      ---> This directory contains all system configuration files (etc - eccetra)
+			  Example username, password details etc
+			  These configuration files are used by the operating system itself.
+
+			  etc/passwd    ---> all USER information is stored in passwd file.
+			  etc/group     ---> all groups user is part of, details is stored in group file
+			  etc/hosts     ---> all host information is stored in hosts file (ip addresses and dns names)
+
+*******************************************************************
+
+ls                      ---> lists all files and directory in Alphabetical order
+ls -r					---> lists all files and directory in REVERSE Alphabetical order
+ls -l  					---> lists all files and directory in LONG LISTING format
+
+-rw-r--r--  1 fmganesa  staff     52 Jan 24 21:29 count.txt
+
+ '-'      				---> first character represents the type of file 
+ 'rw-r--r--'            ---> remaining nine characters represents permissions
+ '1'                    ---> 1 represents the No of linked files
+ 'fmganesa'				---> user/owner
+ 'staff'				---> group the user belong to 
+ '52'					---> size of the file
+ 'Jan 24 21:29'			---> created time or last modified time
+ 'count.txt'			---> name of the file
+
+ ls -a 					---> lists ALL hidden files and directories
+ ls -A                  ---> lists ALL files except . and .. files
+ ls -F                  ---> lists all the files by TYPE
+
+ /                      ---> directory
+ *						---> executable file
+ @						---> linked file
+
+
+man ls       			---> Opens manual page (documentation) for the ls command
+man ls > ls_docu.text	---> 
+
+wc -l ls_docu.txt       ---> prints the number of lines in th file
+
+ls | wc -l              ---> prints number of files
+ls -a | wc -l           ---> prints number of ALL hidden files
+
+ls -i                   ---> displays the all files and directory with inode (index node)
+
+For every file all attributes will be stored in a memory location. This location is called inode.
+The File attributes include size of the file, no of links to file, owner name, created time, last modified time.
+
+By default 'ls' does not display sub directory contents
+
+ls -R                   ---> displays all files and also Sub directory files (Recursive )
+ls -s                   ---> displays all files and directories with block size
+ls -ls
+ls -lt                  ---> displays all files and directories in the order of LAST MODIFIED
+
+8 -rw-r--r--  1 fmganesa  staff     52 Jan 24 21:29 count.txt
+
+1 block = 1kb           ---> it varies based on the linux flavor
+
+ls -lh                  ---> displays size in human readable form
+
+-rw-r--r--  1 fmganesa  staff    52B Jan 24 21:29 count.txt
+
+ls -l | head            ---> In the full list of output lines, display only the FIRST 10 lines.
+
+ls -l | head -3         ---> In the full list of output lines, display only the FIRST 3 lines.
+
+ls -l | tail            ---> In the full list of output lines, display only the LAST 10 lines.
+
+ls -l | tail -3         ---> In the full list of output lines, display only the LAST 3 lines.
+
+ls -l | more            ---> display list in page by page, Only forward direction only
+ls -l | less            ---> display list in page by page, BOTH direction only (more powerful)
+
+ls -ai
+ls -ia                  ---> both same, order does'nt matter
+
+
+*******************************************************************
+
+Command Line Arguments
+----------------------
+
+eg: ./test.sh 10 29 30
+
+here, 10, 29, 30 are command line arguments
+
+$#   ---> No of arguments (here it is 3 (10, 20, 30))
+$0   ---> Script name (test.sh)
+$1   ---> First argument (10)
+$2   ---> First argument (20)
+$3   ---> First argument (30)
+
+$*   ---> All arguments (10 20 30)
+$@   ---> All arguments (10 20 30)
+
+$?   ---> Represents exit code of previously executed command or script
+
+Difference between $@ and $*
+----------------------------
+
+$@   ---> All command line arguments with space seperator
+          "$1" "$2" "$3" "$4"
+
+$*   ---> All command line as a single string
+          "$1c$2c$3c$4" where c is the first chracter of the IFS (Internal Field Seperator)
+          The deault is space.
+
+The shell has one environment variable, which is called the Internal Field Separator (IFS). This variable indicates how the words are separated on the command line. The IFS variable is, normally or by default, a white space (' '). 
+
+set  ---> display all pre defined environment variables  
+env  ---> display all pre defined environment variables
+
+set | grep IFS
+
+IFS=$' \t\n\C-@'
+
+What is the main purpose of cmmand line arguments?
+To customize behaviour of the script
+
+echo murali |wc -c    ---> displays the character count
+7
+it includes an /n new line character at the end, hence the count is 7.
+
+echo -n MURALI |wc -c
+6
+it ignores the new line character, hence the count is 6.
+
+
+len=$(echo $1 |wc -c)
+echo "The lenght of given string $1:$len"
+
+
+********************************************************************
+
+Write a script to create log file with time stamp
+
+echo "hello" > demo.text     ---> overwrites the file with "hello"
+
+echo "hello" >> demo.text    ---> appdends the file content with "hello"
+
+
+
+Miscellaneous commands
+
+ps ---> process status command
+id ---> tells all about us
+hostname ---> 
+uname
+uname -r
+uname -a
+wgo ---> tells who else logged in
+caffinate --> keeps the system awake till the terminal is running
+
+To lock screen from Termianl
+pmset displaysleepnow  --> puts the screen to sleep and eventually, system is locked.
+
+
+
+apropos --->
+
+********************************************************************
+
+Linux File Ownership
+--------------------
+
+In Linux, there are three types of owners: user, group, and others.
+
+Linux User: A user is the default owner and creator of the file. So this user is called owner as well.
+
+Linux Group: A user-group is a collection of users. Users that belonging to a group will have the same Linux group permissions to access a file/ folder. You can use groups to assign permissions in a bulk instead of assigning them individually. A user can belong to more than one group as well
+
+Other: Any users that are not part of the user or group classes belong to this class.
+
+File permissions fall in three categories: read, write, and execute
+
+Below is the symbolic representation of permissions to user, group, and others.
+
+    -        rwx   rwx    rwx
+filetype    user  group  other
+
+Example: ls -l
+
+-rw-r--r--@ 1 muralikrishnan  staff  99 Jun 13 11:42 test.py
+
+
+So for the test.py file,
+
+rw- is the user permissions
+r-- is the group permissions
+r-- is the other permissions
+muralikrishnan is the user
+staff is the group
+99 is size
+
+And the "-" in the beginning represents file or directory.
+
+- means a regular file
+d means a directory
+
+Now modifying permissions using chmod command:
+
+syntax of chmod:
+
+chmod permissions filename
+
+We can change permissions using two modes:
+
+1. Symbolic mode:
+u - user   
+g - group
+o - other
+
+r - read
+w - write
+x - execute
+
+2. Absolute mode: represents permissions as 3-digit octal numbers ranging from 0-7.
+
+
+
+^^^^^^
+echo $0 --> will display the name of the currently running file
+
+The $0 is one of the special variables you get in bash and is used to print the filename of the script that is currently being executed.
+
+^^^^^^
+
+*******************************************************
+
+awk command (more of a scripting language) stands for Aho, Weinberger, and Kernighan, initials for its designers
+
+by default the awk command see spaces as delimiter fir each field
+
+awk '{command}' filename
+
+awk '{print}' tmnt.txt  --> prints all content
+awk '{print $0}' tmnt.txt  --> prints all content
+
+awk '{print $1}' tmnt.txt  --> prints all the first field in all lines
+awk '{print $2}' tmnt.txt  --> prints all the second field in all lines
+awk '{print $3, $1}' tmnt.txt  --> prints all the third and first field in all lines
+
+similarly we can pip commands to awk as well
+
+ls -l | awk '{print $1}'   ---> prints all the first field from the listed files
+
+echo the monkey is flying high | awk '{print $2}'   ---> this prints the second field in the out put of the first command, that is monkey
+
+we can specify the delimiting charater from default value space to any thing by below command,
+here the delimiting character in :
+
+awk -F':' '{print $3}' /etc/passwd   
+
+*********************************************************
+
+pbcopy --> copies content to clipboard --> paste board copy
+pbpaste --> pastes content from the clipboard --> paste board paste
+
+
+
+If directory name is a single word, cd my_directory will work.
+In case, our directory name has two words like 'My Directory',
+Then we should use cd command as cd "My Directory"
+
+readlink -f settings.txt      ----> prints the ABSOLUTE FILE PATH of the specified file
+
+unzip filename.zip -d /destination/folder_path
+
+
+
+
+

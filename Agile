@@ -1,0 +1,13 @@
+AGILE METHODOLOGY
+
+
+--> Story points <--
+--------------------
+Story points are a way to estimate the amount of effort required to complete user story in your product backlog. Story points in Agile are abstract measurements that developers use instead of hours. Points are relative values, so a story with a value of four is twice as hard as a story with a value of two. The actual numbers don't matter — you could assign values between 1,000,000 and 5,000,000 if you want.
+
+Example for why we go for Fibonacci number for story points
+Imagine holding a one-pound weight in one hand and a two-pound weight in the other. Without looking, you are likely able to determine which is which because the 2-pound weight is noticeably heavier—the two-pound weight is 100% heavier than the 1-pound weight).
+
+If you were to hold a 20-pound weight and a 21-pound weight, it is harder to determine which is heavier because the difference between the weights is not that significant—the 21-pound weight is only 5% heavier.
+
+*********************************************************************************

@@ -1,0 +1,116 @@
+
+Appium is cross platform --> Android, IOS, Windows
+appium support physical devices, Andriod emulators and IOS emulators as well or similator
+
+Appium uses selenium's Webdriver API,
+And Webdriver API uses json wire protocol
+
+Client makes a https request to server, and then the server sends the response back
+
+Appium 2.x no longer supports  json wire protocol, this is completely replaced by W3C webdriver protocol
+W3C webdriver protocol is also based on client server architecture
+
+Both Selenium 4.x and Appium 2.x completly removed json wire protocol and fully supports W3C
+
+For every proramming language, we have a appium client
+
+Example,
+
+For Java, we have java cient that converts all java code to restfull api calls to the appium server
+
+Example:
+
+MobileElement el = driver.findElementByAccecibilityId("someId");
+el.click();
+
+the above code will be sent as a api call as,
+
+HTTP API: POST /session/:session_id/element/:element_id/click
+
+for every request, the client passes the session id so that server knows 
+
+
+                                                  /<--UIAutomator2--> android
+JAVA CLIENT --{JSON-HTTPS REQUEST}--> APPIUM SERVER 
+                                                  \<--XCUITest--> IOS
+
+
+Appium is a node.js HTTPS server that exposes an API
+The client initiates the session using the Desired Capabilities - where we can select the platform, application
+
+** Navtive apps are easy to automate, elements can be identified using appium inspector
+
+** Hybrid apps - contains both Web view and Mobile view (its platform agnostic)
+difficult to automate, since there is more of driver context switching and we need to enable debug mode in android app
+
+** Mobile web apps, that are opened in mobile browser. Web apps are responsive versions of websites that can work on any mobile device or OS because they’re delivered using a mobile browser.
+
+Apart from uiautomatior2 and xcuitest driver, appium supports other derivers as well. There is a ecosystem of drivers.
+
+Ex: youiengine, windows, mac, mac2, espresso, flutter, 
+
+windows driver is nothing but a proxy for winapp which used to automate windows applications
+
+UIAutomator2 -- more suitable for automating functional test cases
+Espresso -- more suitable for automating unit test cases
+
+-> node and npm mandatory
+
+npm install -g appium@next
+
+sudo npm install -g appium
+
+--> install appium
+
+appium --version
+
+npm uninstall -g appium
+
+appium driver list
+
+--> installing appium driver
+
+All appium supported driver's are decoupled from the appium server. we need to install them as we need them.
+
+sudo appium driver install uiautomator2
+
+--> install appium inspector
+In case if we get apple can't open your software, go to system preferences, general, click open anyway.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

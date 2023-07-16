@@ -1,0 +1,30 @@
+Script is a command line program that contains a series of program. 
+The command contains in the scripts are executed by an interpreter. Here the shell acts as an interpreter.
+Anything you can type in the command line, we can put in the script.
+
+Every script starts with a shebang #!, followed by the path to the shell, which we want to use as a interpreter
+eg: #!/bin/bash 
+#!/bin/zsh
+
+If the script does not begin with a shebang, the script might still get executed, but it's always good practice to be explicit.
+
+we can even ser python as our interepreter like, #!/bin/python
+
+Variables are storage location that have a name, similar to key-value pair
+eg: VARIABLE_NAME="name"
+
+variables, are case sensitive, and by convention variables are uppercase
+
+Valid variable names
+
+FIRST_NAME="firstname"
+FIRST3NAME="firstname"
+firstName="firstname"
+
+writing tests
+
+syntax: [condition-to-test-for]
+example: [ -e /etc/passwd]   --> this checks whether /etc/passwd file exists or not
+
+Every command executed by the shell has a exit code. That exit code is an integer.
+Commond that exits with an o exit status has succeeded, A non zero exit status indicates a failure (1-255)

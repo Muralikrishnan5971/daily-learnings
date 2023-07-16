@@ -1,0 +1,24 @@
+
+
+SAML - Security Assertion Markup Language
+https://www.onelogin.com/learn/saml
+
+OpenID
+https://en.wikipedia.org/wiki/OpenID
+
+https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a
+
+setup.py file
+https://www.geeksforgeeks.org/what-is-setup-py-in-python/
+
+https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a
+
+What is Single Sign-On?
+Single sign-on (SSO) is an authentication method that enables users to securely authenticate with multiple applications and websites by using just one set of credentials.
+
+How Does SSO Work?
+SSO works based upon a trust relationship set up between an application, known as the service provider, and an identity provider, like OneLogin. This trust relationship is often based upon a certificate that is exchanged between the identity provider and the service provider. This certificate can be used to sign identity information that is being sent from the identity provider to the service provider so that the service provider knows it is coming from a trusted source. In SSO, this identity data takes the form of tokens which contain identifying bits of information about the user like a user’s email address or a username.
+
+Fork bomb - a form of DoS attack (Denial of Attack)
+
+:(){:|: &};:

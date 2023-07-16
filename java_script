@@ -1,0 +1,123 @@
+
+
+* Everything in  js happens inside an Execution context
+
+Execution context is like a container where all of the js code gets executed.
+It has TWO components in it.  
+
+** First component -- Memory Component
+
+Its where all the variables and functions are stored as key : value pairs
+
+key  : value
+a    : 10
+func : {
+	...
+}
+
+This Memory component is also called Variable Environment
+
+** Second component -- Code Component
+
+This is the place where code gets executed one line at a time.
+
+This code component is also called Thread of Execution.
+
+* Java script is a Synchronous, Single Threaded language
+--> Single threaded means, js can execute only one command at a time
+--> Synchronous Single threaded means, js can only execute one command at a time and that too at a particular order.
+
+js is not possible without the Execution context.
+
+** This Execution context is created in TWO Phases.
+
+--> The first phase is the Creation Phase, Also known as Memory creation phase
+
+the variables are assigned a special value called undefined,
+
+n : undefined
+
+And incase of functions, the entire function is stored
+
+square : {...}
+
+--> The second phase is the Code Execution Phase
+
+Line by line the code gets executed.
+Variables are assigned with values, And functions are invoked.
+
+* Whenever function is invoked, A brand new Execution Context is created.
+
+Again there is two phases involved. (Memory and Code)
+
+** In Memory phase, memory is assigned to variables and function present inside the invoked function **
+
+And the variables include the parameters passed to the function
+
+Lets consider a example fucntion
+
+
+function square(num){
+	
+	ans = num * num
+	return ans
+}
+
+here both num and ans are variable and are assigned with undefined 
+
+In the next Code Execution block, all the code inside the function gets executed line by line
+
+After all the lines are executed, the control is thrown back to the Execution context
+
+**--> To execute js code, we need a run time environment, 
+
+Earlier, it was provided by the browser environment (since js was used only for client side scripting)
+Now, with Node.js, we can be used js for server side scripting as well, here, Node provides the run time environment.
+
+With Browser environment, we get access to the DOM and to perform DOM operations, which is not possible with node.
+With Node, it exposes almost all system resources to your program. This means you can interact with operating system,
+access the file system, read write to files, these things are not possible with browser environments.
+
+js builtin global object for browser is window, In Node, the global object goes by the name global.
+
+***
+https://www.freecodecamp.org/news/modules-in-javascript/
+
+When we need to get code from many different files, ie., if we're going to use the code inside each file, both need to be loaded – but this is not the best thing to do. That's because the browser needs to perform two different requests to load all the JS necessary.
+
+We should always try to reduce the requests to the minimun to increase the performance of our projects. So let's see how we can do this with the help of a module bundler
+
+******
+https://egghead.io/lessons/javascript-use-javascript-modules-in-the-browser
+
+But these are advantages only for the development phase of a project. 
+When in production, modules are not the best thing, as forcing the browser to make a request for each JS file might hurt the site's performance.
+
+This problem can be easily solved with the use of a module bundler. Simply put, module bundlers are programs that take JS modules as input and combine them into a single file (many module bundlers have many more features but that's their core concept).
+
+**** This step of converting "development code" to "production code" is normally recognized as "build" ****
+
+There're many options to use for this (like Browserify, Parcel, Rollup.js, Snowpack...) but the most widely used is Webpack. So let's see an example using Webpack.
+
+This package has installed:
+	•	Node.js v18.16.1 to /usr/local/bin/node
+	•	npm v9.5.1 to /usr/local/bin/npm
+Make sure that /usr/local/bin is in your $PATH.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

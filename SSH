@@ -1,0 +1,28 @@
+
+**ssh-keygen -t ed25519 -C "muralikrishnan.pro@gmail.com"
+
+this will generate a private and public key file under .ssh folder
+
+**copy the public key and put it in github ssh key section
+
+now we need to add the private key to ssh agent
+
+ssh-add /path to private key
+
+**ssh-add -l
+
+The ssh-add command prompts the user for a private key password and adds it to the list maintained by ssh-agent.
+Once you add a password to ssh-agent, you will not be prompted for it when using SSH or scp to connect to hosts with your public key.
+
+**create a config file in .ssh and add the below entries for each account
+
+# Work gitlab account
+Host gitlab.com
+   HostName gitlab.com
+   User git
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_ed25519
+
+when we try to clone any repo using the ssh url eg: git@gitlab.com:muralikrishnan/automation.git
+
+here the user is git, hostname is gitlab, then the corresponding private key will be enabled.

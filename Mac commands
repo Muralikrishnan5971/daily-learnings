@@ -1,0 +1,26 @@
+
+security find-generic-password -wa "Galaxy M13 0294"
+
+copies content to clipboard
+
+pbcopy
+pbpaste
+
+defaults write com.apple.screenshots type jpeg
+
+defaults write com.apple.screenshots location ~/Desktop/my_screenshots
+
+to change password
+passwd
+
+find ip address
+ifconfig en0 | grep inet
+
+To print only the ipv6 address
+ifconfig en0 | grep inet | awk '{print $2}'
+
+top command
+displays all process which consumes most cpu
+
+top -o rsize
+display all process which consumes most memory

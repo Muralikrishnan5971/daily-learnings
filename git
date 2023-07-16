@@ -1,0 +1,190 @@
+
+
+Git you have three levels of settings files, 
+in repository, global for your user and global for the whole computer with all its users. 
+git config --list will list all of them that are in effect in the place where you are.
+
+.gitconfig is one of four configuration files that git config --list will search for configuration options. 
+.gitconfig contains only the user-specific configurations (also called global configuration), but you can also have system-specific and repository-specific configurations. To get a full view of the configuration in your current directory, you should use git config --list.
+
+git config user.name                                   --> reads user.name from the git config file
+git config --global user.name "muralikrishnan"         --> sets the username
+
+git config user.eamil                                  --> reads user.eamil from the git config file
+git config --global user.email "muralikrishnan"        --> sets the email
+
+To configure the initial branch name to use in all of your new repositories, which will suppress this warning, call:
+
+git config --global init.defaultBranch <name>          --> like main, master, trunk, develoment
+
+we can also rename the just-created branch with the below command
+
+git branch -m <name>                                    --> git branch -m main or git branch -m master
+
+git init   --> initializes a repo
+creates a hidden .git folder
+
+.git folder consisits of below files and directories
+
+files,
+
+HEAD
+config
+description
+
+directories,
+hooks
+info
+objects
+refs
+
+There can be other files and directories as well inside it as we start configurng and using.
+
+git add filename1 filename2
+git add .
+
+git status -u                     --> shows untracked files and directories
+
+The working tree, or working directory, consists of files that you are currently working on. You can think of a working tree as a file system where you can view and modify files. The index, or staging area, is where commits are prepared. The index compares the files in the working tree to the files in the repo.
+
+git rm --cached <file>            --> to unstage
+
+git config --global core.editor "code --wait"       --> to set vs code as text editor for typing commit messages
+
+--global flag means it applies to all the repos  
+
+git log --pretty        --> pretty prints the commit messages
+git log --oneline       --> prints only one line from the commit message
+
+git commit --ammend     ---> The git commit --amend command is a convenient way to modify the most recent commit. It lets you combine staged changes with the previous commit instead of creating an entirely new commit.
+
+example:
+
+git commit -m "new changes added"
+opps some changes missed and now added
+git add .
+git commit --amend    ---> this opens up the previous commit message which can be updated.
+
+in case we need only to edit the latest commit message, git commit --amend will open up commit message editor.
+
+.gitignore file   created at the root of a repository
+
+filename.txt   --> ignores the file filename.txt
+foldername/    --> ignores the contents of the folder foldername
+*.log          --> ignores all the files with .log extension
+
+*******   gitignore.io   --> check this out
+
+When we make a commit, each commit get this wierd looking hash (hash code)
+algorithm used by hashing function in git is sha1
+
+Every commit has a unique identifier, ie., unique hash
+And each commit references atleast one parent commit that came before it 
+
+master or main branch is just like any other branch
+
+comit 2f24r34tr35tr3445253454354fdwfwefw (HEAD -> master)
+
+HEAD is a pointer that refers to current location in our repository,
+It points to a particular branch reference.
+
+git branch     --> lists all our branches
+
+git branch <branchname>    --> creates a new branch given name, but does not switch to it. 
+i.e., iam still on the master branch
+
+once new branch is created, the HEAD will be pointing to both the branch, like the below example
+
+commit 482398c2e0a00ca1f3e0c5ede509a2eeb76d2f4b (HEAD -> songs, tamilsongs)
+
+git switch <branchname> switches to the specified branch  --> it is a new command, the same was done earlier using git checkout
+
+after commiting some changes, doing git log, we can see the HEAD pointing to the latest active branch
+
+commit aabba92ff3b36c51e4ebfcc92686415f4445efdd (HEAD -> tamilsongs)
+
+git commit -a -m "commit meesage"  --> to directly stage all changes and commit
+
+it does matter where we branc from.
+
+***  git checkout branchname    --> switches to the branch specified
+***  but git checkout does a lot more
+
+git switch -c branchname    ---> creates a new branch and switches to it.
+
+-c stands for create
+
+git checkout -b branchname  ---> creates a new branch and switches to it.
+
+Now we have done some changes in the existing files, now try to switch to another branch, it will not switch and throw the below error.
+
+error: Your local changes to the following files would be overwritten by checkout:
+	playlist.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+The same thing does not apply when we create a new file, work on it and then try to switch from there, we can switch.
+since the new file is yet to be commited.
+
+
+good practice is to always add and commit changes or stash before switching
+
+git switch -d branchname  --> deletes only when all changes are merged
+git switch -D branchname  --> force deletes irrespective of the merge status
+
+
+when we try to delete current branch from the active branch, we cannot do that and get below error msg:
+error: Cannot delete branch 'deletemebranch' checked out at '/Users/muralikrishnan/Desktop/murali/dummy_git/roadtrip'
+
+to delete irrespective of its merge status use -D option, git branch -D branchname
+
+To rename a branch
+first change to the branch we want to rename, then use the below command
+
+git branch -m newname       ---> -m option stands for move/rename 
+
+Each HEAD references the branch and
+Each branch reeferences to a commit
+
+
+In the .git folder HEAD file will store always, where the head is present in the below format
+ref: refs/heads/harrissongs
+
+in .git/ref/head   --> this folder contains all the branches as files, where it stores the latest commits hash value
+
+git Merging
+
+*** we merge branches not specific commits
+*** we always merge to current HEAD branch
+
+Steps to merge
+
+1. checkout to the branch we want to merge the changes into (receiving branch) --> git checkout master
+2. use the git merge command to merge a specific change to the current branch  --> git merge bugfix
+
+remember the branches are just defined by a branch pointer
+master and bugfix now point to the same commit, until they diverge again  --> in our example
+This is called a Fast Forward.
+
+*****************************************
+Setting up a global .gitignore file.
+
+You can create a global gitignore
+create a ~/.gitignore in your user directory, then
+
+git config --global core.excludesfile ~/.gitignore
+
+git log --graph
+git log --graph --all
+git log --graph --decorate --oneline
+
+https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git
+
+
+
+
+
+
+
+
+
