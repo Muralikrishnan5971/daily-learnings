@@ -452,7 +452,21 @@ readlink -f settings.txt      ----> prints the ABSOLUTE FILE PATH of the specifi
 
 unzip filename.zip -d /destination/folder_path
 
+*******************************************************
 
+The watch command is a utility from the procps-ng package.
+This package is by default available on all Linux distros.
+We can use the watch command to execute a command at regular intervals. 
+It displays its output on a console or terminal in fullscreen mode.
 
+watch -n 1 -d find .
+
+-n --> specifies the intraval
+-d --> differance
+followed by the command we need to execute for the mentioned interval
+
+********************************************************
+
+mv -> You can only move files to a directory that already exists: Linux will not create a new directory with the mv command.
 
 

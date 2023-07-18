@@ -78,28 +78,58 @@ sudo appium driver install uiautomator2
 In case if we get apple can't open your software, go to system preferences, general, click open anyway.
 
 
+set path for sdk manager.
 
+export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
 
+Now emulator set-up
 
+Open Android studio -> more options -> Virtual Device Manager
 
+Based on the available system resources, we can create multiple AVD's -> Android Virtual Device or Emulators
 
+Start Appium server
 
+Now open Appium inspector and select Appium server.
 
+In the Appium server section we need to give all required information, as Our Appium server needs to know which device it needs to check.
 
+give Remote host, Remote port, Remote path
 
+And then Desired Capabilites details in JSON format in the appim inspector
 
+{
+  "automationName": "uiautomator2",
+  "platformName": "Android",
+  "deviceName": "pixel_3a",
+  "app": "/Users/muralikrishnan/Desktop/appium-dummy-app/ApiDemos-debug.apk"
+}
 
+get the device name form the properties list, app is the appium's dummy app for automation
 
+So basically we are sending a rest call to the server with the above request body,
 
+So that our appium inspector knows which server to connect to, which driver and which app to install in that device.
 
+Click Start Session
 
+now we cans ee the screenshot and coresponding xml dump in the appium inspector.
 
+also adb devices should list the emulator as the device
 
+adb devices
+List of devices attached
+emulator-5554   device
 
+this is the udid -> emulator-5554
 
+Same can be used as key value pair as "udid":"emulator-5554" instead of "deviceName": "pixel_3a"
 
-
-
+Where we have multiple virtual devices, udid's are helpful
 
 
 

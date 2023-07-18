@@ -1,0 +1,82 @@
+
+ARRAY
+
+An array is a collection of items stored at contiguous memory locations. 
+The idea is to store multiple items of the same type together. 
+This makes it easier to calculate the position of each element by simply adding an *offset* to a base value, 
+i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+
+Their elements are next to each other in memory.
+
+When you define the size of the array, all of that space in memory is “reserved"
+If you do not fill the array with values, that space will be kept reserved and empty until you do.
+
+This is key because arrays are extremely efficient in accessing values because all the elements are stored in contiguous spaces in memory. This way, the computer knows exactly where to look to find the information you requested
+
+But… there is a downside to it because this is not memory-efficient. 
+You are reserving memory for future operations that may not occur. 
+This is why arrays are recommended in situations when you know beforehand how many elements you are going to store.
+
+:--> Insertion
+
+To insert into arrays, we move all the elements located to the right of the insertion site, 
+one index to the right. Element “a” will now be at index 1, element “b” will be at index 2 and so on…
+
+ You will need to create a variable to keep track of the last index that contains elements,
+ This way, you can determine if the array is full and what index you should use to insert an element at the end.
+
+ Now what happens, if the array is full and we try to add a new item,
+
+ In this case, you need to create a new, larger array and manually copy all the elements into this new array. 
+ This operation is very expensive, time-wise. Imagine what would happen if you had an array with millions of elements! 
+ That could take a very long time to complete. 
+
+:--> Deleting
+ You can’t just delete the element and leave that space empty.
+ You should move the elements that come after the element that you want to delete one index the left.
+
+ Deletion is very efficient when you remove the last element. 
+ Since you need to create a variable to keep track of the last index that contains elements (in the diagram above, index 3), you can directly remove that element using the index.
+
+
+Finding an Element in a Array
+
+We have three situations in finding an element in a Array.
+
+1. When we know where its located --> Use the index
+2. When we don't know where its located, and your data is sorted
+		you can use algorithms to optimize your search, such as Binary Search
+3. When we don't know where its located, and your data is NOT sorted
+		you will need to search through every element in the array and check if the current element is the element you are looking for (please see the sequence of diagrams below).
+
+Memory is allocated immediately after the array is created and it’s empty until you assign the values.
+
+Their elements are located in contiguous locations in memory, so they can be accessed very efficiently **(random access, O(1)** = constant time) using indices.
+
+Arrays can be used to sort data in ascending or descending order. 
+Sorting algorithms such as bubble sort, merge sort, and quicksort rely heavily on arrays.
+
+Arrays can be searched for specific elements using algorithms such as linear search and binary search
+
+Arrays are used to represent matrices in mathematical computations such as matrix multiplication, linear algebra, and image processing.
+
+Matrices: Arrays are used to represent matrices in mathematical computations such as matrix multiplication, linear algebra, and image processing.
+
+Matrices: Arrays are used to represent matrices in mathematical computations such as matrix multiplication, linear algebra, and image processing.
+
+Graphs: Arrays can be used to represent graphs in computer science. Each element in the array represents a node in the graph, and the relationships between the nodes are represented by the values stored in the array.
+
+Dynamic programming: Dynamic programming algorithms often use arrays to store intermediate results of subproblems in order to solve a larger problem.
+
+
+
+
+
+
+
+
+
+
+
+
+

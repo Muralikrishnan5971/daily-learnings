@@ -180,9 +180,75 @@ git log --graph --decorate --oneline
 
 https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git
 
+git remote add origin remote-repo-url
+
+git branch -m main
+
+git push -u origin main
+
+To merge branches, switch to the branch we want changes to be merged
+
+git switch master
+
+Then git merge feature-branch-name
+
+git automatically merge commits the feature-branch changes to the master and prompts us for a commit msg.
+
+When we try to merge branches, where there is no chance of conflicts, git commits the changes to the recipient branch and promtps us for an commit message. So this merge commit will have two parent commits. One from the recipient branch, other from the giving branch.
 
 
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line
 
+Resolving merge conflicts
+
+when two people try to merge different changes to same line and file, we get merge conflicts. No git does'nt know how to merge these conflicts automatically, so we need to fix it.
+
+git throws the following error:
+Auto-merging playlist.txt
+CONFLICT (content): Merge conflict in playlist.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Also, the files where there are conflicts are decorated. They have new content to indicate where there are conflicts.
+
+If you have questions, please
+<<<<<<< HEAD                         --> content in the branch we are trying to merge into
+open an issue
+=======
+ask your question in IRC.
+>>>>>>> branch-a                     --> content from the branch we are trying to merge from
+
+To see the beginning of the merge conflict in your file, search the file for the conflict marker <<<<<<<. When you open the file in your text editor, you'll see the changes from the HEAD or base branch after the line <<<<<<< HEAD. Next, you'll see =======, which divides your changes from the changes in the other branch, followed by >>>>>>> BRANCH-NAME. In this example, one person wrote "open an issue" in the base or HEAD branch and another person wrote "ask your question in IRC" in the compare branch or branch-a.
+
+we go through the changes, decide what we want and dont. Remove all the markers
+
+
+git log --graph --decorate --oneline --all
+
+There are 3 types of merge: the fast-forward merge, three-way merge, and rebasing which I briefly mentioned above
+
+--> Fast-forward merge, as the name implies, is a quick and easy way to merge your branches and continue working on your project. It doesn't require any extra work and you'll rarely run into a merge conflict with it.
+
+This is because all it does is move its HEAD from the current commit of the main branch onto the latest commit of the branch being merged. It's like moving your project forward in time.
+
+--> A three-way merge occurs when the branch you're trying to merge to is ahead of the branch you're trying to merge. For example you create a branch to fix a bug and at the same time, a colleague is working on the main branch. And before you can finish squashing the bug, a new commit has been added to the main branch.
+
+Git won't be able to smoothly integrate your branch into the main branch because the main branch is now ahead of the commit your branch was pointing to.
+
+So it has to create a separate commit for it and combine your commit, the new commit on the main branch, and the commit they're both pointing to (since they both have the same ancestor commit) into one commit in order to merge them as a new commit.
+
+--> The last method, which is rebasing, transfers the whole feature branch onto the main branch.
+
+A downside to rebasing which merge doesn't have is loss of project history. When you merge a branch to another branch, you still have access to that branch until you delete it. But when you rebase a branch you lose access to all of that branch's history. This can be good or bad depending on you, (your team), and your project.
+
+
+**************************************
+Git under the hood
+
+So you could say Git is a database of references to your project. That database is built using three types of objects:
+
+the commits which contain the metadata of every commit such as the message and author,
+the tree of changes which contain references to filenames, file contents, and sometimes other trees,
+and the blob which represents the actual data held within the files.
 
 
 

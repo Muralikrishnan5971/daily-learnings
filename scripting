@@ -30,3 +30,74 @@ Every command executed by the shell has a exit code. That exit code is an intege
 Commond that exits with an o exit status has succeeded, A non zero exit status indicates a failure (1-255)
 If a command is not found, the child process created to execute it returns a status of 127. 
 If a command is found but is not executable, the return status is 126
+
+
+random is a bilt-in varaible in linux
+open terminal, enter echo $RANDOM
+
+which spits random numbers between 0 - 32767, everytime we hit the command, 
+
+Similarly we have a bunch of built-in variables
+
+echo $RANDOM
+echo $SHELL
+echo $USER
+echo $PWD
+echo $HOSTNAME
+
+Similarly, we can create our own system variables,
+
+go to terminal, then
+
+name="murali"
+echo $name
+
+but we can't use our variable in our script, just yet.
+
+Because the variable name, we just set, cannot be used by a ** child processess **
+Yes, our scripts are all child processess.
+
+we change this by the export command
+
+export name       -> Now it can be used by the child processes, meaning all the scripts
+
+But the same thing vanishes, once we EXIT the terminal.
+
+***** to overcome this, we need to set the name="murali" as an environment variable in our .zshrc or .bashrc file  ********
+The above step makes our vairable permanant
+
+<__BASH MATH__>
+
+echo $(( 3 +7 ))    --> (()) inside it we write our math function
+
+$(( $RANDOM % 10 ))  --> this gives us a random number from 0 - 9, Similarly
+
+$(( $RANDOM % 20 ))  --> will generate random number between 0 - 19
+
+$(( $RANDOM % 2 ))  --> will generate number between 0 and 1
+
+echo "Do you like to die ? (y/n)"
+read ans
+
+#!/bin/zsh
+echo "Do you like to die ? (y/n)"
+read ans
+
+if [[ $ans == "y" ]]; then
+        echo "YOU DIE !!!"
+else
+        echo "YAY, YOU LIVE !!!"
+fi
+
+ALWAYS END YOUR BASH CONDITIONS
+
+Nested IF --> all the conditions must be true
+
+ELIF --> only one condtion is enough to be true
+
+
+
+
+
+
+
