@@ -1,0 +1,31 @@
+
+vi dummy.py
+
+:q!      -> quit without saving
+:w
+:wq
+:!ls     -> execute terminal commands
+
+i   - insert in INSERT mode
+a   - append in INSERT mode
+o   - goes to new line below in in INSERT mode
+
+I   - goes beginning of line
+A   - goes to the end of the line
+O   - goes to new line above
+
+To see line numbers
+
+:set numbers
+
+pressing numbers - to repeat actions
+
+example: press 4 + k  -> goes four lines up
+
+set relativenumber
+
+colorscheme murphy
+
+:wq
+
+open vi again, now all settings are gone

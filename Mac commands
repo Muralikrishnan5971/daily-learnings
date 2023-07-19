@@ -24,3 +24,8 @@ displays all process which consumes most cpu
 
 top -o rsize
 display all process which consumes most memory
+
+Fonts location
+~/Library/Fonts
+
+fc-cache -fv  --> clears font cache
