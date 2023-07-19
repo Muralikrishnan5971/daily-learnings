@@ -29,3 +29,41 @@ colorscheme murphy
 :wq
 
 open vi again, now all settings are gone
+
+When opened --> NORMAL mode
+
+INSERT mode
+
+VISUAL mode
+
+Visual Mode is probably used a little less than the first two modes mentioned, but can still be extremely useful. 
+It’s mostly used to highlight blocks of text, and then perform a command on the entire block. For example, 
+you maybe highlight a block and indent the entire thing.
+
+COMMAND mode
+
+Commands are essential for Vim, and will be used heavily, 
+especially when we get to plugins. Commands, as we’ll see, make Vim do something. 
+To enter a command you simply type : while in Normal Mode and then the command.
+
+https://medium.com/analytics-vidhya/vim-for-developers-part-1-the-basics-663619ca122a
+
+.vimrc:
+
+.vimrc is the configuration file used by the Vim text editor.
+Vim is a popular, classic text editor and the predecessor of Neovim.
+The .vimrc file is written in Vimscript, a scripting language specific to Vim.
+init.vim:
+
+init.vim is the configuration file used by the Neovim text editor.
+Neovim is a modern fork of Vim, designed to improve upon and extend Vim's capabilities.
+The init.vim file can be written in either Vimscript or Lua, as Neovim introduced support for Lua starting from version 0.5.
+
+
+
+
+
+
+
+
+
