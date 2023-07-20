@@ -158,7 +158,13 @@ anything written to it and only returns an end-of-file EOF when read.
 echo $?
 ? 
 
-The $? symbol is a special variable that always contains the exit status of the previous command; it will be overwritten every time you run a new command. By convention, an exit code of 0 indicates that the previous command was successful while anything greater indicates an error code for that specific program.
+The $? symbol is a special variable that always contains the exit status of the previous command; 
+it will be overwritten every time you run a new command. By convention, an exit code of 0 indicates that the previous command was successful while anything greater indicates an error code for that specific program.
+
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+bash command to list files
+find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 
 
 

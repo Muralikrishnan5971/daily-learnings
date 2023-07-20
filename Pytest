@@ -1,0 +1,12 @@
+
+
+py.test    -> runs all pytests in the directory
+
+pytest -v -s 
+
+-v verbose
+-s 
+
+pytest -k
+
+-k --> keyword match (test parse)
