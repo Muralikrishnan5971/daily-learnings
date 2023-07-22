@@ -469,4 +469,35 @@ followed by the command we need to execute for the mentioned interval
 
 mv -> You can only move files to a directory that already exists: Linux will not create a new directory with the mv command.
 
+*********************************************************
+
+SYMBOLS
+
+`  --> backtick
+^  --> carrot or cap symbol --> indicates something that starts with.
+
+example:
+ls | grep ^D   --> It will list all files with filenames starting with D
+
+() --> open and close parentheses
+{} --> open and close curly braces
+[] --> open and close brackets
+| --> pipe
+\ --> backslash -- used in windows to mention the file path
+
+<,> --> input and output
+>> --> means appending to the file
+> --> means overwriting the file
+< --> sending output as input
+/ --? forwardslash -- used in linux to mention the file path
+
+
+
+
+
+
+
+
+
+
 

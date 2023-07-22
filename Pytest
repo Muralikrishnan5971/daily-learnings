@@ -1,4 +1,24 @@
 
+You can think of a test as being broken down into four steps:
+
+Arrange
+
+Act
+
+Assert
+
+Cleanup
+
+Arrange is where we prepare everything for our test. This means pretty much everything except for the “act”. It’s lining up the dominoes so that the act can do its thing in one, state-changing step. This can mean preparing objects, starting/killing services, entering records into a database, or even things like defining a URL to query, generating some credentials for a user that doesn’t exist yet, or just waiting for some process to finish.
+
+Act is the singular, state-changing action that kicks off the behavior we want to test. This behavior is what carries out the changing of the state of the system under test (SUT), and it’s the resulting changed state that we can look at to make a judgement about the behavior. This typically takes the form of a function/method call.
+
+Assert is where we look at that resulting state and check if it looks how we’d expect after the dust has settled. It’s where we gather evidence to say the behavior does or does not aligns with what we expect. The assert in our test is where we take that measurement/observation and apply our judgement to it. If something should be green, we’d say assert thing == "green".
+
+Cleanup is where the test picks up after itself, so other tests aren’t being accidentally influenced by it.
+
+At its core, the test is ultimately the act and assert steps, with the arrange step only providing the context. Behavior exists between act and assert.
+
 
 py.test    -> runs all pytests in the directory
 
@@ -10,3 +30,55 @@ pytest -v -s
 pytest -k
 
 -k --> keyword match (test parse)
+
+pip --> package installer for Python
+
+platform darwin -- Python 3.11.4, pytest-7.4.0, pluggy-1.2.0
+rootdir: /Users/muralikrishnan/Desktop/murali/python_selenium/my_test
+collected 6 items
+
+here pluggy is a hook for calling pytest.
+
+python -m pytest -v -s
+
+pytest -rA
+
+pytest -rA -v
+
+We can configure different naming conventions by setting the python_files, python_classes, python_functions in our configuration file.
+
+
+****
+https://docs.pytest.org/en/7.1.x/example/pythoncollection.html
+****
+
+pytest allows to use our standard python asserts
+
+AssertionError is bulit-in exception that inherits the Exception class
+
+is --> A reserved word that test, if two variables points to the same object, similar to java == which checks if both objects point to the same memory location
+
+== --> does value comparison, similiar to java str.equals() method
+
+Hard assert vs Soft assert
+--------------------------
+
+Hard assert stops exection after a failure and moves to next annotation
+	--> Its best to use hard assertion, if there is only one result to verify in the test function
+
+Soft assert continues exection after a failure adn moves to the next statement line.
+	--> If there's more than one result to verify in the same test function, its best to use soft assertion.
+
+https://pypi.org/project/softest/
+
+pip install softest
+
+
+
+
+
+
+
+
+
+

@@ -68,6 +68,18 @@ Graphs: Arrays can be used to represent graphs in computer science. Each element
 
 Dynamic programming: Dynamic programming algorithms often use arrays to store intermediate results of subproblems in order to solve a larger problem.
 
+A good programmer sees both ways before entering a one way street.
+
+Data structute is organizing data in computer, so that data can be used efficiently.
+
+Ds is not a technique, its skill.
+
+Storing the data is a technique, but choosing what data structure to store is a skill.
+
+Algorithm - well defined procedure to implement the critical business logic.
+
+--> Algorithm execution time will not be same for everytime we run a program <--
+
 
 
 
