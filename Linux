@@ -133,6 +133,10 @@ ls -l command list all files and directories
 starting with '-' ---> normal files
 starting with 'd' ---> directory files
 
+ext3, ext4, xfs --> linux file system
+
+cd / --> enters the root directory
+
 
 ******************************************************************
 
@@ -464,6 +468,29 @@ watch -n 1 -d find .
 -n --> specifies the intraval
 -d --> differance
 followed by the command we need to execute for the mentioned interval
+
+********************************************************\\
+
+The name "tarball" is derived from the combination of "tar" (short for "tape archive"), which is the archiving utility used to bundle the files, and "ball," which describes the concept of packing multiple files together.
+
+Tarballs are widely used in Unix-like systems, including Linux and macOS, as a common way to distribute and transport files or software packages. They are popular for creating backups, distributing source code, and packaging software for installation. Tarballs are especially useful when preserving the file structure and permissions of the files is important.
+
+To create a tarball, the "tar" command is used with specific options to bundle the files and directories. For example, to create a tarball named "myfiles.tar.gz" from a directory called "myfiles," you would use the following command:
+
+tar -czvf myfiles.tar.gz myfiles
+
+Here:
+
+-c: Create a new archive.
+-z: Compress the archive using gzip.
+-v: Verbose mode, display the progress and file details during the archiving process.
+-f: Specify the output filename.
+
+To extract the contents of a tarball, you would use a similar command:
+
+tar -xzvf myfiles.tar.gz
+
+-x: Extract`
 
 ********************************************************
 

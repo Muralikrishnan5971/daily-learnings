@@ -250,7 +250,41 @@ the commits which contain the metadata of every commit such as the message and a
 the tree of changes which contain references to filenames, file contents, and sometimes other trees,
 and the blob which represents the actual data held within the files.
 
+**************************************
 
+git diff --> compares Staging area and Working directory
 
+**************************************
+
+git stash will take all uncommited changes, both staged and unstaged
+
+list all changes in the working directory that are not staged for the next commit
+
+git stash save or git stash  --> stashes the uncommited changes
+
+git stash list --> lists all saved stashes
+
+index is what git calls the staging area
+
+git stash pop  --> will remove the most recently stashed changes form the stash and re apply them to your workign directory
+
+good practice, have one stash - git stash, and then reapply it by git stash pop.
+
+git stash apply --> will apply all out changes, but keeps them in our stash
+
+Applying specific stashes
+stash@{0}: WIP on master: 9e245f5 add one murugan song
+stash@{1}: WIP on master: 9e245f5 add one murugan song
+stash@{2}: WIP on master: 9e245f5 add one murugan song
+stash@{3}: WIP on master: 9e245f5 add one murugan song
+stash@{4}: WIP on master: 9e245f5 add one murugan song
+
+here stash@{0} is the stash id, using which we can apply a particular stash
+
+similarly to delete a stash
+
+git stash drop stash{0}
+
+To clear out all stashes, git stash clear
 
 

@@ -25,7 +25,7 @@ py.test    -> runs all pytests in the directory
 pytest -v -s 
 
 -v verbose
--s 
+-s show all cosole logs
 
 pytest -k
 
@@ -40,6 +40,9 @@ collected 6 items
 here pluggy is a hook for calling pytest.
 
 python -m pytest -v -s
+
+-v: verbose
+-s: prints all print statement in our tests
 
 pytest -rA
 
@@ -72,6 +75,149 @@ Soft assert continues exection after a failure adn moves to the next statement l
 https://pypi.org/project/softest/
 
 pip install softest
+
+Pytest MARKERS
+
+pytest --markers.  --> lists all bulitin pytest markers
+
+@pytest.mark.filterwarnings
+@pytest.mark.skip(reason=None)
+@pytest.mark.skipif(condition, ..., *, reason=...)
+@pytest.mark.xfail(condition, ..., *, reason=..., run=True, raises=None, strict=xfail_strict)
+@pytest.mark.parametrize(argnames, argvalues)
+@pytest.mark.usefixtures(fixturename1, fixturename2, ...)
+@pytest.mark.tryfirst: mark a hook implementation function such that the plugin machinery will try to call it first/as early as possible. DEPRECATED, use @pytest.hookimpl(tryfirst=True) instead.
+
+@pytest.mark.trylast: mark a hook implementation function such that the plugin machinery will try to call it last/as late as possible. DEPRECATED, use @pytest.hookimpl(trylast=True) instead.
+
+we can use custom markers as well. like @pytest.mark.smoke
+
+pytest -m "smoke" -rA -v
+
+-m: marker
+-rA: report all
+
+when we use custom markers, we get warnings to register them first. To disbale them, we can use --disable-warnings option 
+
+pytest -m "smoke" -rA -v --disable-warnings
+
+We need to register our custom markers in pytest.ini file to not get those warnings,
+pytest.ini is a configuration file that we place in the root directory
+
+[pytest]
+markers = 
+    smoke: Smoke Test
+    regression: Regression Test
+    sanity: Sanity Test
+    blocked: Blocked Test
+
+
+We can also configure the options such as -v, -rA, -s in our pytest.ini file as well.
+
+[pytest]
+markers = 
+    smoke: Smoke Test
+    regression: Regression Test
+    sanity: Sanity Test
+    blocked: Blocked Test
+    integration: Integration Test
+
+addopts = -rA -v
+
+We can also add more markers to a test function and call them using and function as:
+
+pytest -m "smoke and login" --> will run test cases with smoke AND login markers
+
+pytest -m "smoke and not integration" 		similarly
+pytest -m "smoke or integration"
+pytest -m "not smoke"
+
+pytest -m "smoke and not integration" my_test/test_markers_group.py
+
+we can also declare the pytest markers at global level to apply it to all the test functions
+
+pytestmark = pytest.mark.regression      --> for a single marker
+pytestmark = [pytest.mark.regression, pytest.mark.sanity]   --> for multiple markers
+
+now if we do pytest --markers we can see all the built in markers along with our own custom markers as well.
+
+pytest allows us to set more that one fixture for a test function
+
+def fixture(
+    fixture_function: None = ...,
+    *,
+    scope: _ScopeName | ((str, Config) -> _ScopeName) = ...,
+    params: Iterable[object] | None = ...,
+    autouse: bool = ...,
+    ids: Sequence[object | None] | ((Any) -> (object | None)) | None = ...,
+    name: str | None = None
+) -> FixtureFunctionMarker
+
+pytest.fixture(autouse=True)
+
+we also set scope for a particular fixture.
+
+pytest.fixture(scope="module")
+
+class, function, module, package, session,x
+
+
+test_1one.py  --> will be picked first -- number first
+
+
+test_apple --> then, in alphabetical order
+test_banana --> 
+
+**********************************
+
+fixtures can be centralized via conftest.py
+
+@pytest.fixture
+def int_list():
+    return [1, 2, 3]
+
+The above is a fixture function,that return list of integers.
+
+Here’s an example of a test function that uses the int_list fixture:
+
+def test_sum(int_list):
+    assert sum(int_list) == 6
+
+
+Pytest will automatically pick up our hook from conftest.py much like it would with fixtures.
+
+Usually, if you're in doubt whether to use fixtures or hooks, 
+use fixtures. Hooks are for altering the framework itself, not for test related stuff.
+
+
+Pytest hooks are to modify the behavior of pytest like modify the test collection strategy, test execution order etc. Fixtures are meant to set up the tests before they are executed, e.g. setting up db, initialize an app, etc.
+
+
+***---> The yeild keyword is used in python generator to create ierable objects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
