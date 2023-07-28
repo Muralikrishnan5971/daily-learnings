@@ -7,11 +7,16 @@ https://docs.python.org/3/tutorial/datastructures.html
 Dunder Methods - (also sometimes refered as magic methods)
 https://mathspp.com/blog/pydonts/dunder-methods#:~:text=What%20are%20dunder%20methods%3F,__%20or%20__add__%20.
 
-n Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and operators of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start and end with two underscores, for example __str__ or __add__.
+In Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and 
+operators of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start 
+and end with two underscores, for example __str__ or __add__.
 
-If you have defined classes in Python, you are bound to have crossed paths with a dunder method: __init__. The dunder method __init__ is responsible for initialising your instance of the class, which is why it is in there that you usually set a bunch of attributes related to arguments the class received.
+If you have defined classes in Python, you are bound to have crossed paths with a dunder method: __init__. 
+The dunder method __init__ is responsible for initialising your instance of the class, which is why it is in there that 
+you usually set a bunch of attributes related to arguments the class received.
 
-Dunder methods are not called magically, though. They are just called implicitly by the language, at specific times that are well-defined, and that depend on the dunder method in question.
+Dunder methods are not called magically, though. They are just called implicitly by the language, 
+at specific times that are well-defined, and that depend on the dunder method in question.
 
 All Python operators, like +, ==, and in, rely on dunder methods to implement their behaviour.
 
@@ -28,7 +33,8 @@ difference between parameter and argument:
 
 Note that for the most part, arguments and parameters mean the same thing. They are the variables used in the function.
 
-The difference lies in where we are referring to them. Arguments are what we pass into the function when calling it, and parameters are what is declared in the function.
+The difference lies in where we are referring to them. Arguments are what we pass into the function when calling it, 
+and parameters are what is declared in the function.
 
 def add_one(num):
 	return num + 1
@@ -38,10 +44,12 @@ print(final_value)
 
 Here, num is parameter, 1 is argument
 
-“Behavior” is the way in which some system acts in response to a particular situation and/or stimuli. But exactly how or why something is done is not quite as important as what was done.
+“Behavior” is the way in which some system acts in response to a particular situation and/or stimuli. 
+But exactly how or why something is done is not quite as important as what was done.
 
 
-Something that you’ll always find in every Python package is an __init__.py file. This file will tell Python to treat directories as modules (or sub-modules).
+Something that you’ll always find in every Python package is an __init__.py file. 
+This file will tell Python to treat directories as modules (or sub-modules).
 
 
 Why Do You Need Virtual Environments?
@@ -57,6 +65,18 @@ If you install two different versions of the same package into your global Pytho
 https://realpython.com/python-virtual-environments-a-primer/#how-can-you-work-with-a-python-virtual-environment
 
 
+
+Dictionaries in python
+
+There are a couple points to keep in mind:
+
+Dictionaries map keys to values and store them in an array or collection.
+The keys must be of a hashable type, which means that they must have a hash value that never changes during the key’s lifetime.
+Unlike sequences, which are iterables that support element access using integer indices, dictionaries are indexed by keys.
+
+The keys in a dictionary are much like a set, which is a collection of hashable and unique objects. Because the objects need to be hashable, mutable objects can’t be used as dictionary keys
+
+In Python 3.6 and beyond, dictionaries are ordered data structures, which means that they keep their elements in the same order in which they were introduced
 
 
 

@@ -1,3 +1,24 @@
 
 Maven cmd to create a java project
 
+mvn archetype:generate 
+	-DgroupId={project-packaging}
+	-DartifactId={project-name}
+	-DarchetypeArtifactId={maven-template} 
+	-DinteractiveMode=fals
+
+
+mvn archetype:generate -DgroupId=com.mk.dsa -DartifactId=JavaDSA -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+groupId uniquely identifies your project across all projects. A group ID should follow Java's package name rules. This means it starts with a reversed domain name you control. For example,
+org.apache.maven, org.apache.commons
+
+Maven does not enforce this rule. There are many legacy projects that do not follow this convention and instead use single word group IDs. However, it will be difficult to get a new single word group ID approved for inclusion in the Maven Central repository.
+
+You can create as many subgroups as you want. A good way to determine the granularity of the groupId is to use the project structure. That is, if the current project is a multiple module project, it should append a new identifier to the parent's groupId. For example,
+
+org.apache.maven, org.apache.maven.plugins, org.apache.maven.reporting
+
+artifactId is the name of the jar without version. If you created it, then you can choose whatever name you want with lowercase letters and no strange symbols. If it's a third party jar, you have to take the name of the jar as it's distributed.
+eg. maven, commons-math

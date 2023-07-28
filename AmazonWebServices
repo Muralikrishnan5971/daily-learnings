@@ -1,0 +1,70 @@
+
+S3 = Simple Storage Service
+S3 is object based
+
+Recommended for storing static content such as graphic files, document, log files, audio, video and compressed files
+
+We can save files upto 0 byte to 5TB.
+
+Using this service, you can easily build applications that make use of cloud native storage. 
+Since Amazon S3 is highly scalable and you only pay for what you use, you can start small and grow your application as you wish, 
+with no compromise on performance or reliability.
+
+Amazon S3 is also designed to be highly flexible. Store any type and amount of data that you want, 
+read the same piece of data a million times or only for emergency disaster recovery, 
+build a simple FTP application or a sophisticated web application such as the Amazon.com retail web site. 
+Amazon S3 frees you to focus on innovation instead of spending time figuring out how to store your data.
+
+You can store virtually any kind of data in any format.
+
+The total volume of data and number of objects you can store in Amazon S3 are unlimited. 
+Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 TB. 
+The largest object that can be uploaded in a single PUT is 5 GB. For objects larger than 100 MB,
+customers should consider using the multipart upload capability.
+
+What are different storage class in S3 ?
+
+Amazon S3 is a simple key-based object store. When you store data, you assign a unique object key that can later be used to retrieve the data. Keys can be any string, and they can be constructed to mimic hierarchical attributes. Alternatively, you can use S3 Object Tagging to organize your data across all of your S3 buckets and/or prefixes.
+
+Amazon S3 delivers strong read-after-write consistency automatically, 
+without changes to performance or availability, without sacrificing regional isolation for applications, 
+and at no additional cost.
+
+After a successful write of a new object or an overwrite of an existing object, 
+any subsequent read request immediately receives the latest version of the object. 
+S3 also provides strong consistency for list operations, so after a write, you can immediately perform 
+a listing of the objects in a bucket with any changes reflected.
+
+Strong read-after-write consistency helps when you need to immediately read an object after a write; 
+for example, when you often read and list immediately after writing objects. High-performance computing 
+workloads also benefit in that when an object is overwritten and then read many times simultaneously, 
+strong read-after-write consistency provides assurance that the latest write is read across all reads. 
+These applications automatically and immediately benefit from strong read-after-write consistency. 
+The strong consistency of S3 also reduces costs by removing the need for extra infrastructure to provide strong consistency.
+
+An AWS Region is a physical location around the world where AWS cluster data centers.
+Each group of logical data centers within a Region is know as an Availability Zone (AZ). 
+Each AWS Region consists of a minimum of three, isolated, and physically separate AZs within a geographic area. 
+Unlike other cloud providers, who often define a Region as a single data center, the multiple AZ design of every 
+AWS Region offers advantages for customers. 
+Each AZ has independent power, cooling, and physical security and is connected via redundant, ultra-low-latency networks
+
+All AZs in an AWS Region are interconnected with high-bandwidth, low-latency networking, **over fully redundant**, 
+dedicated metro fiber providing high-throughput, low-latency networking between AZs.
+
+The term "over fully redundant" seems to be a combination of two concepts: "over redundant" and "fully redundant." Let's break down each part:
+
+Fully Redundant: In the context of systems or data, redundancy refers to the duplication of critical components or information to ensure that if one component fails, there is a backup that can take over without causing a complete system failure. Fully redundant systems have complete duplication of all critical components, providing the highest level of fault tolerance.
+
+Over Redundant: The term "over redundant" is not a standard term in technology or engineering. However, it could imply an excessive or unnecessary level of redundancy beyond what is typically required or considered practical. In this context, "over redundant" might suggest a system that has more redundancy than is needed to ensure reliable operation.
+
+
+There are several factors to consider based on your specific application. 
+For instance, you may want to store your data in a Region that is near your customers, your data centers, 
+or other AWS resources to reduce data access latencies. You may also want to store your data in a Region that 
+is remote from your other operations for geographic redundancy and disaster recovery purposes.
+
+Amazon Athena is an interactive query service that makes it simple to analyze data directly in Amazon S3 using standard SQL
+
+
+S3 glacier - archive storage in cloud
