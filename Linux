@@ -518,6 +518,14 @@ ls | grep ^D   --> It will list all files with filenames starting with D
 < --> sending output as input
 / --? forwardslash -- used in linux to mention the file path
 
+grep comamnd
+
+ed is an oldest line based bulit-in editor that comes with unix based systems.
+quit and ed editor using ctrl+D
+the ed commands g/re/p command constitute to the linux grep command, which stands for 
+grep --> global/regular expression search/print
+In ed, the command g/re/p would print all lines featuring a specified pattern match
+
 
 
 

@@ -1,0 +1,8 @@
+
+
+
+https://medium.com/bb-tutorials-and-thoughts/how-to-get-started-with-jenkins-2b3f01a910c7
+
+java -jar jenkins.war --> defaults to port 8080
+
+java -jar jenkins.war --httpPort=9090     --> custom http port
