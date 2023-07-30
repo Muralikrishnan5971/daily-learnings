@@ -288,3 +288,118 @@ git stash drop stash{0}
 To clear out all stashes, git stash clear
 
 
+Detached HEAD
+
+when we checkout to a particular commit, instead of a branch, then it is a Detached head
+
+/** Discarding changes in git **/
+
+Suppose we made some changes, to a file but don't want to keep them. To revert the file back to whatever it looked like when you last commited.
+
+**
+git checkout HEAD <filename>   similar to git checkout .
+git checkout -- <filename>	
+
+git restore .
+git restore <filename>
+
+git checkout is like a switch knife in the sense that it can do a million things. So new commands were written
+git switch --> switch to
+git restore --> undo changes
+
+
+To remove staged file
+git restore --staged <filename>
+
+Undoing commits with git reset
+
+git reset <commit hash>  -- commit hash --> first seven letters of the actual commit hash
+
+this removes the commit from the repo, but we can still see those changes in the working directory. 
+To remove those we need a hard reset.
+
+git reset --hard <commit hash>   --> git undoes the commits up to the mentioned commit hash and removes those changes in the working directory.
+This is on a per baranch basis
+
+git revert does the same as the git reset, but does it as a brand new commit, which then will be prompted for a commit message.
+
+git reset moves the branch pointer backwards as it eliminates commits.
+
+So when to use git revert ??
+If you want to reverse some commits that other people have on their machines, then we need to use git revert.
+because using git reset will become fatal.
+
+
+git restore
+git reset
+git revert
+
+GIT REMOTE
+Before pushing anything to github, we need to tell git about our remote repository on github.
+We need to set up a 'destination' before pushing
+
+In git, we refer to these 'destinations' as remotes.
+Each remote is a url where a hosted repository lives.
+
+The term origin is just a conventional git remote name, but it is not at all special.
+When we clone a repo, the default remote name is set up as origin. we can change it, most people leave it.
+
+git push <remote> <local branchname we want to push up to remote>
+
+always change master branch to main by --> git branch -m main
+
+since 2020, github has changed its default banch name to main instead of master
+
+/** if we create a new local branch called feature-branch, do some changes and try to push it to our remote origin, then,
+the changes get pushed, but to a new remote branch feature-branch. **/
+
+
+While often we push a local branch up to a remote branch of the same name --> git push origin main,
+we can also push from a local branch to different remote branch --> git push <remote> <local-branch>:<remote-branch>
+
+example: git push origin bug-fix:develop
+
+The above method is totally NOT common,
+
+git push -u origin main  -->  here -u is the option
+
+The -u option allows you to set the upstream of the branch we are pushing. 
+we can think of this as a link connecting our local branch to a branch on github
+
+Running git push -u origin main sets the upstream of the local branch, so that it tracks the same branch (main) on the repo.
+
+The main advantage of setting this -u option is that, once it is set git push -u origin main
+then we can use the shorthand git push which will push our current branches changes to the upstream
+
+git push -u orgin main is same as git push --set-upstream origin main 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

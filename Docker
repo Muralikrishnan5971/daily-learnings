@@ -26,3 +26,25 @@ Designed for human interaction, YAML is a strict superset of JSON, another data 
 But because it's a strict superset, it can do everything that JSON can and more.
 
 https://circleci.com/blog/what-is-yaml-a-beginner-s-guide/#:~:text=YAML%20is%20a%20digestible%20data,that%20JSON%20can%20and%20more.
+
+Major difference between Docker and Virtual Machine,
+
+VM's simulate an entire machine, while containers contain only the application.
+Each VM's contain entire os, whereas, contains share the underlying os between them.
+
+VM creates seperate machine with seperate OS's. In docker, all the application resource are bundles into the container.
+An Container engine is what unpacks the container files hands them off to the operating system kernel.
+
+Container disadvantage.
+
+Conainers must be packaged to work with the same operating sytem of the server
+
+ie., if the server os is linux, then the container files must linux based and so on.
+But thats not the case with VM, as it can run any os at once.
+
+Another disadvantage with container is, since all containers share the server os resources, if the server is crashed,
+then all cantainers go down.
+
+Some companies use vm servers and inside the vm's they use containers to extract maximum benifit.
+
+

@@ -1,0 +1,19 @@
+
+
+to list all installed java version
+
+/usr/libexec/java_home -V  --> will list all installed java versions
+
+java_home is a command line utility.
+
+To set the default JDK version, use the -v option with the java_home command and specify the version you want to set as the default, like
+
+/usr/libexec/java_home -v 17.0.8
+
+The same can be acheived by adding the below line to .zshrc file
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+
+maven command to create maven project
+
+mvn archetype:generate -DgroupId=com.dm -DartifactId=directory-manager -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false

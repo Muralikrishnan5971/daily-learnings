@@ -1,0 +1,12 @@
+globs
+
+A string can be considered a wildcard pattern if it contains one of the following characters: *, ?, or [.
+The three main use cases of asterisks that I've seen used are:
+
+* - On Linux, will match everything except slashes. On Windows, it will avoid matching backslashes as well as slashes.
+** - Recursively matches zero or more directories that fall under the current directory.
+*(pattern_list) - Only matches if zero or one occurrence of any pattern is included in the pattern-list above
+
+These use cases can also be used in conjunction with each other! For example, to find all Markdown files recursively that end with .md, the pattern would be **/*.md
+
+Note: *.md would only return the file paths in the current directory, which is why we append **/ at the beginning.

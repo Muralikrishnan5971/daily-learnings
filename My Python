@@ -78,5 +78,40 @@ The keys in a dictionary are much like a set, which is a collection of hashable 
 
 In Python 3.6 and beyond, dictionaries are ordered data structures, which means that they keep their elements in the same order in which they were introduced
 
+***
+Some languages build something called a virtual machine, instead of compiling instructions for specific processor that's inside our computer.
+Instead, they build a peice of software that emulates the processor  and it wwants instruction, and it knows what to do with those instruction.
+And then it translates those instruction  into the actual instruction  for your actual computer, and that set of instruction......
+
+
+
+
+Run, Python, Run
+
+Read source code, then
+Parse, then
+Generate abstract syntax tree, then
+Produce bytecode, then
+Run bytecode.
+
+python does all the artihmetic operation during the compling itself, thus saving time and also there is no point in recalculation the same thing in run time evertime we run our program. this is called constant folding, a very popular optimization.
+
+
+The 'is' operator compares object identity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

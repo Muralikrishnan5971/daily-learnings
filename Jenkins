@@ -1,8 +1,14 @@
 
-
+Jenkins
 
 https://medium.com/bb-tutorials-and-thoughts/how-to-get-started-with-jenkins-2b3f01a910c7
 
 java -jar jenkins.war --> defaults to port 8080
 
 java -jar jenkins.war --httpPort=9090     --> custom http port
+
+Jenkins requires Java 11 or 17 since Jenkins 2.357 and LTS 2.361.1.
+
+Jenkins Pipeline provides an extensible set of tools for modeling simple-to-complex delivery pipelines "as code". 
+The definition of a Jenkins Pipeline is typically written into a text file (called a Jenkinsfile) which in turn is 
+checked into a project’s source control repository.
