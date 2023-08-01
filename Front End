@@ -1,0 +1,171 @@
+
+
+Style, colour, buttons, menus, user interaction
+
+Its called a server, because it provides a service to another computer.
+
+A web server has many functions such as 
+website storage, 
+administration,
+data storage,
+security,
+managing email.
+
+Another primary functionis handeling web requests.
+
+Its the job of the web server to respond all the request sent from the client.
+
+Webpage and website.
+
+** A web page is a document that displays images, texts, videos and other content in the web browser.
+** A website is a collection of webpages that link together.
+
+In its most basic form, a webpage is just a text document, you can open and edit with any text editor, 
+but developers usually use more sophisticated tools for working with webpages.
+
+To work with a webpage, we need to know three techs and how they interact with each other.
+
+HTML structures the content we see,
+CSS controls the color and style and 
+JS is responsible for interaction
+
+Java script is the power house of the webpage.
+
+** But how exactly does this code get translated to display the content that you see on your screen ? **
+
+When a copy of that webpage is sent from the web server to your browser, each line of code is processed in sequential order from first to last. As each line is interpreted, the browser creates the building blocks, which is the visual representation you see on the screen. This creation process is known as page rendering, the response from the web server must be a complete web page in order to fulfill the request, to show the page in the browser.
+
+A web browser works by sending a request to a web server and receives a response containing the content that is to be displayed 
+on the screen of our device.
+
+address is the URL -- Uniform Resource Locator
+
+https://www.example.com/index.html
+
+https --> protocol
+www.example.com --> domain name
+/index.html --> path to the file that is displayed
+
+		   request
+		----------->
+Browser     HTTPS		  Server
+		<-----------
+		   response
+
+Web hosting is a service where you place your website and files on the hosting companies web server. 
+You're essentially renting the space in return for stable and secure storage.
+
+There different hosting options available. These can include shared hosting, virtual private hosting, dedicated hosting, and Cloud hosting.
+
+IP address and Postal system
+
+When we send data between computers across the internet, a common way of understanding is, 
+computers are destination that request and receive data, and the networks are the route the data travels across.
+
+What makes those possible is Internet Protocol. There are two widly used standards of internet protocol. IPv4 and IPv6.
+Every computer on a network is assigned an IP address.
+
+IPv4 contains four octets  --> 192.1.196.150
+IPV6 contains eight groups of hexadecimal digits seperated by a colon  --> 3422:4234:5445:7686:4343:2234:6766:4545
+
+When you send data across a network, you send the data as a series of messages called IP packets. 
+Also known as data grams at a high level IP packets contain a header and a payload or the data. 
+
+Like in postal system, You not only include the recipient's address but also your own address in case a return location is needed. 
+IP packets are the same. They include the destination IP address and source IP address
+
+Earlier I mentioned that things can go wrong with the postal system. When sending multiple letters to a friend it's possible they may arrive out of order. It's possible that a package will get damaged or if you're really unlucky a letter could get lost. These issues can happen to IP packets too they can arrive out of order, become damaged or corrupted to in transit or be dropped or lost during transit. To solve these problems, the payload part of the packets contains other protocols too. You can think of them as another message inside the payload of the IP packet.
+
+The two most common protocols are the Transmission Control Protocol referred to as TCP and the User Datagram Protocol, also known as UDP. 
+TCP can solve all three of the previously mentioned issues but at the cost of a small delay when sending the data. 
+This protocol is used for sending the data that must arrive correctly and in order such as a text or image files. 
+UDP solves the corrupt packet issue but packets can still arrive out of order or not arrive at all. T
+his protocol is used for sending data that can tolerate some data loss such as voice calls or live video streaming. 
+Both of these protocols contain payloads that contain further protocols inside of them and there you have it. 
+The internet uses internet protocols much like an old fashioned postal system. 
+These protocols can help to make sure that data arrives in order does not become corrupted or lost or dropped during transit. 
+Now you're able to explain how IP addresses work and how computers send data across the internet.
+
+
+HTTP is a core operational protocol of the world wide web. 
+It is what enables your web browser to communicate with a web server that hosts a website. 
+HTTP is the communication protocol you use whenever you browse the web.
+It is a protocol used for transferring web resources such as HTML documents, images, styles, and other files. 
+HTTP is a request response based protocol. A
+web browser or client sends an HTTP request to a server and the web server sends the HTTP response back to the browser.
+
+An HTTP requests consists of a method, path, version and headers. 
+The path is the representation of where the resource is stored on the web server, for example if you wanted to request an image from a page in a website, then the URL in the address bar would need to contain the full path to that particular file on the web server, such as example dot com, forward slash images, forward slash image dot jpg.
+there are many versions of htttp. 1.1 and 2.0 are the mostly used.
+
+Lets say we are ordering something from online using our credit card through http, 
+we dont want anyone to get this information from the http request. This is where https is involded
+
+Https - secured version of communicating between two computer.
+
+The big difference is that, before the request is sent it turned into secret code, only the other computer can turn it to its original content.
+
+
+Main difference between a Website and Web application.
+
+The terms website and web application are often used interchangeably. The key difference between a website, and web application is the level of interactivity, and dynamic content. The easy way to remember this is that a website is more informative and a web application is more interactive. 
+
+
+We use the words libraries and framework interchangeably, so what's the dfference.
+
+Libraries are reusable pieces of code that can be used by your application. They are purpose-built to provide a specific functionality
+example: external library to validate email format.
+
+Frameworks on the other hand provide a structure for developers to build with. Consider this in the context of our carpenter analogy. As a carpenter you create a lot of different chairs, therefore there would be a blueprint for each chair to speed up building them. You can decide the type of wood to use, but the dimensions and style of the chair are always the same. Frameworks act as a structure where the developer provides their own code that the framework interacts with.
+
+The key difference between a library and a framework is "Inversion of Control". When calling a method from a library, the developer is in control. With a framework, the control is inverted: the framework calls the developer's code.
+
+I often use a house as a metaphor for web development concepts.
+
+A library is like going to Ikea. You already have a home, but you need a bit of help with furniture. You don’t feel like making your own table from scratch. Ikea allows you to pick and choose different things to go in your home. You are in control.
+
+A framework, on the other hand, is like building a model home. You have a set of blueprints and a few limited choices when it comes to architecture and design. Ultimately, the contractor and blueprint are in control. And they will let you know when and where you can provide your input.
+
+
+The Technical Difference
+The technical difference between a framework and library lies in a term called inversion of control.
+
+When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
+
+
+Some common api's developers work with include browser api, rest api and sensor api.
+One such api is the browser api or web api, which are built into a browser itself.
+A good example will be dom api, 
+**** which turns the html document into a tree of nodes that are represented as Javascript objects *****
+
+API's
+As a real-world example, think about the electricity supply in your house, apartment, or other dwellings. 
+If you want to use an appliance in your house, you plug it into a plug socket and it works. 
+You don't try to wire it directly into the power supply — to do so would be really inefficient and, if you are not an electrician, difficult and dangerous to attempt.
+
+In the same way, if you want to say, program some 3D graphics, it is a lot easier to do it using an API written in a higher-level language such as JavaScript or Python, rather than try to directly write low-level code (say C or C++) that directly controls the computer's GPU or other graphics functions.
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction
+
+fetch api, canvas api, history api.
+
+APIs are also known as gateways or middleware because they act as a bridge between systems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
