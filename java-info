@@ -17,3 +17,17 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 maven command to create maven project
 
 mvn archetype:generate -DgroupId=com.dm -DartifactId=directory-manager -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+To see recursive function
+https://cscircles.cemc.uwaterloo.ca/java_visualize/
+
+
+deals
+overview
+user-setuo
+compliance
+roles/permissions
+customer management - only mangement
+AEC onboarding
+
+honda2 honda3

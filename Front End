@@ -151,6 +151,76 @@ fetch api, canvas api, history api.
 
 APIs are also known as gateways or middleware because they act as a bridge between systems.
 
+HTML - Hyper Text Markup Language
+Hyper text is text which contains links to other text.
+Markup refers to tags and elements used within a element.
+
+html is simply a text file with a specific structure that consists of tags and eleemnts.
+html files usually have a .html extension.
+example, when we visit a website, the first page that is returned to the browser is index.html 
+
+html tags and elements
+
+Each html element consists of opening tag enclosed in angled brackets
+example: paragraph tag <p>
+
+most elemetns are paired with closing tag like </p>
+
+html element usually have some content inside them
+
+<p>This is a paragraph</p>
+
+html elements can also contain other elements
+
+<p>This is a <i>paragraph</i></p>  to add italics to the paragraph
+
+Elemnts can also be empty or self closing, meaning they dont need a closing html tag
+example is a line break tag
+
+<p>This is a <br>paragraph</p> this is a line break tag that moves the following content to new line
+
+There are rules and structure for elements and tags which are known as the html specification.
+This html specification is maintained by the world wide web consortium W3C, whenever html specification changes, 
+a new version of html is standardized. The current versio is html5
+
+<img src="logo.jpg" />
+<p>This is a <i>paragraph</i></p>
+
+an image tag displays image file logo.jpg, next it reads the p tag to display the paragraph under the image.
+
+But the browser reads the html document and displays the web page to the user in very basic format.
+Now if we want to tell the browser how to display the web page, you should use CSS
+
+The great thing about html docuemnt is that, we dont need the web to view them. They dont have to be hosted on a websever server 
+for us to view them in the web browser.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
