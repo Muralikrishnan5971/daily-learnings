@@ -22,12 +22,13 @@ To see recursive function
 https://cscircles.cemc.uwaterloo.ca/java_visualize/
 
 
-deals
-overview
-user-setuo
-compliance
-roles/permissions
-customer management - only mangement
-AEC onboarding
+Java Path vs File
 
-honda2 honda3
+File:   java.io.File
+In Java, File is the class that belongs to the java.io package. It is an abstract representation of the file and directory pathnames.
+It is used for the file I/O, but have many drawbacks.
+
+
+
+Path:   java.nio.file.Path
+It is the same as the File class or we can say that it is a substitute class of the Java File class. It can perform all the operations that can be done with the help of the File class. Java Path class belongs to the java.nio.file package. (nio --> non blocking i/o)
