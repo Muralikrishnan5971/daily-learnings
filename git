@@ -38,7 +38,7 @@ info
 objects
 refs
 
-There can be other files and directories as well inside it as we start configurng and using.
+There can be other files and directories as well inside it as we start configuring and using.
 
 git add filename1 filename2
 git add .
@@ -103,9 +103,9 @@ after commiting some changes, doing git log, we can see the HEAD pointing to the
 
 commit aabba92ff3b36c51e4ebfcc92686415f4445efdd (HEAD -> tamilsongs)
 
-git commit -a -m "commit meesage"  --> to directly stage all changes and commit
+git commit -a -m "commit message"  --> to directly stage all changes and commit
 
-it does matter where we branc from.
+it does matter where we branch from.
 
 ***  git checkout branchname    --> switches to the branch specified
 ***  but git checkout does a lot more
@@ -302,8 +302,10 @@ git checkout -- <filename>
 
 git restore .
 git restore <filename>
+git restore --staged <filename>
+git restore --staged .  --> unstage all files
 
-git checkout is like a switch knife in the sense that it can do a million things. So new commands were written
+git checkout is like a swiss knife in the sense that it can do a million things. So new commands were written
 git switch --> switch to
 git restore --> undo changes
 
@@ -372,6 +374,53 @@ The main advantage of setting this -u option is that, once it is set git push -u
 then we can use the shorthand git push which will push our current branches changes to the upstream
 
 git push -u orgin main is same as git push --set-upstream origin main 
+
+
+git commmand to untrack file
+
+git rm --cached <filename>
+
+************************************************************************
+
+When we clone a repo (let's say it has one branch named master) to our local, In the local repo, we'll be having two branch references.
+
+1. The regular old master branch (Or whatever the default branch is, when we clone the repo) - > regular branch reference
+2. Then there is the Remote Tracking branch reference called origin/master
+
+git branch -r --> to view all remote branches
+
+By default our main branch is already tracking origin/main
+
+
+we can switch to remote branches by git checkout origin/remote-branch-name   also
+
+we can do git switch <remote-branch-name>  to create a local branch from the remote branch of the same name.
+And it sets up to track the remote branch origin/<remote-branch-name>
+
+
+			    workspace ---- staging(index) ---- local repo ---- remote repo
+git add 		workspace -->> staging(index)
+git commits					   staging(index) -->> local repo
+git push 										   local repo -->> remote repo
+git fetch           							   local repo <<-- remote repo
+git pull 	    workspace <<-------------------------------------- remote repo
+
+
+Fetching allows us the download changes from our remote repo, but those changes will not be automatically integrated into our working files.
+
+git fetch <remote>    which is ussually origin. Therefore git fetch origin will do the job.
+
+git fetch    --> if remote is not specified, it defaults to origin.
+
+git pull is another commmand that we use to retreive changes from remote repo. Unlike git fetch, pull actually updates our HEAD branch with 
+whatever changes are retreived from the remote. So in a way we can say, git pull = git fetch + git merge.
+
+To pull we need to specify the particular remote and branch we want to pull using git pull <remote> <branch>
+Just like with git merge, it matters WHERE we run our git pull command from. Whatever branch we run it from is where the changes will be run into.
+
+git pull origin main ---> would fetch the latest information from the origin's master branch and merge those changes into our current branch.
+
+
 
 
 
