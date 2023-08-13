@@ -421,33 +421,97 @@ Just like with git merge, it matters WHERE we run our git pull command from. Wha
 git pull origin main ---> would fetch the latest information from the origin's master branch and merge those changes into our current branch.
 
 
+*************************** /// GIT CLONE /// **************************
+
+https://github.blog/2020-12-17-commits-are-snapshots-not-diffs/
+
+What if there was a better way? Could you get started working in the repository without downloading every version of every file in the entire Git history? Git’s partial clone and shallow clone features are options that can help here, but they come with their own tradeoffs. Each option breaks at least one expectation from the normal distributed nature of Git, and you might not be willing to make those tradeoffs.
+
+If you are working with an extremely large monorepo, then these tradeoffs are more likely to be worthwhile or even necessary to interact with Git at that scale!
+
+There are three ways to reduce clone sizes for repositories hosted by GitHub.
+
+git clone --filter=blob:none <url> creates a blobless clone.
+These clones download all reachable commits and trees while fetching blobs on-demand. 
+These clones are best for developers and build environments that span multiple builds.
+
+git clone --filter=tree:0 <url> creates a treeless clone. 
+These clones download all reachable commits while fetching trees and blobs on-demand. 
+These clones are best for build environments where the repository will be deleted after a single build, but you still need access to commit history.
+
+git clone --depth=1 <url> creates a shallow clone. 
+These clones truncate the commit history to reduce the clone size. 
+This creates some unexpected behavior issues, limiting which Git commands are possible. 
+These clones also put undue stress on later fetches, so they are strongly discouraged for developer use. 
+They are helpful for some build environments where the repository will be deleted after a single build.
+
+Before digging in on this topic, be sure you are familiar with how Git stores your data, including COMMITS, TREES, and BLOB objects.
+
+Git has a reputation for being confusing. Users stumble over terminology and phrasing that misguides their expectations. 
+This is most apparent in commands that “rewrite history” such as git cherry-pick or git rebase. 
+In my experience, the root cause of this confusion is an interpretation of commits as diffs that can be shuffled around. 
+However, commits are snapshots, not diffs!
+
+Object IDs are hashes
+The most important part to know about Git objects is that Git references each by its object ID (OID for short), providing a unique name for the object. 
+We will use the git rev-parse <ref> command to discover these OIDs. 
+Each object is essentially a plain-text file and we can examine its contents using the git cat-file -p <oid> command.
+
+git-cat-file - Provide content or type and size information for repository objects
+
+git cat-file -p fb4ca6ed2c90698f84393f482a1224313f8339ba
+
+Blobs are file contents
+Blob
+A blob is short for a Binary Large OBject.
+At the bottom of the object model, blobs contain file contents. 
+To discover the OID for a file at your current revision, run git rev-parse HEAD:<path>. 
+Then, use git cat-file -p <oid> to find its contents.
+
+If I edit the README.md file on my disk, then git status notices that the file has a recent modified time and hashes the contents. 
+If the contents don’t match the current OID at HEAD:README.md, then git status reports the file as “modified on disk.
+” In this way, we can see if the file contents in the current working directory match the expected contents at HEAD.
+
+$ git rev-parse HEAD:README.md
+eb8115e6b04814f0c37146bbe3dbc35f3e8992e0
+
+$ git cat-file -p eb8115e6b04814f0c37146bbe3dbc35f3e8992e0 | head -n 8
+
+Trees are directory listings
+Note that blobs contain file contents, but not the file names! The names come from Git’s representation of directories: trees. 
+A tree is an ordered list of path entries, paired with object types, file modes, and the OID for the object at that path. 
+Subdirectories are also represented as trees, so trees can point to other trees!
+
+$ git rev-parse HEAD^{tree}
+75130889f941eceb57c6ceb95c6f28dfc83b609c
+
+$ git cat-file -p 75130889f941eceb57c6ceb95c6f28dfc83b609c  | head -n 15
+
+Trees provide names for each sub-item. Trees also include information such as Unix file permissions, object type (blob or tree), and OIDs for each entry. 
+We cut the output to the top 15 entries, but we can use grep to discover that this tree has a README.md entry that points to our earlier blob OID.
 
 
+Commits are snapshots
+A commit is a snapshot in time. Each commit contains a pointer to its root tree, representing the state of the working directory at that time. The commit has a list of parent commits corresponding to the previous snapshots. A commit with no parents is a root commit and a commit with multiple parents is a merge commit. Commits also contain metadata describing the snapshot such as author and committer (including name, email address, and date) and a commit message. The commit message is an opportunity for the commit author to describe the purpose of that commit with respect to the parents.
 
 
+Branches are pointers
+In Git, we move around the history and make changes without referring to OIDs most of the time. 
+This is because branches provide pointers to the commits we care about. A branch with name main is actually a reference in Git called refs/heads/main. 
+These files literally contain hex strings referencing the OID of a commit. As you work, these references change their contents to point to other commits.
 
+This means branches are significantly different from our previous Git objects. 
+Commits, trees, and blobs are immutable, meaning you can’t change their contents. 
+If you change the contents, then you get a different hash and thus a new OID referring to the new object! Branches are named by users to provide meaning, such as trunk or my-special-project. We use branches to track and share work.
 
+The special reference HEAD points to the current branch. When we add a commit to HEAD, it automatically updates that branch to the new commit.
 
+Let’s put all of these new terms into one giant picture. 
+Branches point to commits, commits point to other commits and their root trees, trees point to blobs and other trees, and blobs don’t point to anything
 
+git log --reverse   --> displays the commit history in reverse order
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://www.freecodecamp.org/news/boost-programming-skills-read-git-code/
 
 
 
