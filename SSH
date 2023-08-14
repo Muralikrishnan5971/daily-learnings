@@ -26,3 +26,18 @@ Host gitlab.com
 when we try to clone any repo using the ssh url eg: git@gitlab.com:muralikrishnan/automation.git
 
 here the user is git, hostname is gitlab, then the corresponding private key will be enabled.
+
+SSH is a cryptographic network protocol that allows secure communication between networked devices. 
+It was developed as a replacement for Telnet, which sends all data, including passwords, in clear text, 
+making it susceptible to eavesdropping and interception.
+
+SSH provides encryption and authentication mechanisms to protect the confidentiality and integrity of network communications.
+
+How SSH Works
+SSH uses a client-server architecture, where the client initiates a connection to the server and requests a secure communication channel. 
+The server responds by generating a pair of cryptographic keys, one public and one private.
+
+The public key is sent to the client, while the private key is kept securely on the server. 
+The client then encrypts a random session key using the server's public key and sends it back to the server. 
+The server decrypts the session key using its private key and sends an acknowledgement to the client. 
+From this point on, all data transmitted between the client and server is encrypted using the session key.
