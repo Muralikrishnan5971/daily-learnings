@@ -8,3 +8,5 @@ The local-name function is mandatory for creating a xpath of a svg element. So f
 
 //*[local-name()='svg' and @data-icon='home']/*[local-name()='path']
 Here, data-icon is an attribute of the svg tag element which is added accompanied with @ symbol. The [local-name()='path'] is included since it is the child of the svg tagname.
+
+CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart)

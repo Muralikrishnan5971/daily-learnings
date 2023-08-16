@@ -514,5 +514,126 @@ git log --reverse   --> displays the commit history in reverse order
 https://www.freecodecamp.org/news/boost-programming-skills-read-git-code/
 
 
+**** UNDO MISTAKES WITH GIT ****
+
+1. Discarding local changes in a file (that also includes deleting a file)
+
+To discard changes in particular files
+git restore <filename> 
+git checkout <filename> 
+
+To discard all changes
+git restore .
+git checkout .
+
+discarding uncommited local changes cannot be undone.
+
+2. Discarding chunks / lines in a file
+
+git restore -p or git restore -p <filename>        -p is for --patch mode
+
+this command make git go into interactive mode as shown below
+
+diff --git a/playlist.txt b/playlist.txt
+index fb4ca6e..900049d 100644
+--- a/playlist.txt
++++ b/playlist.txt
+@@ -1,4 +1,5 @@
+ Songs - Artist
++argaeveve
+ ++++++++++++++
+ ==============
+ Swalla - Jason Derulo
+(1/2) Discard this hunk from worktree [y,n,q,a,d,j,J,g,/,e,?]? 
+
+prompts for a response from us
+
+y - yes discard this hunk
+n - no do not discard this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+
+3. Fixing last commit
+
+Editing last commit messasge
+
+git commit --amend -m "crt/new commit msg"    ---> to change the last commit mesage
+
+In case we need to add changes to the last commit
+
+git add <changes to add to last commit>
+
+git commit --amend -m <crt/new commit msg>
+
+***  --amend rewrites history. Never change history of commits that already been pushed to a remote repository. ***
+
+Everytime we amend the commmit hash changes, 
+In the background a completly new commit object is created and swaps out the old one.
+
+This is what RE WRITING history means. i.e, the new commits being exchanged in the background
+
+4. Reverting a commit in the middle
+
+git revert creates a new commit that reverts the effects of the specified commit.
+
+git revert <COMMIT HASH>    ---> This prompts for a new commit message. Git also provides a clean default commit msg.
+
+You can skip this revert commit with "git revert --skip"
+
+To abort and get back to the state before "git revert",
+hint: run "git revert --abort"
+
+5. Resetting to an older version
+
+git reset --hard <COMMIT HASH>
+
+6. Recovering deleted commits
+
+git reflog  -  a journal that log every COMMIT HASH, the HEAD has been to.
+
+using git reflog get the COMMIT HASH from which we need, then we can create a new branch from that COMMIT, as
+
+git branch <new-branch-name> <COMMIT HASH>   ---> Now this new branch will contain all the older commits from the specified COMMIT
+
+7. Recovering a deleted branch
+
+Similarly like recovering deleted commits, using git reflog get the COMMIT HASH, the HEAD was pointing to before deleting the branch, then
+
+git branch <branch-name> <COMMIT HASH>
+
+************* GIT ---- FAQ **************
+
+Git does not track Empty directories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
