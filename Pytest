@@ -193,7 +193,7 @@ use fixtures. Hooks are for altering the framework itself, not for test related 
 Pytest hooks are to modify the behavior of pytest like modify the test collection strategy, test execution order etc. Fixtures are meant to set up the tests before they are executed, e.g. setting up db, initialize an app, etc.
 
 
-***---> The yeild keyword is used in python generator to create ierable objects
+***---> The yeild keyword is used in python generator to create iterable objects
 
 
 

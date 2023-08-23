@@ -1,4 +1,13 @@
+
+
 Github Bug Bounty program
 
 https://bounty.github.com/
 https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters
+
+****************************** LINUX SOURCE ***************************************
+
+https://www.howtogeek.com/ 
+
+
+pytest with arguments test_emp_creation.py::TestEmpCreation::test_emp_creation --no-header --no-summary -q in /Users/muralikrishnan/Documents/cqe_automation/platformautomation/tests/web/arc/core/employee_onboarding

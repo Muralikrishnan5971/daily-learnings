@@ -59,7 +59,85 @@ init.vim is the configuration file used by the Neovim text editor.
 Neovim is a modern fork of Vim, designed to improve upon and extend Vim's capabilities.
 The init.vim file can be written in either Vimscript or Lua, as Neovim introduced support for Lua starting from version 0.5.
 
+In general, vi commands:
+• Are case-sensitive (uppercase and lowercase keystrokes mean different things; I is
+different from i).
+• Are not shown (or “echoed”) on the screen when you type them.
+• Do not require an ENTER after the command.
 
+You can use vi to edit any text file. vi copies the file to be edited into a buffer (an area
+temporarily set aside in memory), displays the buffer (though you can see only one
+screenful at a time), and lets you add, delete, and change text. When you save your
+edits, vi copies the edited buffer back into a permanent file, replacing the old file of the
+same name. Remember that you are always working on a copy of your file in the buffer,
+and that your edits will not affect your original file until you save the buffer. Saving
+your edits is also called “writing the buffer,” or more commonly, “writing your file.”
+
+(A newline character is inserted into the file when you press the ENTER key in insert
+mode.) If you type 200 characters before pressing ENTER, vi regards all 200 characters
+as a single line (even though those 200 characters visibly take up several lines on the
+screen).
+
+
+VIM COMMANDS
+------------
+
+ZZ ---> quit and save
+h  ---> Left, one space
+j  ---> Down, one line
+k  ---> Up, one line
+l  ---> Right, one space
+
+we multiply commands using numeric arguments
+
+4l ---> similar to pressing llll --> moves four spaces to left. 
+
+0 ---> move to beginning of the line
+$ ---> move to the end of the line.
+w ---> move the cursor forward one word at a time, counting symbols and punctuation as equivalent to words
+W ---> move forward by word, not counting symbols and punctuation
+b ---> move the cursor back one word at a time, counting symbols and punctuation as equivalent to words
+B ---> move back by word, not counting symbols and punctuation
+
+10w ---> moves forward cursor by 10 words
+
+G ---> goes to the end of the file
+1G ---> goes to the beginning of the file
+i ---> enter text before the cursor (insert)
+a ---> enter text after the cursor (append)
+
+Change commands has the following pattern (command)(text object)
+ex: command is the change command c, and text object is a movement command.
+
+c ---> change command
+d ---> delete command
+y ---> yank (copy) command
+p ---> put (paste) command
+
+dw ---> deletes the word
+d2w ---> deltes two words
+
+Here’s how this works. Number and command are optional. Without them, you simply have a movement command. 
+If you add a number, you have a multiple movement. On the other hand, combine a command (c, d, or y) with a text object to get an editing
+command. When you realize how many combinations are possible in this way, vi becomes a powerful editor indeed!
+
+cc ---> special change command --> To replace the entire current line with any amount of text entered before pressing ESC
+c$ ---> changes the line from the cursor to the end of the line.
+C  ---> does exactly the same as the above command
+rW ---> replacement command, replaces the cursor character with W, without going to insert mode.
+s  ---> substitute command deletes the cursor character, and goes to insert mode
+S  ---> substitute command deletes entire line and goes to insert mode.
+~  ---> changes the case of the cursor character
+dd ---> delete a line
+
+EX COMMANDS
+-----------
+:w  ---> to save (write) your file but not quit vi
+:q  ---> to quit if you haven’t made any edits
+:wq ---> write and quit vi
+:e! ---> wipe out all of the edits you have made in a session and then return to the original file (without exiting vi)
+:q! ---> wipe out all your edits and then just quit vi
+:sh ---> You can create a shell by typing :sh; type CTRL-D or exit to terminate the shell and return to vi.
 
 
 
