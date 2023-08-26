@@ -129,6 +129,49 @@ s  ---> substitute command deletes the cursor character, and goes to insert mode
 S  ---> substitute command deletes entire line and goes to insert mode.
 ~  ---> changes the case of the cursor character
 dd ---> delete a line
+.  ---> Any time you make the same editing command over and over, you can save time by duplicating it with the repeat command, the period (.)
+
+50i*ESC ---> inserts a line of 50 *
+50a--ESC ---> appends 50 --
+
+Editing action Command
+Insert text at current position              ---> i
+Insert text at beginning of line             ---> I
+Append text at current position              ---> a
+Append text at beginning of line             ---> A
+Open new line below cursor for new text      ---> o
+Open new line above cursor for new text      ---> O
+Delete line and substitute text              ---> S
+Overstrike existing characters with new text ---> R
+Join current and next line                   ---> J
+Toggle case                                  ---> ~
+Repeat last action                           ---> .
+Undo last change u
+Restore line to original state U
+
+MOVING AROUND
+-------------
+
+Scrolling the Screen
+********************
+Ctrl+ F ---> scroll forward one screen
+Ctrl+ B ---> scroll backward one screen
+Ctrl+ D ---> scroll forward half screen (down)
+Ctrl+ U ---> scroll backward half screen (up)
+
+Repositioning the screen
+************************
+If you want to scroll the screen up or down, but you want the cursor to remain
+on the line where you left it, use the z command.
+
+z + ENTER ---> Move current line to top of screen and scroll.
+z + .     ---> Move current line to center of screen and scroll.
+z + -     ---> Move current line to bottom of screen and scroll
+
+z also takes numeric prefixes
+200z + ENTER moves line 200 to the top of the screen.
+
+page 59
 
 EX COMMANDS
 -----------
