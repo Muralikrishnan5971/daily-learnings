@@ -78,6 +78,12 @@ mode.) If you type 200 characters before pressing ENTER, vi regards all 200 char
 as a single line (even though those 200 characters visibly take up several lines on the
 screen).
 
+Modal Editing - change the meaning of keys in each mode of operation 
+Normal mode - navigate the structure of the file
+Insert mode - editing the file
+Visual mode - highlight portions of the file to manipulate at once
+EX mode or Command mode - to execute command
+
 
 VIM COMMANDS
 ------------
@@ -153,7 +159,7 @@ MOVING AROUND
 -------------
 
 Scrolling the Screen
-********************
+********************p
 Ctrl+ F ---> scroll forward one screen
 Ctrl+ B ---> scroll backward one screen
 Ctrl+ D ---> scroll forward half screen (down)
@@ -171,6 +177,11 @@ z + -     ---> Move current line to bottom of screen and scroll
 z also takes numeric prefixes
 200z + ENTER moves line 200 to the top of the screen.
 
+gg   ---> Move to top of the file
+G    ---> Move to bottom of the file
+
+
+
 page 59
 
 EX COMMANDS
@@ -183,6 +194,55 @@ EX COMMANDS
 :sh ---> You can create a shell by typing :sh; type CTRL-D or exit to terminate the shell and return to vi.
 
 
+{command}{text object or motion}
+example:
+dw  	---> delete word ---> deletes from cursor to end of the word
+diw 	---> delete in word ---> deletes the entire word the cursor is present
+caw 	---> deletes entire word the cursor is in, and enters INSERT mode
+yi) 	---> yank all text inside parantheses
+da]     ---> delete all text including parentheses
+
+The syntax of the language is broken down into verbs and nouns, operations and text that you want to operate on.
+
+***** verb + noun ******
+
+d for delete + w + word
+
+:dw --->  deletes a word
+
+Verbs in vim
+------------
+d ---> delete
+c ---> change (deletes and enters insert mode)
+> ---> indent
+v ---> visually select
+y ---> yank (copy)
+
+Nouns in Vim (Motion)
+---------------------
+w ---> word (forward by a word)
+b ---> back (back by a word)
+
+2j ---> down twice
+
+Nouns in Vim (Text Objects)
+---------------------------
+iw ---> inner word (works anywhere from the word)
+it ---> inner tag
+i" ---> inner qoutes
+ip ---> inner paragraph
+
+diw ---> deletes the word, the cursor is in
+dip ---> deletes the paragraph the cursor is in
+
+
+
+
+
+
+
+
+:read !ls  ---> reads the output of the command into the buffer
 
 
 
