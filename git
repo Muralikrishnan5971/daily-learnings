@@ -617,7 +617,11 @@ Git does not track Empty directories
 
 
 
+Removing untracked file using git
 
+git clean -n  ---> runs a dry run and shows what its going to do
+git clean -f  ---> force deletes the untracked files and changes
+git clean -i  ---> opens an interactive session:
 
 
 
