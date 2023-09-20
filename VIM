@@ -236,13 +236,30 @@ diw ---> deletes the word, the cursor is in
 dip ---> deletes the paragraph the cursor is in
 
 
+:read !ls   ---> reads the output of the command into the buffer
+:term       ---> opens horizontal terminal inside vim
+:vert term  ---> opens vertical terminal inside vim
+
+
+master guide --> https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
+
+
+By default  vim will not allow you to switch buffers, unless that buffer is fully written and then unloaded.
+
+:buffers    ---> lists all open buffers
+:ls         ---> does the same
+:bp         ---> buffer previous --- moves to previous buffer
+:bn         ---> buffer next   --- moves to next buffer
+:bd         ---> buffer delete
+
+
+:e!         ----> clear all unsaved changes
 
 
 
 
 
 
-:read !ls  ---> reads the output of the command into the buffer
 
 
 

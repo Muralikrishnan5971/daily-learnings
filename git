@@ -143,6 +143,12 @@ first change to the branch we want to rename, then use the below command
 
 git branch -m newname       ---> -m option stands for move/rename 
 
+To delete local branch
+git branch -d <branch name>
+
+To delete remote branch
+git push origin -d <remote-branch-name>   ---> deletes a remote branch
+
 Each HEAD references the branch and
 Each branch reeferences to a commit
 
@@ -281,11 +287,31 @@ stash@{4}: WIP on master: 9e245f5 add one murugan song
 
 here stash@{0} is the stash id, using which we can apply a particular stash
 
+--> WIP -- work in progress
+
 similarly to delete a stash
 
 git stash drop stash{0}
 
 To clear out all stashes, git stash clear
+
+****
+
+git stash 
+git stash save
+
+git stash --include-untracked
+git stash save -u "name for the work in progress"
+
+https://stackoverflow.com/questions/835501/how-do-you-stash-an-untracked-file
+
+To show untracked files
+
+git show stash@{0}^3
+
+https://stackoverflow.com/questions/12681529/in-git-is-there-a-way-to-show-untracked-stashed-files-without-applying-the-stas
+
+****
 
 
 Detached HEAD
@@ -605,18 +631,6 @@ git branch <branch-name> <COMMIT HASH>
 Git does not track Empty directories
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 Removing untracked file using git
 
 git clean -n  ---> runs a dry run and shows what its going to do
@@ -624,9 +638,34 @@ git clean -f  ---> force deletes the untracked files and changes
 git clean -i  ---> opens an interactive session:
 
 
+git status shows the difference between these trees in the following manner:
+
+If the Working Tree is different from the index, then git status will show there are some changes not staged for commit
+If the Working Tree is the same as index, but they are different from HEAD, 
+then git status will show some files under changes to be committed section in its result
+If the Working Tree is different from the index, and the index is different from HEAD, 
+then git status will show some files under changes not staged for commit section and some other files under changes to be committed section in its result.
+
+git blame <path-to-file> ---> lists the respective commit and author for each line in the file. 
+
+Git options:
+
+-n ---> dry run
+-i ---> open interactive mode
 
 
+https://github.com/techgaun/git-internals
 
+
+What is git-show?
+git-show is a command line utility that is used to view expanded details on Git objects such as blobs, trees, tags, and commits. 
+git-show has specific behavior per object type.
+
+git show          ---> without any argument git shows the head reference, same as the below command
+git show HEAD     ---> shows the details of the latest commit (head reference)
+
+
+ 
 
 
 

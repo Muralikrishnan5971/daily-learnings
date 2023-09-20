@@ -526,6 +526,103 @@ the ed commands g/re/p command constitute to the linux grep command, which stand
 grep --> global/regular expression search/print
 In ed, the command g/re/p would print all lines featuring a specified pattern match
 
+pgrep command  ---> process command
+
+The Process Grep, commonly known as pgrep, is another popular method used for finding process IDs.
+The pgrep command displays the PID of processes that match any given pattern, similar to how grep is used to match patterns in a text file.
+You can use pgrep to help you identify a process based on multiple factors when you don’t know its exact PID.
+
+pgrep [options] {pattern}
+
+ps --> process status
+
+ps command is used to list the currently running processes and their PIDs along with some other information depends on different options
+
+ps ---> shows all running process in the current shell
+
+To view all running process
+ps -A
+ps -e
+
+ps -Aj
+ps -ej ---> To display more information on the process
+
+ps aux
+
+top command
+
+The top command is another highly recommended method to see your Linux servers resource usage. 
+One can see a list of top process that using the most memory or CPU or disk.
+
+
+
+Unix utilities
+==============
+
+Shell redirection commands
+--------------------------
+
+cmd < file 			# takes input from a file
+cmd > file 			# stores output to a file (truncates)
+cmd >> file 		# appends output to a file
+cmd_1 | cmd_2		# pass output of command 1 as input for command 2
+
+cat
+cat -n
+tac    (tail -r path/to/file)
+head 
+head -n 25 path/to/file    ---> prints first 25 lines from the file
+tail
+tail -n 25 path/to/file    ---> prints last 25 lines from the file
+tail -f path to file       ---> follows
+
+tr command
+
+Translate characters: run replacements based on single characters and character sets.
+
+tr "first_charcter" "second_character"    ---> used to replace single character
+
+example: head -n 10 <path-to-file>| tr "," " "          ____> replaces all occurences of "," with " " in the first line of the given file
+
+head -n 10 <path-to-file>| tr -d "-"	----> deletes all occurences of "-"
+
+head -n 10 <path-to-file>| tr "[:lower:]" "[:upper:]"	---> replaces all lower case charcters to upper case characters
+
+cut command
+
+Cut out fields from `stdin` or files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
