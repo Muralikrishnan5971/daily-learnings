@@ -1,0 +1,60 @@
+
+
+ WEB SERVICE - W3C Definition
+
+ A software system designed to support INTEROPERABLE, MACHINE TO MACHINE, INTRACTION OVER A NETWORK. 
+
+ Interoberable meaning - platform independant  
+
+                Request
+               ---------------->
+              /                 \
+ 		Application A        Webservice
+ 			  \                 /
+ 			   <----------------
+ 			   Response
+
+ how does the application knows what request to send, where to send it and what is the format for the response ?
+ The solution to that is Service Definition. Every webservice offers a Service Definition. 
+
+ A Serice Definition would sepecify the following things. (WADL formats, SWAGGER and etc.  )
+
+ 1. Request/Response format
+ 2. Request structure
+ 3. Response structure
+ 4. Endpoint  
+
+ There are two popular way the web service is transported over the network.
+ Transport indicates, whether the service is exposed over the queue or over the network
+ 1. http via url
+ 2. mq via messeaging queue
+
+ The most important Abstraction in REST is something called a RESOURCE. 
+ A resource is anything we'd want to expose to the outside world through our application.
+
+ For example if we take a TO-DO Management App, 
+ The users are a resource, What are the to-dos can be resource, A specific to-do is a resource, A list of to-dos is also a resource.
+ When we are talking of developing a restful services, we are always talking about resources. What are the resources in my application.
+
+ What we do is, we would assign a URI to the resource.  
+
+ A Resource has an URI (Uniform Resource Identifier)
+
+ /Users/Murali/todo/1
+ /Users/Murali/todos
+ /Users/Murali
+
+ REST does not worry about how we are representing our resources. Our resources can have different representations
+ JSON, XML, HTML
+
+
+start.spring.io
+
+
+
+
+
+
+
+
+
