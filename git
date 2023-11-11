@@ -665,7 +665,35 @@ git show          ---> without any argument git shows the head reference, same a
 git show HEAD     ---> shows the details of the latest commit (head reference)
 
 
- 
+Notes from Linus Torvals speech at google
+-----------------------------------------
+
+-> tarballs and patches
+-> cvs -- concurrent version systems
+-> BitKeeper
+-> SCM - Source Code Management
+-> Subversion - centralized version control
+-> git - distributed version control - (distributed - not only it's a good idea, not doing it does'nt work)
+
+Being distributed means you do not have one centralized location that keeps track of your data.  
+*** No single place is more important than any other single place ***  
+
+If we are distributed, every single person has his own branch.
+
+
+
+shit happens ---> git happens 
+
+https://www.freecodecamp.org/news/git-internals-objects-branches-create-repo/
+
+
+https://github.com/jlevy/the-art-of-command-line
+
+
+ GIT ERRORS
+ ----------
+
+ https://medium.com/@rajlaxmii/git-error-you-have-divergent-branches-and-need-to-specify-how-to-reconcile-them-75e97bd8abd2
 
 
 
