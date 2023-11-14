@@ -593,12 +593,55 @@ cut command
 Cut out fields from `stdin` or files.
 
 
+****** EPOCH TIME & UNIX *******
+
+The Unix keeps tracks of the time by counting the number of seconds since a special date in history ( January 1, 1970, 00:00:00 UTC).
+There is no special meaning behind the date, it was choosen since it was easy.
+
+date -r 23413312341212 --> will return the corresponding time and date  
+
+The time stamp is represented in signed integers.
+
+Prime numbers play a role in encryption schemes and other cryptographic protocols
+
+Larget signed 32 bit integer 2147483647
+
+https://www.youtube.com/watch?v=QOeWxA9sXFY
+https://www.youtube.com/watch?v=QJQ691PTKsA    
+
+minus integers to represent dates back from jan 1 1970
+
+January 1, 1970, 00:00:00 UTC
+
+positive integers to represent dates onwards from jan 1 1970
+
+date +%s   --> displays the time in seconds since epoch
+
+date -r 1233242342  --> displays human readable time 
 
 
+To kill a process in linux
+
+kill -15 "pid"  --> -15 is the option to properly kill a process
+kill -9 "pid"   --> -9 is the option to force kill a process
+
+kill -15 $(lsof -i tcp:8080 | awk '$1 == "java" {print $2}')
 
 
+Kill command kills a process by PID of any process (Process ID)
 
 
+Killall command kills a process by process name.
+
+PS COMMAND - PROCESS STATUS
+
+ps -=-=-> to list all running commad in Mac os.
+
+ps aux  --> display a detailed list of all processes running on your system. The columns include the process ID (PID), the user who owns the process, the CPU and memory usage, the command associated with the process, and more
+
+ps -U username --> This command shows all processes owned by a specific user.
+
+ps -p PID ---> Replace "PID" with the actual process ID for which you want to get information. This command shows details for a specific process
 
 
 

@@ -67,6 +67,15 @@ git commit --amend    ---> this opens up the previous commit message which can b
 
 in case we need only to edit the latest commit message, git commit --amend will open up commit message editor.
 
+GIT AMEND
+---------
+
+git commit --amend --no-edit --> adds the staged changes to the previous commit and does not change the commit message. (Although the commit hash id is changed).
+
+git commit --amend -m "new commit message"  --> this updates the commit message of the previous commit. (Also changes the commit hash id)
+
+Since using amend changes the commit id's, it's good practice to keep ammending to private/local branches. ie., we should not be ammending public commits.
+
 .gitignore file   created at the root of a repository
 
 filename.txt   --> ignores the file filename.txt
@@ -310,6 +319,16 @@ To show untracked files
 git show stash@{0}^3
 
 https://stackoverflow.com/questions/12681529/in-git-is-there-a-way-to-show-untracked-stashed-files-without-applying-the-stas
+
+****  
+When you have some changes STAGEDand some changes UNSTAGES, and apply stash, git stashes all the changes including the staged changes as well.
+
+git stash show -p   --> will show both staged and unstaged changes in a single stash.
+
+we need to apply the stash and re stage them again. To avoid this we can use --keep-index option
+
+git stash --keep-index ---> will keep the staged changes. 
+git stash push --keep-index 
 
 ****
 
@@ -698,11 +717,77 @@ https://github.com/jlevy/the-art-of-command-line
 
 
 
+git log --graph --decorate --oneline --all
+
+git log --pretty="%s"		%s is placeholder that stands for summary (which is the first line for the commit message)
+
+git log --pretty="%C(red)%h%Creset%C(yellow)%d %Creset%C(cyan)%s %Creset%C(green)(%ar)%Creset"
+
+%h - hash code, %s summary, %d decorate (for branch refs), %ar relative time stamps
+
+git config --global alias.lg "log --pretty='%C(red)%h%Creset%C(yellow)%d %Creset%C(cyan)%s %Creset%C(green)(%ar)%Creset'"
+
+git diff HEAD^ HEAD -->  display the differences between the current commit (HEAD) and its parent commit (HEAD^). 
+
+HEAD^: The caret (^) is a shorthand for the parent commit of the current commit. 
+So, HEAD^ refers to the commit immediately before the current commit (HEAD).
+HEAD: Represents the latest commit in the currently checked-out branch.
+
+*** All git output is passed through an external program called PAGER. Be default get uses less, but we can configure it to other pager ***  
+
+git config --global core.pager delta
+
+**//** It's always a good idea in git to make commits that are semantically cohesive.
+  i.e., one commit should represent one logical change. **/**
+
+But since it's not possible in reality, with git we can work as we like, and then use a git feature to have a clean history.
+i.e., the --patch option of the git add command
+
+git add --patch,  by passing 's', we can split the hunks into even smaller chunks of code, add and commit them seperately.
+
+We apply the same process to discard uncommited changes in the working directory as well
+
+git restore --patch,   similar to the previous process.
+
+SEARCHING in GIT using the pickaxe option
+
+n Git, the "pickaxe" is a feature associated with the git log command, 
+and it's used to search for changes in the commit history that match a specific string or pattern. 
+The pickaxe feature is enabled by using the -S option with git log.
+
+git log -S "text"
+
+This command will show a list of commits that introduced or removed occurrences of the string "text."
+
+    If the string was added, the commit where it was introduced will be shown.
+    If the string was removed, the commit where it was deleted will be shown.
+
+This feature is helpful for investigating when and how a particular piece of code was added or removed in the commit history. 
+Keep in mind that the pickaxe search is case-sensitive by default, but you can use the -i option for a case-insensitive search:
+
+git log -S "text" -i
+
+we can also search by function name. SEARCH GIT LOGS BY FUNCTION NAME
+
+function() {
+	
+}
+
+git log -L:function_name:path/to/file ---> shows all commits that added, modified or removed the function
 
 
+GIT AUTOMATION
+
+By enabling autosquash we can rewrite history more easily
+
+git config --global rebase.autosquash true
 
 
+GIT PRESENTATIONS
+------------------
+https://www.youtube.com/watch?v=BdiLKxSu-2Q
 
+https://megakemp.com/services/
 
 
 

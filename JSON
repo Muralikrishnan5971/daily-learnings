@@ -1,0 +1,12 @@
+
+Json is a superset of Javascript.
+
+Json supports
+
+Strings, Numbers (any formats whole numbers, negative numbers, scientific numbers), Boolean, null, object
+
+Object -> String -> Byte stream - Serialization - Transfer over a network
+
+Byte Stream -> String -> Object - Deserialization - Retreive data 
+
+A JSON string can be stored in its own file, which is basically just a text file with an extension of .json

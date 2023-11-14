@@ -1,0 +1,9 @@
+
+
+TMUX - TERMINAL MULTIPLXER
+
+C-b ? --> help
+C-b % --> horizontal split
+C-b " --> veritcal split
+C-b o --> switch between panes
+C-b x --> kill current pane 

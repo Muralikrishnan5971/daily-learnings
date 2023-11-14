@@ -50,6 +50,72 @@
 
 start.spring.io
 
+fill details, add dependancies, click generate. zip file is downloaded. setting up a spring project.
+
+Main goals of Spring Boot
+
+-> Build quickly
+	- Spring initializr
+	- Spring boot starter projects
+	- Spring boot Auto Configurations
+	- Spring boot DevTools
+-> Be Production Ready
+	- Logging
+	- Different configurations for different environments (like Stage, PreProd, QA etc)
+		Profiles, ConfigurationProperties
+	- Monitoring (Spring Boot Actuator)
+
+Now why do we need to restart the manual for every code change ? here comes the Spring boot dev tools
+add the spring boot devtols dependency to pom.xml, then it restarts the server everytime there's a code change.
+
+
+**** Whenever we make any changes to the pom.xml, we need to restart the server manually.
+
+Managing Application configuration using Profiles
+-------------------------------------------------
+
+Application in different environments like stage, tst, prod, need different configurations like different database, different web services,  
+
+example, the dev env needs to be talking to dev db, the stage env should be talking to stage db. This can be handles using profiles.
+
+Profiles enables you to provide environment specific configurations.
+
+When the application is not using any profiles, it uses the default application.properties
+
+
+* Simplified deployemnt with Spring boot Embedded servers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
