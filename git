@@ -782,12 +782,64 @@ By enabling autosquash we can rewrite history more easily
 
 git config --global rebase.autosquash true
 
-
+******************************************************************
 GIT PRESENTATIONS
 ------------------
 https://www.youtube.com/watch?v=BdiLKxSu-2Q
 
 https://megakemp.com/services/
+
+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
+
+
+******************************************************************
+
+GIT BRANCHES
+------------
+The typical vision of branch is something like:   
+
+ master --()--()--()--()-- 
+
+now when we make a feature branch and start adding commits then it might loof something like:
+
+
+					feature --()--()--()--  
+						   /
+ master --()--()--()--()-- 
+
+This view of a branch that has straight line with a name is WRONG.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -471,6 +471,16 @@ followed by the command we need to execute for the mentioned interval
 
 ********************************************************\\
 
+$ find ~/Downloads -type f -size 35000k -exec rm -i {} \;
+
+Here are some one-liners to help you if you want to delete files blindly:
+
+$ find ~/Downloads -type f -size 35000k -exec ls -l {} \; | awk '{ print $9 }' | xargs rm
+
+$ find ~/Downloads -type f -size +35000k -delete
+
+********************************************************
+
 The name "tarball" is derived from the combination of "tar" (short for "tape archive"), which is the archiving utility used to bundle the files, and "ball," which describes the concept of packing multiple files together.
 
 Tarballs are widely used in Unix-like systems, including Linux and macOS, as a common way to distribute and transport files or software packages. They are popular for creating backups, distributing source code, and packaging software for installation. Tarballs are especially useful when preserving the file structure and permissions of the files is important.
@@ -621,6 +631,18 @@ date -r 1233242342  --> displays human readable time
 
 
 To kill a process in linux
+--------------------------
+
+kill and killall command, two commands that give absolute control over whether an application can continue running or not.
+
+Which command should we use. Almost always use killall. 
+Because with killall command, we don't have to worry about finding the PID's of the process.
+
+With killall, we need to know the real name of the process (actuall command and not the name of the application)
+
+To find the actual process name/command, use top command, get the process command, then killall it.
+
+Killall requires the actual command name of the application, that we want to force close, whereas kill requires the process id.
 
 kill -15 "pid"  --> -15 is the option to properly kill a process
 kill -9 "pid"   --> -9 is the option to force kill a process
@@ -633,7 +655,7 @@ Kill command kills a process by PID of any process (Process ID)
 
 Killall command kills a process by process name.
 
-PS COMMAND - PROCESS STATUS
+PS COMMAND - PROCESS STATUScd
 
 ps -=-=-> to list all running commad in Mac os.
 
@@ -643,11 +665,37 @@ ps -U username --> This command shows all processes owned by a specific user.
 
 ps -p PID ---> Replace "PID" with the actual process ID for which you want to get information. This command shows details for a specific process
 
+DNS Cache: (for fixing 504 Gateway timeout error)
+
+Linux, Windows, Mac save the name resolution information in the form of a DNS cache. 
+We can clear our DNS cache.  we Need to flush our cache.
+
+For MAC: sudo killall -HUP mDNSResponder
+
+sudo dscacheutil -flushcache   --> flushes the DNS cache
+sudo killall -HUP mDNSResponder --> restarts the process
 
 
 
+Learn Linux with these 6 websites 
 
+1. Sysxplore
+sysxplore.com
 
+2. LinuxOpsys
+linuxopsys.com
+
+3. Linux Handbook
+linuxhandbook.com
+
+4. Linuxize
+Linuxize.com
+
+5. Linux Journey
+linuxjourney.com
+
+6. Linux Survival
+Linuxsurvival.com
 
 
 
