@@ -791,6 +791,10 @@ https://megakemp.com/services/
 
 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
 
+Git Branches - https://www.youtube.com/watch?v=a3CSIV5NGsk 
+
+https://megakemp.com/
+
 
 ******************************************************************
 
@@ -807,16 +811,98 @@ now when we make a feature branch and start adding commits then it might loof so
 						   /
  master --()--()--()--()-- 
 
-This view of a branch that has straight line with a name is WRONG.
+This view of a branchs that are straight lines with a name is WRONG.
+
+Now what exactly is a branch and how git tracks its branches ?
+
+First of all, a branch is not a named line of development that goes forward in future.
+Actually it goes backward in future.
+
+whenever we create a new branch, the new reference points the latest commit only
+
+		     feature
+ --()--()--()--()
+ 			 master
+
+To make it simpler, a branch in git is nothing but a small file that has the branch name and resides in /Users/muralikrishnan/Desktop/murali/dummy_git/new-project/.git/refs/heads
+
+master
+feature
+
+these files contain nothing but the sha1 of the commit to which they both point.
+
+Adding a few commits to feature looks like
 
 
+		     			  feature
+ --()--()--()--()--()--()--()
+ 			 master
 
+Now if we merge, it's fast forward merge, git updates the branch pointer
 
+    			 		 feature
+ --()--()--()--()--()--()--()
+ 						 master
 
+No new commit object are created.
 
+Now let delete the feature branch git branch -d feature
 
+Now when we do delete a branch, the only thing that happens is the 'feature' file in 
+/Users/muralikrishnan/Desktop/murali/dummy_git/new-project/.git/refs/heads is disappeared.
 
+Switching branch is just my HEAD pointer gets updated to the new branch pointer
 
+heads is the internal name given for a branch  
+
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+This is not a typical use case, but sometimes binaries or generated files gets ‘added’ and ‘pushed’ inadvertently. 
+And even if the developer realises and immediately deletes the file, and commits and push again, the Git history has the file in its commit and history is usually kept immutable unless of course you do a ‘hard reset’ and do a forced push.
+
+This is not recommended as it may cause inconsistency if somebody already has ‘pulled’ the history with the commit into his or her local repository.
+
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+KEEPING FORKED REPO IN SYNC WITH UPSTREAM REPO
+----------------------------------------------
+
+The term "upstream repository" refers to the original repository from which a fork is created. When you fork a repository on a platform like GitHub, GitLab, or Bitbucket, you essentially create a copy of the repository under your own account. The original repository, from which the copy is made, is commonly referred to as the "upstream repository."
+
+Here's a breakdown of the terms:
+
+    Upstream Repository:
+        The original repository that you forked from. It is usually the repository maintained by the project or the repository you want to contribute to.
+
+    Forked Repository:
+        Your personal copy of the upstream repository. This is a separate repository in your account, and you have your own copy of the code, issues, and branches.
+
+    Downstream Repository:
+        If someone else forks your repository, their repository is considered a downstream repository concerning your fork.
+
+The concept of upstream and downstream is used to describe the direction of changes and contributions. When you want to get the latest changes from the original project or contribute your changes back to it, you interact with the upstream repository.
+
+Here's a common workflow involving the upstream repository:
+
+    Fork the Upstream Repository:
+        You create your own copy (fork) of the upstream repository to work on your changes.
+
+    Clone Your Fork:
+        You clone your fork to your local machine to make changes.
+
+    Add Upstream as a Remote:
+        You add the upstream repository as a remote to your local repository. This allows you to fetch and merge changes from the upstream repository.
+
+    Fetch and Merge Changes from Upstream:
+        Periodically, you fetch the latest changes from the upstream repository and merge them into your local branch to stay up-to-date.
+
+    Push Changes to Your Fork:
+        After making changes locally, you push them to your fork on the platform.
+
+    Create Pull Request (Optional):
+        If you want to contribute your changes back to the upstream repository, you can create a pull request from your fork.
+
+By maintaining a connection to the upstream repository, you can keep your fork up-to-date with the latest developments in the original project.
 
 
 
