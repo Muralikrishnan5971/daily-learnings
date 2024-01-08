@@ -1,10 +1,10 @@
 
 
-Git you have three levels of settings files, 
-in repository, global for your user and global for the whole computer with all its users. 
+Git you have three levels of settings files,
+in repository, global for your user and global for the whole computer with all its users.
 git config --list will list all of them that are in effect in the place where you are.
 
-.gitconfig is one of four configuration files that git config --list will search for configuration options. 
+.gitconfig is one of four configuration files that git config --list will search for configuration options.
 .gitconfig contains only the user-specific configurations (also called global configuration), but you can also have system-specific and repository-specific configurations. To get a full view of the configuration in your current directory, you should use git config --list.
 
 git config user.name                                   --> reads user.name from the git config file
@@ -51,7 +51,7 @@ git rm --cached <file>            --> to unstage
 
 git config --global core.editor "code --wait"       --> to set vs code as text editor for typing commit messages
 
---global flag means it applies to all the repos  
+--global flag means it applies to all the repos
 
 git log --pretty        --> pretty prints the commit messages
 git log --oneline       --> prints only one line from the commit message
@@ -88,7 +88,7 @@ When we make a commit, each commit get this wierd looking hash (hash code)
 algorithm used by hashing function in git is sha1
 
 Every commit has a unique identifier, ie., unique hash
-And each commit references atleast one parent commit that came before it 
+And each commit references atleast one parent commit that came before it
 
 master or main branch is just like any other branch
 
@@ -99,7 +99,7 @@ It points to a particular branch reference.
 
 git branch     --> lists all our branches
 
-git branch <branchname>    --> creates a new branch given name, but does not switch to it. 
+git branch <branchname>    --> creates a new branch given name, but does not switch to it.
 i.e., iam still on the master branch
 
 once new branch is created, the HEAD will be pointing to both the branch, like the below example
@@ -150,7 +150,7 @@ to delete irrespective of its merge status use -D option, git branch -D branchna
 To rename a branch
 first change to the branch we want to rename, then use the below command
 
-git branch -m newname       ---> -m option stands for move/rename 
+git branch -m newname       ---> -m option stands for move/rename
 
 To delete local branch
 git branch -d <branch name>
@@ -306,7 +306,7 @@ To clear out all stashes, git stash clear
 
 ****
 
-git stash 
+git stash
 git stash save
 
 git stash --include-untracked
@@ -320,15 +320,15 @@ git show stash@{0}^3
 
 https://stackoverflow.com/questions/12681529/in-git-is-there-a-way-to-show-untracked-stashed-files-without-applying-the-stas
 
-****  
+****
 When you have some changes STAGEDand some changes UNSTAGES, and apply stash, git stashes all the changes including the staged changes as well.
 
 git stash show -p   --> will show both staged and unstaged changes in a single stash.
 
 we need to apply the stash and re stage them again. To avoid this we can use --keep-index option
 
-git stash --keep-index ---> will keep the staged changes. 
-git stash push --keep-index 
+git stash --keep-index ---> will keep the staged changes.
+git stash push --keep-index
 
 ****
 
@@ -343,7 +343,7 @@ Suppose we made some changes, to a file but don't want to keep them. To revert t
 
 **
 git checkout HEAD <filename>   similar to git checkout .
-git checkout -- <filename>	
+git checkout -- <filename>
 
 git restore .
 git restore <filename>
@@ -362,7 +362,7 @@ Undoing commits with git reset
 
 git reset <commit hash>  -- commit hash --> first seven letters of the actual commit hash
 
-this removes the commit from the repo, but we can still see those changes in the working directory. 
+this removes the commit from the repo, but we can still see those changes in the working directory.
 To remove those we need a hard reset.
 
 git reset --hard <commit hash>   --> git undoes the commits up to the mentioned commit hash and removes those changes in the working directory.
@@ -410,7 +410,7 @@ The above method is totally NOT common,
 
 git push -u origin main  -->  here -u is the option
 
-The -u option allows you to set the upstream of the branch we are pushing. 
+The -u option allows you to set the upstream of the branch we are pushing.
 we can think of this as a link connecting our local branch to a branch on github
 
 Running git push -u origin main sets the upstream of the local branch, so that it tracks the same branch (main) on the repo.
@@ -418,7 +418,7 @@ Running git push -u origin main sets the upstream of the local branch, so that i
 The main advantage of setting this -u option is that, once it is set git push -u origin main
 then we can use the shorthand git push which will push our current branches changes to the upstream
 
-git push -u orgin main is same as git push --set-upstream origin main 
+git push -u orgin main is same as git push --set-upstream origin main
 
 
 git commmand to untrack file
@@ -457,7 +457,7 @@ git fetch <remote>    which is ussually origin. Therefore git fetch origin will 
 
 git fetch    --> if remote is not specified, it defaults to origin.
 
-git pull is another commmand that we use to retreive changes from remote repo. Unlike git fetch, pull actually updates our HEAD branch with 
+git pull is another commmand that we use to retreive changes from remote repo. Unlike git fetch, pull actually updates our HEAD branch with
 whatever changes are retreived from the remote. So in a way we can say, git pull = git fetch + git merge.
 
 To pull we need to specify the particular remote and branch we want to pull using git pull <remote> <branch>
@@ -477,29 +477,29 @@ If you are working with an extremely large monorepo, then these tradeoffs are mo
 There are three ways to reduce clone sizes for repositories hosted by GitHub.
 
 git clone --filter=blob:none <url> creates a blobless clone.
-These clones download all reachable commits and trees while fetching blobs on-demand. 
+These clones download all reachable commits and trees while fetching blobs on-demand.
 These clones are best for developers and build environments that span multiple builds.
 
-git clone --filter=tree:0 <url> creates a treeless clone. 
-These clones download all reachable commits while fetching trees and blobs on-demand. 
+git clone --filter=tree:0 <url> creates a treeless clone.
+These clones download all reachable commits while fetching trees and blobs on-demand.
 These clones are best for build environments where the repository will be deleted after a single build, but you still need access to commit history.
 
-git clone --depth=1 <url> creates a shallow clone. 
-These clones truncate the commit history to reduce the clone size. 
-This creates some unexpected behavior issues, limiting which Git commands are possible. 
-These clones also put undue stress on later fetches, so they are strongly discouraged for developer use. 
+git clone --depth=1 <url> creates a shallow clone.
+These clones truncate the commit history to reduce the clone size.
+This creates some unexpected behavior issues, limiting which Git commands are possible.
+These clones also put undue stress on later fetches, so they are strongly discouraged for developer use.
 They are helpful for some build environments where the repository will be deleted after a single build.
 
 Before digging in on this topic, be sure you are familiar with how Git stores your data, including COMMITS, TREES, and BLOB objects.
 
-Git has a reputation for being confusing. Users stumble over terminology and phrasing that misguides their expectations. 
-This is most apparent in commands that “rewrite history” such as git cherry-pick or git rebase. 
-In my experience, the root cause of this confusion is an interpretation of commits as diffs that can be shuffled around. 
+Git has a reputation for being confusing. Users stumble over terminology and phrasing that misguides their expectations.
+This is most apparent in commands that “rewrite history” such as git cherry-pick or git rebase.
+In my experience, the root cause of this confusion is an interpretation of commits as diffs that can be shuffled around.
 However, commits are snapshots, not diffs!
 
 Object IDs are hashes
-The most important part to know about Git objects is that Git references each by its object ID (OID for short), providing a unique name for the object. 
-We will use the git rev-parse <ref> command to discover these OIDs. 
+The most important part to know about Git objects is that Git references each by its object ID (OID for short), providing a unique name for the object.
+We will use the git rev-parse <ref> command to discover these OIDs.
 Each object is essentially a plain-text file and we can examine its contents using the git cat-file -p <oid> command.
 
 git-cat-file - Provide content or type and size information for repository objects
@@ -509,11 +509,11 @@ git cat-file -p fb4ca6ed2c90698f84393f482a1224313f8339ba
 Blobs are file contents
 Blob
 A blob is short for a Binary Large OBject.
-At the bottom of the object model, blobs contain file contents. 
-To discover the OID for a file at your current revision, run git rev-parse HEAD:<path>. 
+At the bottom of the object model, blobs contain file contents.
+To discover the OID for a file at your current revision, run git rev-parse HEAD:<path>.
 Then, use git cat-file -p <oid> to find its contents.
 
-If I edit the README.md file on my disk, then git status notices that the file has a recent modified time and hashes the contents. 
+If I edit the README.md file on my disk, then git status notices that the file has a recent modified time and hashes the contents.
 If the contents don’t match the current OID at HEAD:README.md, then git status reports the file as “modified on disk.
 ” In this way, we can see if the file contents in the current working directory match the expected contents at HEAD.
 
@@ -523,8 +523,8 @@ eb8115e6b04814f0c37146bbe3dbc35f3e8992e0
 $ git cat-file -p eb8115e6b04814f0c37146bbe3dbc35f3e8992e0 | head -n 8
 
 Trees are directory listings
-Note that blobs contain file contents, but not the file names! The names come from Git’s representation of directories: trees. 
-A tree is an ordered list of path entries, paired with object types, file modes, and the OID for the object at that path. 
+Note that blobs contain file contents, but not the file names! The names come from Git’s representation of directories: trees.
+A tree is an ordered list of path entries, paired with object types, file modes, and the OID for the object at that path.
 Subdirectories are also represented as trees, so trees can point to other trees!
 
 $ git rev-parse HEAD^{tree}
@@ -532,7 +532,7 @@ $ git rev-parse HEAD^{tree}
 
 $ git cat-file -p 75130889f941eceb57c6ceb95c6f28dfc83b609c  | head -n 15
 
-Trees provide names for each sub-item. Trees also include information such as Unix file permissions, object type (blob or tree), and OIDs for each entry. 
+Trees provide names for each sub-item. Trees also include information such as Unix file permissions, object type (blob or tree), and OIDs for each entry.
 We cut the output to the top 15 entries, but we can use grep to discover that this tree has a README.md entry that points to our earlier blob OID.
 
 
@@ -541,17 +541,17 @@ A commit is a snapshot in time. Each commit contains a pointer to its root tree,
 
 
 Branches are pointers
-In Git, we move around the history and make changes without referring to OIDs most of the time. 
-This is because branches provide pointers to the commits we care about. A branch with name main is actually a reference in Git called refs/heads/main. 
+In Git, we move around the history and make changes without referring to OIDs most of the time.
+This is because branches provide pointers to the commits we care about. A branch with name main is actually a reference in Git called refs/heads/main.
 These files literally contain hex strings referencing the OID of a commit. As you work, these references change their contents to point to other commits.
 
-This means branches are significantly different from our previous Git objects. 
-Commits, trees, and blobs are immutable, meaning you can’t change their contents. 
+This means branches are significantly different from our previous Git objects.
+Commits, trees, and blobs are immutable, meaning you can’t change their contents.
 If you change the contents, then you get a different hash and thus a new OID referring to the new object! Branches are named by users to provide meaning, such as trunk or my-special-project. We use branches to track and share work.
 
 The special reference HEAD points to the current branch. When we add a commit to HEAD, it automatically updates that branch to the new commit.
 
-Let’s put all of these new terms into one giant picture. 
+Let’s put all of these new terms into one giant picture.
 Branches point to commits, commits point to other commits and their root trees, trees point to blobs and other trees, and blobs don’t point to anything
 
 git log --reverse   --> displays the commit history in reverse order
@@ -564,8 +564,8 @@ https://www.freecodecamp.org/news/boost-programming-skills-read-git-code/
 1. Discarding local changes in a file (that also includes deleting a file)
 
 To discard changes in particular files
-git restore <filename> 
-git checkout <filename> 
+git restore <filename>
+git checkout <filename>
 
 To discard all changes
 git restore .
@@ -589,7 +589,7 @@ index fb4ca6e..900049d 100644
  ++++++++++++++
  ==============
  Swalla - Jason Derulo
-(1/2) Discard this hunk from worktree [y,n,q,a,d,j,J,g,/,e,?]? 
+(1/2) Discard this hunk from worktree [y,n,q,a,d,j,J,g,/,e,?]?
 
 prompts for a response from us
 
@@ -611,7 +611,7 @@ git commit --amend -m <crt/new commit msg>
 
 ***  --amend rewrites history. Never change history of commits that already been pushed to a remote repository. ***
 
-Everytime we amend the commmit hash changes, 
+Everytime we amend the commmit hash changes,
 In the background a completly new commit object is created and swaps out the old one.
 
 This is what RE WRITING history means. i.e, the new commits being exchanged in the background
@@ -660,12 +660,12 @@ git clean -i  ---> opens an interactive session:
 git status shows the difference between these trees in the following manner:
 
 If the Working Tree is different from the index, then git status will show there are some changes not staged for commit
-If the Working Tree is the same as index, but they are different from HEAD, 
+If the Working Tree is the same as index, but they are different from HEAD,
 then git status will show some files under changes to be committed section in its result
-If the Working Tree is different from the index, and the index is different from HEAD, 
+If the Working Tree is different from the index, and the index is different from HEAD,
 then git status will show some files under changes not staged for commit section and some other files under changes to be committed section in its result.
 
-git blame <path-to-file> ---> lists the respective commit and author for each line in the file. 
+git blame <path-to-file> ---> lists the respective commit and author for each line in the file.
 
 Git options:
 
@@ -677,7 +677,7 @@ https://github.com/techgaun/git-internals
 
 
 What is git-show?
-git-show is a command line utility that is used to view expanded details on Git objects such as blobs, trees, tags, and commits. 
+git-show is a command line utility that is used to view expanded details on Git objects such as blobs, trees, tags, and commits.
 git-show has specific behavior per object type.
 
 git show          ---> without any argument git shows the head reference, same as the below command
@@ -694,14 +694,14 @@ Notes from Linus Torvals speech at google
 -> Subversion - centralized version control
 -> git - distributed version control - (distributed - not only it's a good idea, not doing it does'nt work)
 
-Being distributed means you do not have one centralized location that keeps track of your data.  
-*** No single place is more important than any other single place ***  
+Being distributed means you do not have one centralized location that keeps track of your data.
+*** No single place is more important than any other single place ***
 
 If we are distributed, every single person has his own branch.
 
 
 
-shit happens ---> git happens 
+shit happens ---> git happens
 
 https://www.freecodecamp.org/news/git-internals-objects-branches-create-repo/
 
@@ -727,13 +727,13 @@ git log --pretty="%C(red)%h%Creset%C(yellow)%d %Creset%C(cyan)%s %Creset%C(green
 
 git config --global alias.lg "log --pretty='%C(red)%h%Creset%C(yellow)%d %Creset%C(cyan)%s %Creset%C(green)(%ar)%Creset'"
 
-git diff HEAD^ HEAD -->  display the differences between the current commit (HEAD) and its parent commit (HEAD^). 
+git diff HEAD^ HEAD -->  display the differences between the current commit (HEAD) and its parent commit (HEAD^).
 
-HEAD^: The caret (^) is a shorthand for the parent commit of the current commit. 
+HEAD^: The caret (^) is a shorthand for the parent commit of the current commit.
 So, HEAD^ refers to the commit immediately before the current commit (HEAD).
 HEAD: Represents the latest commit in the currently checked-out branch.
 
-*** All git output is passed through an external program called PAGER. Be default get uses less, but we can configure it to other pager ***  
+*** All git output is passed through an external program called PAGER. Be default get uses less, but we can configure it to other pager ***
 
 git config --global core.pager delta
 
@@ -751,8 +751,8 @@ git restore --patch,   similar to the previous process.
 
 SEARCHING in GIT using the pickaxe option
 
-n Git, the "pickaxe" is a feature associated with the git log command, 
-and it's used to search for changes in the commit history that match a specific string or pattern. 
+n Git, the "pickaxe" is a feature associated with the git log command,
+and it's used to search for changes in the commit history that match a specific string or pattern.
 The pickaxe feature is enabled by using the -S option with git log.
 
 git log -S "text"
@@ -762,7 +762,7 @@ This command will show a list of commits that introduced or removed occurrences 
     If the string was added, the commit where it was introduced will be shown.
     If the string was removed, the commit where it was deleted will be shown.
 
-This feature is helpful for investigating when and how a particular piece of code was added or removed in the commit history. 
+This feature is helpful for investigating when and how a particular piece of code was added or removed in the commit history.
 Keep in mind that the pickaxe search is case-sensitive by default, but you can use the -i option for a case-insensitive search:
 
 git log -S "text" -i
@@ -770,7 +770,7 @@ git log -S "text" -i
 we can also search by function name. SEARCH GIT LOGS BY FUNCTION NAME
 
 function() {
-	
+
 }
 
 git log -L:function_name:path/to/file ---> shows all commits that added, modified or removed the function
@@ -791,7 +791,9 @@ https://megakemp.com/services/
 
 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
 
-Git Branches - https://www.youtube.com/watch?v=a3CSIV5NGsk 
+Git Branches - https://www.youtube.com/watch?v=a3CSIV5NGsk
+
+Git Objects - https://www.youtube.com/watch?v=1_LFectmOTw
 
 https://megakemp.com/
 
@@ -800,16 +802,16 @@ https://megakemp.com/
 
 GIT BRANCHES
 ------------
-The typical vision of branch is something like:   
+The typical vision of branch is something like:
 
- master --()--()--()--()-- 
+ master --()--()--()--()--
 
 now when we make a feature branch and start adding commits then it might loof something like:
 
 
-					feature --()--()--()--  
+					feature --()--()--()--
 						   /
- master --()--()--()--()-- 
+ master --()--()--()--()--
 
 This view of a branchs that are straight lines with a name is WRONG.
 
@@ -848,16 +850,16 @@ No new commit object are created.
 
 Now let delete the feature branch git branch -d feature
 
-Now when we do delete a branch, the only thing that happens is the 'feature' file in 
+Now when we do delete a branch, the only thing that happens is the 'feature' file in
 /Users/muralikrishnan/Desktop/murali/dummy_git/new-project/.git/refs/heads is disappeared.
 
 Switching branch is just my HEAD pointer gets updated to the new branch pointer
 
-heads is the internal name given for a branch  
+heads is the internal name given for a branch
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-This is not a typical use case, but sometimes binaries or generated files gets ‘added’ and ‘pushed’ inadvertently. 
+This is not a typical use case, but sometimes binaries or generated files gets ‘added’ and ‘pushed’ inadvertently.
 And even if the developer realises and immediately deletes the file, and commits and push again, the Git history has the file in its commit and history is usually kept immutable unless of course you do a ‘hard reset’ and do a forced push.
 
 This is not recommended as it may cause inconsistency if somebody already has ‘pulled’ the history with the commit into his or her local repository.
@@ -906,12 +908,32 @@ By maintaining a connection to the upstream repository, you can keep your fork u
 
 
 
+GIT REMOTES
+-----------
+
+remotes are a way git to know where to pull and where to push.
+git automatically creates the remotes when we clone a repo. by default it is origin, which can be changed via git config.
+
+git remote --> lists all remote
+git remote -v
+
+we can change the remote name
+git remote rename origin new-remote-name
+
+we can remove remote
+git remote remove origin
+
+we can get the url of hte origin
+git remote get-url origin
+
+we can set/update the origin
+git remote set-url origin git@github.com:Muralikrishnan5971/new_repo.git
 
 
 
 
-
-
+GIT SUBMODULES
+--------------
 
 
 

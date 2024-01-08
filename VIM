@@ -36,14 +36,14 @@ INSERT mode
 
 VISUAL mode
 
-Visual Mode is probably used a little less than the first two modes mentioned, but can still be extremely useful. 
-It’s mostly used to highlight blocks of text, and then perform a command on the entire block. For example, 
+Visual Mode is probably used a little less than the first two modes mentioned, but can still be extremely useful.
+It’s mostly used to highlight blocks of text, and then perform a command on the entire block. For example,
 you maybe highlight a block and indent the entire thing.
 
 COMMAND mode
 
-Commands are essential for Vim, and will be used heavily, 
-especially when we get to plugins. Commands, as we’ll see, make Vim do something. 
+Commands are essential for Vim, and will be used heavily,
+especially when we get to plugins. Commands, as we’ll see, make Vim do something.
 To enter a command you simply type : while in Normal Mode and then the command.
 
 https://medium.com/analytics-vidhya/vim-for-developers-part-1-the-basics-663619ca122a
@@ -78,7 +78,7 @@ mode.) If you type 200 characters before pressing ENTER, vi regards all 200 char
 as a single line (even though those 200 characters visibly take up several lines on the
 screen).
 
-Modal Editing - change the meaning of keys in each mode of operation 
+Modal Editing - change the meaning of keys in each mode of operation
 Normal mode - navigate the structure of the file
 Insert mode - editing the file
 Visual mode - highlight portions of the file to manipulate at once
@@ -96,7 +96,7 @@ l  ---> Right, one space
 
 we multiply commands using numeric arguments
 
-4l ---> similar to pressing llll --> moves four spaces to left. 
+4l ---> similar to pressing llll --> moves four spaces to left.
 
 0 ---> move to beginning of the line
 $ ---> move to the end of the line.
@@ -123,7 +123,7 @@ p ---> put (paste) command
 dw ---> deletes the word
 d2w ---> deltes two words
 
-Here’s how this works. Number and command are optional. Without them, you simply have a movement command. 
+Here’s how this works. Number and command are optional. Without them, you simply have a movement command.
 If you add a number, you have a multiple movement. On the other hand, combine a command (c, d, or y) with a text object to get an editing
 command. When you realize how many combinations are possible in this way, vi becomes a powerful editor indeed!
 
@@ -255,9 +255,159 @@ By default  vim will not allow you to switch buffers, unless that buffer is full
 
 :e!         ----> clear all unsaved changes
 
+Using VISUAL BLOCK mode to make multi line changes:
+---------------------------------------------------
+
+press v -> VISUAL MODE
+
+shift + v -> VISUAL LINE MODE
+
+ctrl + v -> starts VISUAL BLOCK MODE
+
+gv -> learn more on this
+
+press h,j,k,l keys to select a block
+
+shit + i -> enter you your changes
+
+press esc -> we can see all changes applied to the lines (making multi line comment)
+
+press u to undo this
+
+****** vim motions *******
+:h motion.txt
+
+To switch between window in VIM
+Press and hold the Ctrl key, then press w followed by another w (without releasing the Ctrl key). This will switch the cursor to the next window.
 
 
 
+set hlsearch ->
+:noh ->  to clear highlight --> to find better way of doing it.
+
+
+In Vim, you can find and replace text using the :substitute command. The basic syntax for the :substitute command is as follows:
+
+vim
+
+:%s/pattern/replacement/options
+
+    %: Specifies that the substitution should be applied to the entire file. You can use a range or specific line numbers instead of % to limit the scope of the substitution.
+    pattern: The text pattern you want to search for.
+    replacement: The text you want to replace the matched pattern with.
+    options: Optional flags that modify the behavior of the substitution.
+
+
+ctrl + n, ctrl + p -> to auto complete
+
+:e ~/.vim  --> opens up the directory
+
+ba --> buffer delete
+
+
+:set rtp?  --> to see all the files in runtimepath of vim
+
+:args
+The :args command in Vim is used to set the argument list, which is the list of files that Vim should consider for certain operations, such as searching, replacing, and other batch processing tasks. The :args command allows you to specify which files should be part of this list.
+
+Here are some common usages of the :args command:
+
+    Set Argument List with Wildcards:
+    To set the argument list based on a wildcard pattern, you can use:
+
+    vim
+
+:args *.txt
+
+This sets the argument list to all files in the current directory that have a .txt extension.
+
+Set Argument List Explicitly:
+You can set the argument list explicitly by providing a list of file paths:
+
+vim
+
+:args file1.txt file2.txt file3.txt
+
+https://www.youtube.com/watch?v=Gs1VDYnS-Ac
+
+
+:e or :edit filename  --> opens the file in a new buffer
+
+:buffers  --> lists open buffers
+
+:b1 or :b2 --> to switch between buffers
+
+ctrl + 6 --> shortcut to switch buffers
+
+VIM TEXT OBJECTS
+----------------
+
+di" delete in ""
+ci" change in ""
+diw delete in word
+ciw change in word
+
+di" delete word within ""
+da" delete word within "" including qoutes
+
+ci" change word within ""
+ca" change word within "" including qoutes
+
+vi{ - visually select within {}
+va{ - visually select within {} including the brackets
+
+We need to thing in terms of Operators, Text objects and Motions
+----------------------------------------------------------------
+
+guaw - change all letters in word to lowercase
+gUaw - change all letters in word to lowercase
+
+
+
+The more common command to save a file is :w, however this always saves the file, even if it hasn't been
+changed. :up preserves timestamps and saves needless disk access
+
+:x or :ZZ save and quit vim - common one is :wq same reason as above
+
+
+Navigation in Vim
+-----------------
+
+{ - go to begining of current para
+
+} - go to end of current para
+
+% - go to matching pair of {}, (), [] in current line
+
+H - Move to highest line in the current window
+L - Move to lowest line in the current window
+M - Move to middle line in the current window
+
+Searching
+---------
+
+/search
+?search
+
+n and N to move to search instances
+
+* to search the word under the cursor forword
+# to search the word under the cursor backward
+
+
+learn about vim undo and redo features, undo branches
+
+:help motion.txt
+:hlep change.txt
+
+learn more about macros
+
+
+select any line and ~ -> toggle case
+select any line and u -> lower case
+select any line and U -> upper case
+
+ctrl + a -> increment a value
 
 
 

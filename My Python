@@ -7,15 +7,15 @@ https://docs.python.org/3/tutorial/datastructures.html
 Dunder Methods - (also sometimes refered as magic methods)
 https://mathspp.com/blog/pydonts/dunder-methods#:~:text=What%20are%20dunder%20methods%3F,__%20or%20__add__%20.
 
-In Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and 
-operators of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start 
+In Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and
+operators of the language. The word “dunder” comes from “double underscore”, because the names of dunder methods start
 and end with two underscores, for example __str__ or __add__.
 
-If you have defined classes in Python, you are bound to have crossed paths with a dunder method: __init__. 
-The dunder method __init__ is responsible for initialising your instance of the class, which is why it is in there that 
+If you have defined classes in Python, you are bound to have crossed paths with a dunder method: __init__.
+The dunder method __init__ is responsible for initialising your instance of the class, which is why it is in there that
 you usually set a bunch of attributes related to arguments the class received.
 
-Dunder methods are not called magically, though. They are just called implicitly by the language, 
+Dunder methods are not called magically, though. They are just called implicitly by the language,
 at specific times that are well-defined, and that depend on the dunder method in question.
 
 All Python operators, like +, ==, and in, rely on dunder methods to implement their behaviour.
@@ -33,7 +33,7 @@ difference between parameter and argument:
 
 Note that for the most part, arguments and parameters mean the same thing. They are the variables used in the function.
 
-The difference lies in where we are referring to them. Arguments are what we pass into the function when calling it, 
+The difference lies in where we are referring to them. Arguments are what we pass into the function when calling it,
 and parameters are what is declared in the function.
 
 def add_one(num):
@@ -44,11 +44,11 @@ print(final_value)
 
 Here, num is parameter, 1 is argument
 
-“Behavior” is the way in which some system acts in response to a particular situation and/or stimuli. 
+“Behavior” is the way in which some system acts in response to a particular situation and/or stimuli.
 But exactly how or why something is done is not quite as important as what was done.
 
 
-Something that you’ll always find in every Python package is an __init__.py file. 
+Something that you’ll always find in every Python package is an __init__.py file.
 This file will tell Python to treat directories as modules (or sub-modules).
 
 
@@ -101,14 +101,23 @@ The 'is' operator compares object identity
 
 
 
+PDB - Python's interactive source code debugger
+-----------------------------------------------
+https://realpython.com/python-debugging-pdb/
 
+I would like to pdb to debug my python code.
 
+pdb commands
+------------
+(pdb) - python debugger promt
 
+p variable name - prints the value of the mentioned variable.
+q - quit pdb
+c -  continue execution and only stop when a breakpoint is encountered.
+n - continue execution until next line in the current function is reached.
+s
 
-
-
-
-
+list . - to show where the debugger is currently executing.
 
 
 

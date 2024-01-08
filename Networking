@@ -2,11 +2,11 @@
 
 computers are connected by Ethernet cable - UTP (Un Twisted Pair) copper cable with an rj45 connector
 
-The correct way to refer to the common “RJ45 plug” is 8P8C RJ45 Ethernet connector. This long name truly nails it down. The 8P8C means eight position / eight conductor. It refers to a type of modular plug normally used at the end of Ethernet patch cables, and when attached at the end of an Ethernet cable it is called a RJ45 8P8C plug. RJ stands for registered jack while the “45” refers to the listing number. 
+The correct way to refer to the common “RJ45 plug” is 8P8C RJ45 Ethernet connector. This long name truly nails it down. The 8P8C means eight position / eight conductor. It refers to a type of modular plug normally used at the end of Ethernet patch cables, and when attached at the end of an Ethernet cable it is called a RJ45 8P8C plug. RJ stands for registered jack while the “45” refers to the listing number.
 
 Network Interface Card (NIC) is how we connect to a physical network or a wireless network
-A network interface card (NIC) is a hardware component without which a computer cannot be connected over a network. 
-It is a circuit board installed in a computer that provides a dedicated network connection to the computer. 
+A network interface card (NIC) is a hardware component without which a computer cannot be connected over a network.
+It is a circuit board installed in a computer that provides a dedicated network connection to the computer.
 It is also called network interface controller, network adapter or LAN adapter.
 
 Its either inserted into our device or already built into it, that has a MAC address, (Media Access Control Adress) burnt into the NIC by the manufacturer.
@@ -19,12 +19,12 @@ This is most commonly used in most IEEE 802 networking technologies including et
 Wifi is an example of using air as a medium of transmission of data from one device to another.
 
 How deos Apple air drop work ?
-AirDrop uses Bluetooth to create a peer-to-peer Wi-Fi network between the devices. 
-That means you don't need to be connected to your router or even the internet in order to have an AirDrop connection. 
+AirDrop uses Bluetooth to create a peer-to-peer Wi-Fi network between the devices.
+That means you don't need to be connected to your router or even the internet in order to have an AirDrop connection.
 You do have to have Wi-Fi and Bluetooth turned on, however.
 
-Each device creates a firewall around the connection and files are sent encrypted, which actually makes it safer than transferring via email. 
-AirDrop will automatically detect nearby supported devices, and the devices only need to be close enough to establish a good Wi-Fi connection, 
+Each device creates a firewall around the connection and files are sent encrypted, which actually makes it safer than transferring via email.
+AirDrop will automatically detect nearby supported devices, and the devices only need to be close enough to establish a good Wi-Fi connection,
 making it possible to share files across several rooms.
 
 If we don't have network interface card, we can use a USB to Ethernet Adapter. Esentially we need a way to get a node onto the network and NIC is the way.
@@ -32,7 +32,7 @@ Most Devices nowadays come with a built in NIC's
 
 A Server has to listen on specific port numbers for specific protocols.
 
-A Computer server is listening of specific port numbers. If you want to get a web page, 
+A Computer server is listening of specific port numbers. If you want to get a web page,
 your browser is automatically configured or programmed to talk to the port 80 or port 443.
 
 port 80 --> http
@@ -42,7 +42,31 @@ port 20 and 21 --> ftp
 A server can run multiple service and provide multiple services.
 
 
+Linux Network Administrator's Guide
+===================================
 
+-> We can define a network as a collections of hosts, that can communicate with
+each other, often buy relying on the services of a number of a dedicated hosts
+that relay data between the participants.
+-> Hosts are often compyters,but need not to be.
+-> Collection of hosts is called as site.
+-> Communication is not possible without some sort of language or code.
+-> In Computer Networks, these languages are collectively known as PROTOCOLS.
+
+
+**** We have three different addresses:
+
+-> HOSTNAME
+-> IP ADDRESS
+-> HARDWARE ADDRESS ( 6 byte ethernet address )
+
+All these addresses somehow need to match, so that when we type ssh hostname,
+the networking software can be given hostname's ip address. it somehow needs to
+find out the hardware address coressponding to the ip address.
+
+These steps of finding address are called hostname resolution, for mapping
+hostname onto ip address, and address resolution for mapping the latter to
+hardware address.
 
 
 
