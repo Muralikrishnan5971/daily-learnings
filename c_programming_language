@@ -1,0 +1,106 @@
+C PORGRAMMING LANGUAGE
+----------------------
+
+Four important aspects of any language are
+--> the way it stores data
+--> the way it operates upon this data
+--> how it accomplishes input and output,
+--> how it lets you control the sequence of execution of instructions in
+a program.
+
+In programming languages,
+--> constants are often called literals, whereas,
+--> variables are called identifiers.
+
+understand the terms
+
+-> literal
+-> variable
+-> constant
+-> identifier
+
+int name = "Muralikrishnan"
+
+Constants in C
+--------------
+
+Primary Constants
+    Integer Constant
+    Real Constant
+    Character Constat
+
+Secondary Constats
+    Array
+    Pointer
+    Structure
+    Union
+    Enum
+    Etc
+
+
+
+-> printf function never supplies a newline character automatically.
+
+In C, we have the following data types:
+
+int, float, char(character, a single byte), short, long, double
+
+The size of these objects are machine dependent.
+
+*** There are also arrays, structures and unions of these basic data types.
+pointers to them, and functions that return them. ***
+
+The indentation emphasizes the logical structure of the program.
+Although C compilers do not care about how a program looks, proper indentation and spacing
+are critical in making programs easy for people to read.
+
+Text input or output, regardless of where it originates or where it goes to, is dealt with
+as streams of characters. A text stream is a sequence of characters divided into lines; each
+line consists of zero or more characters followed by a newline character.
+
+COMPILATION -> converting source code to machine code
+
+** The major difference between a SUBROUTINE and a FUNCTION is that,
+
+in case of function we can return a value to the calling function when
+required. but a subroutine is used to execute a set of instructions and no
+value needs to be returned. **
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
