@@ -1,0 +1,408 @@
+Funds
+-----
+1. Equity (share market)
+2. Debt (bonds)
+3. Balance (hybrid of equity and debt)
+
+All these funds can be actively invested and passively invested
+that is, all these funds can be active funds and passive funds.
+
+
+
+
+
+
+
+
+Types of Mututal funds
+
+Equity Mutual fund
+
+Debt market fund
+
+Active fund
+-----------
+Active investing is a hands-on approach where the fund manager
+is fully involved in the investment process.
+The professional buys stocks, sells them, studies the market,
+looks for opportunities, and more.
+
+
+Passive fund
+------------
+In passive investing, on the other hand, the fund manager has
+a negligible role in selecting stocks and market timing as the
+scheme seeks to replicate the benchmark returns by investing in
+securities in the same proportion as in the index.
+
+things to to be aware of incase of passive funds in expense ratio
+tracking error.
+
+EXPENSE RATIO
+-------------
+Passive mutual fund schemes offer a low-cost option to investors
+as the expense ratio is generally lower than active mutual funds.
+This is primarily because passive mutual fund schemes do not require
+active buying and selling securities like active funds.
+They try to imitate the benchmark.
+
+RETURNS
+-------
+Passive index funds follow a benchmark and deliver returns similar
+to the total returns of the securities represented in the benchmark
+prior expense ratio and tracking error. However, actively managed
+funds can be relatively more volatile. They leverage the knowledge
+and experience of the fund manager to generate favourable returns.
+They primarily aim to beat the benchmark and may offer higher returns.
+
+Before choosing mutual fund plan, we should know its fund type.
+Whether Equity Fund or Debt Fund. Because based on the fund type the taxation
+on gains differs.
+
+
+
+
+
+
+
+
+
+DEMAT ACCOUNT
+-------------
+DP - Depository Participant (Ex: Zerodha)
+DP ID - Is a identificaiton number for the depository participant (zerodha)
+where its demat accounts are maintained. its a 8 digit number same for all its
+customers (Zerodha's customers)
+BO ID - Benificiery Owner Identification Number
+
+DEMAT ID - Demat Id is 16 digit number combination of DP ID and BO ID
+DEMAT ID = DP ID + BO ID
+
+The Demat ID is required when applying for IPO and generating the CDSL TPIN
+for holdings authorizations
+-------------------------------------------
+Using Demat Account we can buy and save Stocks, Bonds, NPS(NET PROMOTER SCORE)
+and Mutual Funds.
+
+But in case of Mutual Funds, A Demat Account is not compulsory.
+Hence, we can invest in mutual funds in two ways
+
+1. via Demat format
+2. via SOA(Statement Of Account)
+
+SOA Format is where we directly go the mutual fund plans website and invest
+from there directly. (here there is no involment of the broker, all your
+mutual funds is scattered if you invest in different mutual fund plans)
+
+In Demat format, all the mutual fund units will be stored in a de materialised
+format.
+
+
+************************************************************************************
+
+TYPES OF BUY ORDER
+-------------------
+1. CNC - Cash And Carry
+Commonly use order type in stock market. Traders buy and sell stocks with the
+intentions of taking delivery of actual shares to their demat account. These
+orders are settled on a T+1 day basis ( ie., trade day + one working day)
+meaning shares will be transfered to investor's demat account two days after
+the trade date.
+
+2. MIS - MARGIN INTRADAY SQUARE OFF
+Order type designed for intraday traders looking to capitalize on short term
+price movements.
+
+3. NRML - NORMAL
+order type similar to CNC, but its typically used for derivative trading,
+including futures and options
+
+Criteria to select best GOLD ETF
+--------------------------------
+
+1. AUM should be HIGHER (ASSETS UNDER MANAGEMENT)
+2. Liquidity
+3. Tracking Error should as minimum as possible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selecting Mutual Fund plan
+--------------------------
+Always choose direct plan rather than regular plan
+as Regular plan has high expense ratio
+
+check expense ratio
+
+Direct or Regular - direct is the best
+Expense Ration - should be less than 1%
+Exit Load - zero is good
+
+
+Two ways to invest in Mutual Funds:
+
+1. via broker app such as Zerodha in DEMAT ACC
+2. via mutual fund house as UTI in SOA (STATEMENT OF ACCOUNT)
+
+
+
+
+
+
+
+
+
+
+CAPITAL GAINS TAX
+-----------------
+EQUITY
+------
+
+ STCG - Short Term Capital Gains
+ gains - buy and sell within 1 year - 15% TAX
+
+ LTCG - Long Term Capital Gains
+ gains - buy and hold for atleast 1 year and then sell
+ TAX EXCEMPTION on first 100000 10 % TAX on rest of gains
+ Take advantage of Tax loss harvesting
+
+DEBT
+----
+In Debt, after April 2023 there is no concept of short term and long term,
+debt mutual fund schemes will be taxed at income tax rates applicable
+to individual's income.
+
+TAX ON FIXED DEPOSITS
+----------------------
+If FD interest exceeds 40,000 TDS is charged at 10% on interest returns.
+if PAN is not linked, 20%
+
+For senior citizens, if FD interest returns exceeds 50000.
+
+
+
+BONDS
+-----
+Reason to invest in bonds:
+1. Capital Protection
+2. Stable Cash Flow
+3. Diversificaton
+
+Bonds are basically load lending instruments
+
+There are two types of bonds:
+1. Secured Bonds (More secure, less interest)
+2. Unsecured Bonds (Less secure, more interest)
+
+We can buy and sell bonds from online platforms such as GoldenPi
+Each bond will e rated by different rating agencies.
+And each rating agencies will have their own rating scale.
+
+Check for the bond issuing entity's profile.
+
+
+
+
+
+
+
+
+
+Credit Card - prey on the uninformed and undisciplined
+------------------------------------------------------
+Always ask for the renewal/annual fee waiver
+
+Always track calls made to financial companies (bank, credit card companies)
+Make a excel and take notes of each call and refer to that every time you call.
+
+
+
+
+
+SPENDING
+---------
+Know the difference between BEING CHEAP and CONSCIOUS SPENDING
+
+There is power in saying no to the things we don’t care about. But there is
+even more power in saying a big YES to the things we love.
+
+Remember, getting a raise is not about you, It's about you demonstrating your
+value to your employer
+
+You can’t tell them you need more money because your expenses are higher.
+Nobody cares. You can, however, show how your work has been contributing to
+the company’s success and ask to be compensated fairly.
+Here’s what you need to do:
+
+Three to six months before your review:
+Become a top performer by collaboratively setting expectations with your boss,
+then exceeding those expectations in every way possible.
+
+One to two months before your review:
+Prepare a “briefcase” of evidence to support the exact reasons why you should
+be given a raise.
+
+One to two weeks before your review:
+Extensively practice the conversation you’ll have with your boss, experimenting
+with the right tactics and scripts.
+
+
+SECURITIES
+----------
+Securities are tradable financial instruments with some monetary value.
+They can take differenct forms such as stock(equity), bonds, futures and
+options. They can be sold and bought in various financial markets like the
+exchange market and the bond market.
+
+
+
+FINANCIAL INSTRUMENT
+--------------------
+Financial instruments are assets that can be traded, or they can also be seen
+as packages of capital that may be traded. Most types of financial instruments
+provide efficient flow and transfer of capital throughout the world’s
+investors.
+
+Common examples of financial instruments include stocks, exchange-traded funds
+(ETFs), mutual funds, real estate investment trusts (REITs), bonds,
+derivatives contracts (such as options, futures, and swaps), checks,
+certificates of deposit (CDs), bank deposits, and loans.
+
+Two types of financial instrument
+1. Cash Instruments - Cash instruments are financial instruments with values
+directly influenced by the condition of the markets.
+    -> Securities
+    -> Deposits and loan
+
+2. Derivative Instruments - Derivative instruments are financial instruments
+that have values determined from underlying assets, such as resources,
+currency, bonds, stocks, and stock indexes.
+    -> SAFE - Synthetic Agreement for Foreign Exchange
+    -> Forward
+    -> Futures
+    -> Options
+    -> Interest Rate Swaps
+
+3. Foreign Exchange Instruments - Foreign exchange instruments are financial
+instruments that are represented on the foreign market and primarily consist of
+currency agreements and derivatives.
+    -> Spot
+    -> Outright Forwards
+    -> Currency Swaps
+
+Asset classes of Financial Instrument
+-------------------------------------
+There are two asset classes for financial instruments
+
+1. Debit based Financial Instrument
+Debt-based financial instruments are categorized as mechanisms that an entity
+can use to increase the amount of capital in a business.
+Examples include bonds, debentures, mortgages, U.S. treasuries, credit cards, and line of
+credits (LOC), Treasury bills (T - Bills)
+
+2. Equity based Financial Instrument
+Equity-based financial instruments are categorized as mechanisms that serve as
+legal ownership of an entity.
+Examples include common stock, ETF's and mutual funds
+
+INDIAN SECURITIES MARKETS
+-------------------------
+The market in which securities are issued, purchased by investors, and
+subsequently transferred among investors is called the securities market.
+The securities market has two interdependent and inseparable segments, viz., the
+primary market and secondary market.
+
+PRIMARY MARKET
+--------------
+The primary market is where securities are created. It's in this market that
+firms sell (float) new stocks and bonds to the public for the first time. An
+initial public offering, or IPO, is an example of a primary market. These
+trades provide an opportunity for investors to buy securities from the bank
+that did the initial underwriting for a particular stock. An IPO occurs when a
+private company issues stock to the public for the first time.
+
+SECONDARY MARKET
+---------------
+The Secondary market is commonly referred to as STOCK MARKET
+Example: NYSE, NSE, BSE, NASDAQ
+
+The defining characteristic of the secondary market is that investors trade
+among themselves.
+That is, in the secondary market, investors trade previously issued securities
+without the issuing companies' involvement. For example, if you go to buy
+Amazon (AMZN) stock, you are dealing only with another investor who owns shares
+in Amazon. Amazon is not directly involved with the transaction.
+
+
+
+CREDIT SCORE
+============
+
+CIBIL Score is a 3-digit numeric summary of your credit history, rating and
+report, and ranges from 300 to 900. The closer your score is to 900, the better
+your credit rating is.
+
+The Credit Information Bureau (India) Limited (CIBIL) is the most popular of
+the four credit information companies licensed by Reserve Bank of India.
+
+There are three other companies also licensed by the RBI to function as credit
+information companies. They are EXPERIAN, EQUIFAX and HIGHMARK. However, the
+most popular credit score in India is the CIBIL score.
+
+CIBIL India is part of TRANSUNION, an American multinational group. Hence
+credit scores are known in India as the CIBIL Transunion score.
+
+
+Net Worth = Total Assets - Total Liabilities
+
+
+NIFTY - National Stock Exchange FIFTY
+-------------------------------------
+SENSEX - Stock Exchnage Sensitive Index
+---------------------------------------
+
+
+
+
+
+
+
+
+MONEY
+=====
+
+Commodity Money
+Fiat Money
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

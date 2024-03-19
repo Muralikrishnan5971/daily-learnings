@@ -1,0 +1,295 @@
+class PayrollInfoPage(SeleniumBase):
+
+	job_code = "WeeklyPay"
+	wage_type = "Salaried"
+
+	def __init__(self, driver):
+		self.driver = driver
+		self.locators()
+	
+	def locators(self):
+		self.employee_job_code = [self.XPATH, "//div[@id = 'jobCode']/div/div"]
+		self.employee_job_code_dropdown = [self.XPATH, "//div[@id = 'jobCodeSearchList']/div/ul/li"]
+		self.employee_wage_type = [self.XPATH, "//div[@id = 'payrollWageType']/div/div/div"]
+		self.employee_wage_type_dropdown = [self.XPATH, "//div[@id = 'payrollWageTypeSearchList']/div/ul/li"]
+	
+	def select_employee_job_code(self):
+		self.selectJQueryDropDown(
+			self.employee_job_code,
+			self.employee_job_code_dropdown,
+			[self.job_code]
+		)
+	
+	def select_employee_wage_type(self):
+		self.selectJQueryDropDown(
+			self.employee_wage_type,
+			self.employee_wage_type_dropdown,
+			[self.wage_type]
+		)
+
+def create_new_employee_with_payroll(self):
+
+		el = self.click_create_employee()
+		el.enter_employee_id()
+		el.enter_employee_email_id()
+		el.enter_employee_first_name()
+		el.enter_employee_last_name()
+		el.enter_employee_phone_number()
+		el.enter_employee_address_line1()
+		el.enter_employee_zip_code()
+		time.sleep(3)
+		el.enter_employee_passcode()
+		ed = el.click_next_button()
+		ed.select_employee_role()
+		ed.select_employee_job_title()
+		ed.select_employee_department_type()
+		ed.select_employee_department()
+		ed.select_employee_start_date()
+		ed.select_employee_dob()
+		ed.enter_employee_ssn()
+		ed.select_employee_gender()
+		ed.select_employee_work_schedule()
+		ed.select_employee_start_day()
+		pi = ed.click_next_button()
+		pi.select_employee_job_code()
+		pi.select_employee_wage_type()
+		
+		time.sleep(20)
+
+
+
+
+	def enter_employee_address_line1(self):
+		"""
+		Method to enter address line one
+		"""
+		self.enter_text(self.employee_address_line1, self.employee_address_line1_data)
+
+	def enter_employee_zip_code(self):
+		"""
+		Method to enter zip code
+		"""
+		self.enter_text(self.employee_zip_code, self.employee_zip_code_data)
+	
+	def enter_emoloyee_city(self):
+		"""
+		Method to enter employee city
+		"""
+		self.enter_text(self.employee_city, self.employee_city_data)
+	
+	def enter_employee_state(self):
+		"""
+		Method to enter employee state
+		"""
+		self.enter_text(self.employee_state, "Willington")
+	
+	def enter_employee_country(self):
+		"""
+		Method to enter employee country
+		"""
+		self.enter_text(self.employee_country, self.employee_country_data)
+
+
+	
+	def select_employee_state(self):
+		"""
+		Method to select employee state dropdown
+		"""
+		self.selectJQueryDropDown(
+			self.select_state,
+			self.state_dropdown,
+			[self.employee_state_data]
+		)
+
+self.employee_address_line1 = [self.XPATH, "(//input[@id = 'line1'])[1]"]
+		self.employee_zip_code = [self.XPATH, "(//input[@id = 'postalCode'])[1]"]
+		self.employee_city = [self.XPATH, "(//input[@id = 'city'])[1]"]
+		self.employee_county = [self.XPATH, "(//input[@id = 'county'])[1]"]
+		self.employee_state = [self.XPATH, "//div[@id='state']/div"]
+		self.employee_country = [self.ID, "country"]
+		self.taxation_address_same_as_employee_address = [self.ID, "taxationAddressCheckbox"]
+
+
+		self.select_state = [self.XPATH, "(//div[@id = 'state']/div)[1]"]
+		self.state_dropdown = [self.XPATH, "//div[@id = 'stateSearchList']/div/ul/li"]
+
+	employee_address_line1_data = f.getAddress()
+	employee_address_line2_data = f.getAddress()
+	employee_zip_code_data = dm.get_dealer_zipcode()
+	employee_city_data = f.getCity()
+	employee_county = "Crittenden"
+	employee_country = f.getCountry()
+
+	employee_address_line1_data = f.getAddress()
+	employee_address_line2_data = f.getAddress()
+	employee_zip_code_data = dm.get_dealer_zipcode()
+	employee_city_data = f.getCity()
+	employee_county = "Crittenden"
+	employee_country = f.getCountry()
+
+	def enter_employee_job_title(self):
+		"""
+		Method to enter employee job title dropdown
+		"""
+		self.enter_text(locator=self.select_job_title, data=self.job_title, enter=True)
+
+
+
+
+	def select_employee_paycycle(self):
+		"""
+		Method to select employee paycycle
+		"""
+		self.selectJQueryDropDown(
+			self.select_pay_cycle,
+			self.select_dropdown,
+			[self.pay_cycle]
+		)
+
+def enter_employee_start_date(self):
+		self.enter_text(self.start_date, "09/27/2023")
+
+	def enter_employee_ssn(self):
+		self.enter_text(self.employee_ssn, "123456789")
+
+	def select_employee_gender(self):
+		self.selectJQueryDropDown(
+			self.select_gender,
+			self.gender_dropdown,
+			[self.gender]
+		)
+	
+	def select_employee_start_date(self):
+		self.click(self.employee_hire_date)
+		date_list = str(date.today()).split("-")
+		current_date = date_list[1]+"/"+date_list[2]+"/"+date_list[0]
+		self.enter_text(locator=self.select_start_date, data=current_date, enter=True)
+	
+	def select_employee_dob(self):
+		self.click(self.employee_dob)
+		date_of_bith = "07/01/1985"
+		self.enter_text(locator=self.select_start_date, data=date_of_bith, enter=True)
+
+
+		self.select_pay_cycle = [self.ID, "paymentCycle"]
+		self.start_date = [self.XPATH, "//div[@id = 'dateInput']/span/div/input[@data-test = 'hireDate']"]
+
+		self.employee_ssn = [self.ID, "ssn"]
+		self.select_gender = [self.ID, "gender"]
+		self.gender_dropdown = [self.XPATH, "//div[@id = 'genderSearchList']/div/ul/li"]
+		self.employee_hire_date = [self.XPATH, "//input[@data-test='hireDate']"]
+		self.employee_dob = [self.XPATH, "//input[@data-test='dob']"]
+		self.select_start_date = [self.XPATH, "//input[@class = 'ant-calendar-input ']"]
+
+
+def get_dealer_zipcode(self):
++        """
++        this method get dealer address
++        @return:
++        """
++        try:
++            response = REQUESTS.get(url=ep.dealerMaster)
++            assert response.status_code == 200
++            res = json.loads(response.text)
++            return res["data"]["dealerAddress"][0]["zipCode"]
++        except Exception as error:
++            logger.error(f"get dealer zipcode is failing with traceID "
++                         f"{response.headers['traceId']} and error {response.text}")
++            raise error
+
+
+
+
+
+ def get_employee_role_list(self):
+        """
+        Get employee role list
+        :return:
+        """
+        role_list = []
+        try:
+            response = REQUESTS.get(url=eo.employee_role)
+            assert response.status_code == 200
+            response = json.loads(response.text)
+            for data in response['data']:
+                role_list.append(data['name'])
+            return role_list
+        except Exception as error:
+            logger.error(
+                f"Get user profile, failed with response {response.text} \
+                and traceId is `{response.headers['traceId']}`")
+            raise error
+    
+    def get_employee_job_title_list(self):
+        """
+        Get employee job title list
+        :return:
+        """
+        response = None
+        job_title = []
+        try:
+            content = COMMONLIB().get_file_path_or_content(
+            path = "src/data/arc/core/employee_onboarding/employee_job_title.json", content=True)
+            response = REQUESTS.post(url=eo.employee_job_title, data=json.dumps(content))
+            assert response.status_code == 200
+            response = json.loads(response.text)
+            for data in response['data']['hits']:
+                job_title.append(data['jobTitle'])
+            return job_title
+        except Exception as error:
+            logger.error(
+                f"Get user profile, failed with response {response.text} \
+                and traceId is `{response.headers['traceId']}`")
+            raise error
+
+
+
+
+
+def get_employee_detail(self, email=None, employee_detail=None):
+		'''
+		['', '654433', 'autotestemployeeonly@gmail.com', 'Auto Test', 'Employee', 'Controller Auto', 
+		'BDC Manager', 'Service', '04 - Mechanical', '-', 'Active', '-', '-', 'Complete', 'No', '-', 
+		'-', '-', 'No', 'No', ''] '''
+		emp_keys = ["employee_number", "email", "first_name", 
+			  		"last_name", "role", "status",
+					"job_title", "department", "department_type", 
+					"skills", "pay_frequency", "job_code", "creation_status", 
+					"payroll_employee", "fed_exempt", "citizenship", "seasonal_employee", 
+					"corporate_officer"]
+		emp_details_dict = dict.fromkeys(emp_keys, None)
+		emp_details_list = []
+		self.click(self.search_icon)
+		self.enter_text(self.search_text, email, enter=True)
+		time.sleep(2)
+		elements = self.find_elements(self.single_employee_list_row[0], self.single_employee_list_row[1])
+		for e in elements:
+			emp_details_list.append(e.text)
+		emp_details_dict["employee_number"] = emp_details_list[1]
+		emp_details_dict["email"] = emp_details_list[2]
+		emp_details_dict["first_name"] = emp_details_list[3]
+		emp_details_dict["last_name"] = emp_details_list[4]
+		emp_details_dict["role"] = emp_details_list[5]
+		emp_details_dict["status"] = emp_details_list[6]
+		emp_details_dict["job_title"] = emp_details_list[7]
+		emp_details_dict["department"] = emp_details_list[8]
+		emp_details_dict["deapartment_type"] = emp_details_list[9]
+		emp_details_dict["skills"] = emp_details_list[10]
+		emp_details_dict["pay_frequency"] = emp_details_list[11]
+		emp_details_dict["job_code"] = emp_details_list[12]
+		emp_details_dict["creation_status"] = emp_details_list[13]
+		emp_details_dict["payroll_employee"] = emp_details_list[14]
+		emp_details_dict["fed_excempt"] = emp_details_list[15]
+		emp_details_dict["citizenship"] = emp_details_list[16]
+		emp_details_dict["seasonal_employee"] = emp_details_list[17]
+		emp_details_dict["corporate_officer"] = emp_details_list[18]
+	
+		return emp_details_dict[employee_detail]
+		
+
+
+
+
+
+
+

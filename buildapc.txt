@@ -1,0 +1,33 @@
+CHECKLIST
+=========
+
+1. PC Case - ATX (Bigger)
+2. Motherboard
+    - You need a motherboard that works with the CPU you choose;
+    - the board should be the right size and shape ("form factor") for your
+      case;
+    - it should have the external ports and internal expansion slots you need
+    for what you plan to install.
+3. CPU (Intel series or AMD Ryzen series)
+4. CPU Liquid Cooler
+5. Memory Kits - RAM
+6. Storage - SSD's & Hardisk
+7. Power Supply
+8. Graphics Card
+
+
+
+Murali1795
+
+
+
+
+
+
+
+
+
+
+
+
+

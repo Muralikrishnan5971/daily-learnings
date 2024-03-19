@@ -1,0 +1,284 @@
+
+Please find validation report on STAGE env:
+
+send request with single end point in request body - 200 - PASS
+ 
+
+send request with end point with same rule name should fail - 200 - PASS
+https://app.tekioncloud.com/internal/approval-management/view-request/9f21c59e-a6cf-41d5-967b-98c6326458eb
+https://app.tekioncloud.com/internal/approval-management/view-request/98d97013-6cd2-44c9-85d4-da5008cfbeb6
+
+send request with multiple end point with unique rule name
+https://app.tekioncloud.com/internal/approval-management/view-request/aa7f0347-0236-4597-81ec-1701ff59f9d5
+
+
+send request with multiple end points in request body with one empty path should add to failed list
+https://app.tekioncloud.com/internal/approval-management/view-request/d477878c-1d73-4a46-8dd4-2e8eb4af4b88
+
+
+Permission --> 05af120e-9c23-4c0a-843e-05231af61f77
+Search --> 4051a47b-c980-46ca-80e9-1d3beb8774f5
+
+Bulk update rate limit rule "httpMethod" field
+https://app.tekioncloud.com/internal/approval-management/view-request/220fa34d-8f28-4742-b673-8888b8df656d
+
+Bulk update rate limit rule "filterAt" field
+https://app.tekioncloud.com/internal/approval-management/view-request/428b3e0d-7e5f-464e-a61f-15176498445d
+
+Bulk update rate limit rule "ruleAppliedForAnyHeaderValue" field
+https://app.tekioncloud.com/internal/approval-management/view-request/2130fb75-c5e0-47e3-b9bd-9782fd3e0854
+
+Bulk update rate limit rule "softLimit" and "thresholdForSoftLimitInPercent" field
+https://app.tekioncloud.com/internal/approval-management/view-request/e13bd607-b590-4a8b-9861-e74f91c74e79
+
+Bulk update rate limit rule "limit" and "order" field
+https://app.tekioncloud.com/internal/approval-management/view-request/1016dfc1-bc95-4dfd-9425-1688185fd5e8
+
+Bulk update rate limit rule "level" and "action" field
+https://app.tekioncloud.com/internal/approval-management/view-request/ccf0749c-7140-4ea7-8ec5-27311332a917
+
+
+{
+    "rateLimitRuleRequests": [
+        {
+            "name": "test permission api",
+            "rateLimitRuleId": "05af120e-9c23-4c0a-843e-05231af61f77",
+            "path": "/api/settings/u/approval/permission",
+            "httpMethod": "POST",
+            "filterAt": "RESPONSE",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 5,
+            "thresholdForSoftLimitInPercent": "40",
+            "limit": 10,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "ALLOW",
+            "level": "EDGE",
+            "serviceName": "Permission",
+            "headerForRateMeasurement": "4",
+            "ruleAppliedForAnyHeaderValue": false,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        },
+        {
+            "name": "test search api",
+            "rateLimitRuleId": "4051a47b-c980-46ca-80e9-1d3beb8774f5",
+            "path": "/api/approval/u/v2/search",
+            "httpMethod": "POST",
+            "filterAt": "RESPONSE",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 2,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 6,
+            "order": 2,
+            "status": "ACTIVE",
+            "action": "EXPONENTIAL_BACKOFF",
+            "level": "NODE",
+            "serviceName": "Search",
+            "headerForRateMeasurement": "4",
+            "ruleAppliedForAnyHeaderValue": false,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        }
+    ]
+}
+
+{
+    "rateLimitRuleRequests": [
+        {
+            "name": "dummy test rule 1",
+            "rateLimitRuleId": "736c886c-e79a-476b-8fb7-c01aba01a634",
+            "path": "/dummy/u/test1",
+            "httpMethod": "GET",
+            "filterAt": "REQUEST",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "DUMMY_SERVICE",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        },
+        {
+            "name": "dummy test rule 2",
+            "rateLimitRuleId": "0423bbd5-5513-4cf6-8b5f-68d908836268",
+            "path": "/dummy/u/test2",
+            "httpMethod": "GET",
+            "filterAt": "REQUEST",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "DUMMY_SERVICE",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        }
+    ]
+}
+
+
+
+send request with end point with same rule name should fail - 200 - PASS
+https://app.tekioncloud.com/internal/approval-management/view-request/0f3634dc-62bb-45ac-a3c4-b118b50723c9
+https://app.tekioncloud.com/internal/approval-management/view-request/9ed9f141-1789-4370-93b0-69d3aea5739e
+
+send request with multiple end point with unique rule name
+https://app.tekioncloud.com/internal/approval-management/view-request/27504005-b759-43e0-bb31-b3e7f76702c2
+
+send request with multiple end points in request body with one empty path should add to failed list
+https://app.tekioncloud.com/internal/approval-management/view-request/f7bf2749-b629-4941-b90b-5f04e15144d6
+
+Bulk update rate limit rule "httpMethod" field
+https://app.tekioncloud.com/internal/approval-management/view-request/44a198f6-21fb-4d2e-9e99-6f0e590f1287
+
+Bulk update rate limit rule "filterAt" field
+https://app.tekioncloud.com/internal/approval-management/view-request/8c375e26-92db-4309-bc65-4a9541b7eef1
+
+Bulk update rate limit rule "ruleAppliedForAnyHeaderValue" field
+https://app.tekioncloud.com/internal/approval-management/view-request/fce836ac-4a3c-4fa1-9463-137161584626
+
+Bulk update rate limit rule "softLimit" and "thresholdForSoftLimitInPercent" field
+https://app.tekioncloud.com/internal/approval-management/view-request/2f00242f-774e-4f5c-a7d1-fec3e9c9bc31
+
+Bulk update rate limit rule "limit" and "order" field
+https://app.tekioncloud.com/internal/approval-management/view-request/32bd2170-2907-4740-b60d-10411689fa96
+
+Bulk update rate limit rule "level" and "action" field
+https://app.tekioncloud.com/internal/approval-management/view-request/d2622a49-47b8-4894-aa92-0e58e1558ad5
+
+
+
+
+unique service name
+https://app.tekioncloud.com/internal/approval-management/view-request/91f05201-16b2-4409-8cdd-655c21966a71
+
+https://app.tekioncloud.com/internal/approval-management/view-request/6d789853-b922-4a7f-9362-aaa6794b63b1
+
+COPYROLE
+e37f6a9c-4fcf-47f7-890c-93bb02f67e1c
+
+SEARCHROLE
+f6e5fed7-eefa-40e1-ad05-2c427a7b9246
+
+Bulk update rate limit rule "filterAt" field
+https://app.tekioncloud.com/internal/approval-management/view-request/0f1f45f4-7dfb-4268-a981-4e2b0f4ec251
+
+Bulk update rate limit rule "httpMethod" field
+https://app.tekioncloud.com/internal/approval-management/view-request/6fc5d7eb-9083-48f9-9ca1-5dcafa8fd6b3
+
+Bulk update rate limit rule "level" and "action" field
+https://app.tekioncloud.com/internal/approval-management/view-request/3025cd33-366e-4a26-a25e-6d40c27c1048
+
+Bulk update rate limit rule "softLimit" and "thresholdForSoftLimitInPercent" field
+https://app.tekioncloud.com/internal/approval-management/view-request/d4dce647-54c4-472d-bfb6-a57430b0dab2
+
+{
+    "rateLimitRuleRequests": [
+        {
+            "name": "copy role api",
+            "rateLimitRuleId": "e37f6a9c-4fcf-47f7-890c-93bb02f67e1c",
+            "path": "/api/settings/u/admin/copy-role",
+            "httpMethod": "GET",
+            "filterAt": "REQUEST",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "COPYROLE",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        },
+         {
+            "name": "search role",
+            "rateLimitRuleId": "f6e5fed7-eefa-40e1-ad05-2c427a7b9246",
+            "path": "/api/settings/u/admin/ml/ui/roles-with-users",
+            "httpMethod": "GET",
+            "filterAt": "REQUEST",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "SEARCHROLE",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        }
+    ]
+}
+
+{
+    "rateLimitRuleRequests": [
+        {
+            "name": "create role",
+            "rateLimitRuleId": "3bb12c70-368a-42c8-a5aa-570ee26dd37a",
+            "path": "/api/settings/u/admin/role",
+            "httpMethod": "POST",
+            "filterAt": "RESPONSE",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "CREATEROLE",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        },
+        {
+            "name": "test permission api",
+            "rateLimitRuleId": "7645663c-0047-4ce2-bb74-92843bc679d6"
+            "path": "/api/settings/u/approval/permission",
+            "httpMethod": "POST",
+            "filterAt": "RESPONSE",
+            "rateMeasuredOn": "DEALER_ID",
+            "duration": 600,
+            "softLimit": 3,
+            "thresholdForSoftLimitInPercent": "60",
+            "limit": 5,
+            "order": 1,
+            "status": "ACTIVE",
+            "action": "BLOCK_REQUEST",
+            "level": "SERVICE",
+            "serviceName": "Permission",
+            "headerForRateMeasurement": "dealerid",
+            "ruleAppliedForAnyHeaderValue": true,
+            "moduleNameForTeamsAlert": "RATELIMITINGSERVICE_ALERTS"
+        }
+    ]
+}
+
+
+{
+    "field": "active",
+    "operator": "IN",
+    "values": [
+        true
+    ]
+}

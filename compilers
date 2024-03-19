@@ -1,0 +1,27 @@
+
+
+Compilation -> converting source code to machine code
+
+LLVM -> LOW LEVEL VIRTUAL MACHINE.
+---------------------------------
+
+LLVM is a compiler and a toolkit for building compilers, which are programs
+that convert instructions into a form that can be read and executed by a
+computer.
+
+The LLVM project is a collection of modular and reusable compiler and toolchain
+technologies. LLVM helps build new computer languages and improve existing
+languages. It automates many of the difficult and unpleasant tasks involved in
+language creation, such as porting the outputted code to multiple platforms and
+architectures.
+
+LLVM and the GNU Compiler Collection (GCC) are both compilers. The difference
+is that GCC supports a number of programming languages while LLVM isn’t a
+compiler for any given language. LLVM is a framework to generate object code
+from any kind of source code.
+
+GCC -> GNU Comiler Collection
+-----------------------------
+-> https://www.incredibuild.com/integrations/gcc
+
+
