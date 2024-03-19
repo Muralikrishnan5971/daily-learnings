@@ -1,0 +1,41 @@
+SORTING
+=======
+
+QUICK SORT
+----------
+quick sort is based on DIVIDE and CONQUER algorithm, that picks an
+element as pivot and partitions the array around the picked pivot,
+by placing the pivot in its correct positon in the sorted array.
+
+1. choose a pivot ( usually last or random )
+2. store elements less than pivot in left subarray
+   store elements greater than pivot in right subarray
+3. call quicksort recusively on the left subarray
+   call quicksort recusively on the right subarray
+
+After every pass, we are putting the pivot in the correct position,
+
+SELECTION SORT
+--------------
+
+find the minimum value and place it in the front.
+worst case performance: O(n2)
+best case performance: O(n2)
+average case performace: O(n2)
+
+space complexity is O(1) since a temp variable is used.
+
+Selection sort is used when,
+-> a small list is to be sorted
+-> ** cost of swapping does not matter
+-> cost of writing to a memory matters (like in flash memory)
+as number of swaps/writes in O(n) as compared to O(n2) opf bubble sort
+
+*** Inversion count in arrays,
+books on algorithms ****
+
+
+
+
+
+
