@@ -109,7 +109,24 @@ Make sure that /usr/local/bin is in your $PATH.
 
 Functions as first class objects:
 --------------------------------
+In programming languages, the term "first-class object" or "first-class citizen" refers to the concept that entities (such as functions or values) can be:
 
+    Assigned to Variables:
+        You can store them in variables, data structures, or constants.
+
+    Passed as Arguments:
+        You can pass them as arguments to functions or methods.
+
+    Returned from Functions:
+        You can return them as results from functions or methods.
+
+    Stored in Data Structures:
+        You can store them in data structures like arrays or objects.
+
+    Used in Expressions:
+        You can use them in expressions or statements.
+
+When a language supports these properties for entities like functions or values, it is said to have first-class functions or first-class objects.
 
 
 

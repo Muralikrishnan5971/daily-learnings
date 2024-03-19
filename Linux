@@ -7,7 +7,7 @@ https://www.masswerk.at/jsuix/
 
 
 Components of UNIX:
-
+ 
 Two components of Unix:e
 
 1. Shell
@@ -62,7 +62,7 @@ cd        ---> change directory
 touch     ---> create a empty file
 rmdir     ---> remove a directory
 rm        ---> remove a file (mostly should be used to remove directory also)
-rm -rf    ---> to remove a directory with sub directory and files, -r is recursive, -f force
+rm -rf    ---> to remove a directory with sub directory and files, -r is recursive, -f force 
 
 date      ---> display current date
 cal       ---> display current month calendar
@@ -91,7 +91,7 @@ All files in the Linux are divided into three types.
 
 Normal Files
 ------------
-These file contains data.
+These file contains data. 
 These files can be normal text files or binary files (image, audio, video files)
 
 adb.txt
@@ -104,12 +104,12 @@ Directory Files
 ---------------
 These files represent directories
 As we use folder terminology, in Linux we use Directory terminlology.
-Directories contains files and sub directories
+Directories contains files and sub directories 
 
 Linux identifies the file type by the data present in the file.
 If a empty file is present, linux can identify the type.
 
-** Example, if we create .jpg file and write text data into it,
+** Example, if we create .jpg file and write text data into it, 
 linux will identify it as a text file and not a image file **
 
 Device Files
@@ -142,7 +142,7 @@ cd / --> enters the root directory
 
 File System Navigation
 
-For every user a seperate directory will be created, that is called User home directory.
+For every user a seperate directory will be created, that is called User home directory.  
 
 /    ---> root directory
 
@@ -204,11 +204,11 @@ ls -l  					---> lists all files and directory in LONG LISTING format
 
 -rw-r--r--  1 fmganesa  staff     52 Jan 24 21:29 count.txt
 
- '-'      				---> first character represents the type of file
+ '-'      				---> first character represents the type of file 
  'rw-r--r--'            ---> remaining nine characters represents permissions
  '1'                    ---> 1 represents the No of linked files
  'fmganesa'				---> user/owner
- 'staff'				---> group the user belong to
+ 'staff'				---> group the user belong to 
  '52'					---> size of the file
  'Jan 24 21:29'			---> created time or last modified time
  'count.txt'			---> name of the file
@@ -223,7 +223,7 @@ ls -l  					---> lists all files and directory in LONG LISTING format
 
 
 man ls       			---> Opens manual page (documentation) for the ls command
-man ls > ls_docu.text	--->
+man ls > ls_docu.text	---> 
 
 wc -l ls_docu.txt       ---> prints the number of lines in th file
 
@@ -295,9 +295,9 @@ $*   ---> All command line as a single string
           "$1c$2c$3c$4" where c is the first chracter of the IFS (Internal Field Seperator)
           The deault is space.
 
-The shell has one environment variable, which is called the Internal Field Separator (IFS). This variable indicates how the words are separated on the command line. The IFS variable is, normally or by default, a white space (' ').
+The shell has one environment variable, which is called the Internal Field Separator (IFS). This variable indicates how the words are separated on the command line. The IFS variable is, normally or by default, a white space (' '). 
 
-set  ---> display all pre defined environment variables
+set  ---> display all pre defined environment variables  
 env  ---> display all pre defined environment variables
 
 set | grep IFS
@@ -334,7 +334,7 @@ Miscellaneous commands
 
 ps ---> process status command
 id ---> tells all about us
-hostname --->
+hostname ---> 
 uname
 uname -r
 uname -a
@@ -396,7 +396,7 @@ chmod permissions filename
 We can change permissions using two modes:
 
 1. Symbolic mode:
-u - user
+u - user   
 g - group
 o - other
 
@@ -439,7 +439,7 @@ echo the monkey is flying high | awk '{print $2}'   ---> this prints the second 
 we can specify the delimiting charater from default value space to any thing by below command,
 here the delimiting character in :
 
-awk -F':' '{print $3}' /etc/passwd
+awk -F':' '{print $3}' /etc/passwd   
 
 *********************************************************
 
@@ -460,7 +460,7 @@ unzip filename.zip -d /destination/folder_path
 
 The watch command is a utility from the procps-ng package.
 This package is by default available on all Linux distros.
-We can use the watch command to execute a command at regular intervals.
+We can use the watch command to execute a command at regular intervals. 
 It displays its output on a console or terminal in fullscreen mode.
 
 watch -n 1 -d find .
@@ -532,7 +532,7 @@ grep comamnd
 
 ed is an oldest line based bulit-in editor that comes with unix based systems.
 quit and ed editor using ctrl+D
-the ed commands g/re/p command constitute to the linux grep command, which stands for
+the ed commands g/re/p command constitute to the linux grep command, which stands for 
 grep --> global/regular expression search/print
 In ed, the command g/re/p would print all lines featuring a specified pattern match
 
@@ -564,7 +564,7 @@ ps aux
 
 top command
 
-The top command is another highly recommended method to see your Linux servers resource usage.
+The top command is another highly recommended method to see your Linux servers resource usage. 
 One can see a list of top process that using the most memory or CPU or disk.
 
 
@@ -583,7 +583,7 @@ cmd_1 | cmd_2		# pass output of command 1 as input for command 2
 cat
 cat -n
 tac    (tail -r path/to/file)
-head
+head 
 head -n 25 path/to/file    ---> prints first 25 lines from the file
 tail
 tail -n 25 path/to/file    ---> prints last 25 lines from the file
@@ -611,7 +611,7 @@ Cut out fields from `stdin` or files.
 The Unix keeps tracks of the time by counting the number of seconds since a special date in history ( January 1, 1970, 00:00:00 UTC).
 There is no special meaning behind the date, it was choosen since it was easy.
 
-date -r 23413312341212 --> will return the corresponding time and date
+date -r 23413312341212 --> will return the corresponding time and date  
 
 The time stamp is represented in signed integers.
 
@@ -620,7 +620,7 @@ Prime numbers play a role in encryption schemes and other cryptographic protocol
 Larget signed 32 bit integer 2147483647
 
 https://www.youtube.com/watch?v=QOeWxA9sXFY
-https://www.youtube.com/watch?v=QJQ691PTKsA
+https://www.youtube.com/watch?v=QJQ691PTKsA    
 
 minus integers to represent dates back from jan 1 1970
 
@@ -630,7 +630,7 @@ positive integers to represent dates onwards from jan 1 1970
 
 date +%s   --> displays the time in seconds since epoch
 
-date -r 1233242342  --> displays human readable time
+date -r 1233242342  --> displays human readable time 
 
 
 To kill a process in linux
@@ -638,7 +638,7 @@ To kill a process in linux
 
 kill and killall command, two commands that give absolute control over whether an application can continue running or not.
 
-Which command should we use. Almost always use killall.
+Which command should we use. Almost always use killall. 
 Because with killall command, we don't have to worry about finding the PID's of the process.
 
 With killall, we need to know the real name of the process (actuall command and not the name of the application)
@@ -670,7 +670,7 @@ ps -p PID ---> Replace "PID" with the actual process ID for which you want to ge
 
 DNS Cache: (for fixing 504 Gateway timeout error)
 
-Linux, Windows, Mac save the name resolution information in the form of a DNS cache.
+Linux, Windows, Mac save the name resolution information in the form of a DNS cache. 
 We can clear our DNS cache.  we Need to flush our cache.
 
 For MAC: sudo killall -HUP mDNSResponder
@@ -680,7 +680,7 @@ sudo killall -HUP mDNSResponder --> restarts the process
 
 
 
-Learn Linux with these 6 websites
+Learn Linux with these 6 websites 
 
 1. Sysxplore
 sysxplore.com
@@ -711,7 +711,7 @@ echo "the monkey is flying high"
 myfilepath="~/mkbin/myfile.txt"
 Wpath="~/mkbin/W"
 
-txt=$(cat "$myfilepath")
+txt=$(cat "$myfilepath") 
 W=$(cat "$Wpath")
 
 
@@ -720,74 +720,13 @@ echo $W
 
 The above script throwing no such file or directory error.
 
-The issue in your script is related to the tilde (~) expansion when assigning values to myfilepath and Wpath.
+The issue in your script is related to the tilde (~) expansion when assigning values to myfilepath and Wpath. 
 In Unix-like shells, tilde expansion is not performed when the tilde is within double quotes.
 
 You should use the full path or use tilde expansion outside of double quotes. Here's a corrected version of your script:
 
 myfilepath=~/mkbin/myfile.txt
 Wpath=~/mkbin/W
-
-UNIX - Notes
-----
-
-POSIX is a group of standards specified by the IEEE for unix based systems
-
-Portable Operating System Interface for Computer Environments
-
-Depending upon the degree of compliance with the standards, one can classify
-operating systems as fully or partly POSIX compatible.
-
-The "write once, adopt everywhere" approach to the development of specfications
-means that once software has been developed on any POSIX-compliant UNIX system,
-it can be easily ported to another POSIX-compliant UNIX machine with minimum
-modifications.
-
-The Unix Arichitecture
-----------------------
-
-Division of labour: The kernel interacts with the hardware and the shell
-interacts with the user. This is the division of labour between the kernel and
-the shell.
-
-
-Two simple entites the support the UNIX system are the abstraction called File
-and Process.
-
-Kaare Christian (Author of UNIX Operating System) detects two powerful
-illusions in them -> files and process
-
-****Files have place and Process have life****
-
---> UNIX doesn't really care to know the type of the file. It even considers
-directories and devices as members of the files system.
-
---> A file to UNIX is just an array of bytes and can contain virtually anything
---> text, object code or a directory structure.
-
-
-Process which is the name given to a file when it is executed as program.
-We can say that a process is simply the 'time image' of an executable file.
-We treat processes as living organisms which have parents, children and
-grandchildren. And born, even reborn and die.
-
-Like files, processes also belong to a seperate hierarchy tree structure.
-
-UNIX is a multiuser system, the resources are actually shared between all users.
-
-UNIX is a multitasking system. A single user can also run multiple tasks
-concurrently.
-
-
-************ In a multitasking environment, a user sees one job running in the
-foreground; rest run in the background. we can switch jobs between background
-and foreground, suspend or even terminate them. programmers can use this
-feature in a very productive way. we can edit a c program, then suspend it to
-run the complier; you don't have to quit the editor to do that.**************
-
-**************
-
-
 
 
 

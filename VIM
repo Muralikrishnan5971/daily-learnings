@@ -36,14 +36,14 @@ INSERT mode
 
 VISUAL mode
 
-Visual Mode is probably used a little less than the first two modes mentioned, but can still be extremely useful.
-It’s mostly used to highlight blocks of text, and then perform a command on the entire block. For example,
+Visual Mode is probably used a little less than the first two modes mentioned, but can still be extremely useful. 
+It’s mostly used to highlight blocks of text, and then perform a command on the entire block. For example, 
 you maybe highlight a block and indent the entire thing.
 
 COMMAND mode
 
-Commands are essential for Vim, and will be used heavily,
-especially when we get to plugins. Commands, as we’ll see, make Vim do something.
+Commands are essential for Vim, and will be used heavily, 
+especially when we get to plugins. Commands, as we’ll see, make Vim do something. 
 To enter a command you simply type : while in Normal Mode and then the command.
 
 https://medium.com/analytics-vidhya/vim-for-developers-part-1-the-basics-663619ca122a
@@ -78,7 +78,7 @@ mode.) If you type 200 characters before pressing ENTER, vi regards all 200 char
 as a single line (even though those 200 characters visibly take up several lines on the
 screen).
 
-Modal Editing - change the meaning of keys in each mode of operation
+Modal Editing - change the meaning of keys in each mode of operation 
 Normal mode - navigate the structure of the file
 Insert mode - editing the file
 Visual mode - highlight portions of the file to manipulate at once
@@ -96,7 +96,7 @@ l  ---> Right, one space
 
 we multiply commands using numeric arguments
 
-4l ---> similar to pressing llll --> moves four spaces to left.
+4l ---> similar to pressing llll --> moves four spaces to left. 
 
 0 ---> move to beginning of the line
 $ ---> move to the end of the line.
@@ -123,7 +123,7 @@ p ---> put (paste) command
 dw ---> deletes the word
 d2w ---> deltes two words
 
-Here’s how this works. Number and command are optional. Without them, you simply have a movement command.
+Here’s how this works. Number and command are optional. Without them, you simply have a movement command. 
 If you add a number, you have a multiple movement. On the other hand, combine a command (c, d, or y) with a text object to get an editing
 command. When you realize how many combinations are possible in this way, vi becomes a powerful editor indeed!
 
@@ -374,7 +374,7 @@ Navigation in Vim
 -----------------
 
 { - go to begining of current para
-
+	
 } - go to end of current para
 
 % - go to matching pair of {}, (), [] in current line
@@ -403,11 +403,7 @@ learn about vim undo and redo features, undo branches
 learn more about macros
 
 
-select any line and ~ -> toggle case
-select any line and u -> lower case
-select any line and U -> upper case
-
-ctrl + a -> increment a value
+set-option status-style fg=#030303,bg=#9ACD32
 
 
 

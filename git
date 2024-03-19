@@ -929,6 +929,9 @@ git remote get-url origin
 we can set/update the origin
 git remote set-url origin git@github.com:Muralikrishnan5971/new_repo.git
 
+git pre commit hook
+------------------
+https://prettier.io/docs/en/precommit.html
 
 
 
