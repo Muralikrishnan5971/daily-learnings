@@ -20,6 +20,39 @@ CHECKLIST
 Murali1795
 
 
+****************************************************************************
+
+1. Processor - Ryzen Threadripper 3970x - AMD RYZEN 5950x
+2. Motherboard - Gigabyte Aorus TRX40 Master
+3. processor cooler - Noctua
+4. RAM
+5. Storage - SSD
+6. PC case - Be quite
+
+7. SMPS -
+8. Graphic card - Some random sapphire RX 580 graphics card
+
+
+****************************************************************************
+
+CPU
+core
+thread
+
+x86 processors
+
+
+Few things to consider while choosing a processor
+
+clock speed - Mhz
+No of threads
+Instruction per cycle - IPC
+Watts
+
+
+
+
+
 
 
 
