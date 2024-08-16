@@ -745,12 +745,57 @@ lsblk -a (--all)    --> shows all block devices, including the empty ones
 lsblk -b (--bytes)  ---> prints the size in bytes instead of in a human
 readable format
 
+lsblk -o NAME,SIZE,MOUNTPOINT   --> --output  --> allows you to customize the
+output by sepecifing a comma seperated values
 
+The lsblk command in linux is a great way to get an overview of your system
+storage devices, however for detailed disk usages statistics, consider using
+the 'df' command
 
+----------- the du command and the df command -------------------------------
 
+df command - disk free
 
+df -H   --> human readable format
 
+df -H -T   --> adds a type column
 
+df -hT -x tmpfs   ---> exculdes the mentioned tmpfs files
+with the -x option we can hide whatever files we dont want to see.
+
+du - disk usage 
+
+du -h   --> human readable format
+
+du -h /home/emkay --max-depth=1
+du -h /home/emkay --max-depth=2
+what the max depth option does is it controls how many directories deep the du
+command is allowed to go.
+
+du -hs /home/emkay     ---> give a shot summary of the disk usage'
+du -hsc /home/emkay /etc   ---> gives a total of disk usage for the listed paths
+
+sudo du -hsc /home/emaky/*    ---> this command gives an short summary on all
+available sub-directories
+
+The best way to see the disk usage details is by the use fo *ncdu* command
+-------------------------------------------------------------------------
+
+installation: sudo apt install ncdu
+
+run ndcu from the terminal
+
+this command uses disk usage command by default.
+
+The command 'ncdu' stands for NCruses Disk Usage. 
+It is a disk usage analyzer with an ncruses based user interface, which makes
+it easy to navigae to thgrough directories and visualize disk usage directly
+from the terminal.
+
+***Learn more on how use NCruses to build text based user interface****
+
+FORMATTING & MOUNTING STORAGE VOLUMES
+--------------------------------------
 
 
 
