@@ -943,6 +943,45 @@ GIT SUBMODULES
 
 
 
+USING GIT REV-PARSE COMMANDS
+----------------------------
+
+The 'git rev-parse' command is a versatile tool in git for parsing and
+retrieving various pieces of information relatred to the repository.
+
+**helps in buildding bash script based git utils(automating everything git**
+
+Some of the useful use cases:
+-----------------------------
+**Resolve repository state
+git rev-parse HEAD   --->  retrieves the SHA-1 hash of the latest commit on the
+current branch
+
+**Check Repository status
+git rev-parse --is-inside-work-tree    ---> returns true if you are inside a
+working directory of a git repository
+
+git rev-parse --is-inside-git-dir    ---> returns true of you are inside the
+.git directory 
+
+**Determine Paths
+git rev-parse --show-toplevel    --->   shows the absolute path to the
+top-level directory of the repository
+
+git rev-parse --git-dir    --->   shows the absolute path to the .git directory
+
+**Verify Existence of Branches and Tag
+git rev-parse --verify <ref>    ---> checks if the given reference (branch,
+tags, ets) exists in the repository
+
+**Extract commit information
+git rev-parse --short HEAD     ---> provides a shortened version of the commit
+hash for the latest commit.
+
+Overall "git rev-parse" helps in scripts and automation by providing useful
+information about the repository's structure and state.
+
+
 
 
 
