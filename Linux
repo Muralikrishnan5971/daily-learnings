@@ -729,7 +729,21 @@ myfilepath=~/mkbin/myfile.txt
 Wpath=~/mkbin/W
 
 
+linux commands --->
 
+lsblk --> list block devices
+It is used ot listt out all vlock deviesin a tree like format.
+This powerful command can help you gather comprehensive information about each 
+block devices connected to your linux system, including the disk partitions and
+their repective sizes.
+
+syntax of the command
+
+lsblk [options] [device...]
+
+lsblk -a (--all)    --> shows all block devices, including the empty ones
+lsblk -b (--bytes)  ---> prints the size in bytes instead of in a human
+readable format
 
 
 
