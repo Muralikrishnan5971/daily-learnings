@@ -797,6 +797,82 @@ from the terminal.
 FORMATTING & MOUNTING STORAGE VOLUMES
 --------------------------------------
 
+sdb is a very common name to give to a storage device.
+
+ls -l /dev/sdb    --> this lists a file. Technically everything's a file in
+linux. And this file represents an actual device. Other device names are sda,
+sdb, sdc and sdd so on. So basically every storage device that you plug in or
+add to you coumputer or server thats running linux, the kernel is going to
+provide its own name.
+
+NVME STORAGE - INTERNAL DISK
+
+different types of storage devices have different naming schemes.
+
+mount command
+-------------
+
+this mount command is going to list all of the mounted storage devices on the
+system. since we know the device name, we can grep it.
+
+mount | grep "device-name"
+mount | grep "sdb1"   ---> this command will show us every volume that is
+mounted that is matched with the criteria. 
+
+mount is another useful command to check what is mounted on our system.
+
+Now lets erase/format the usb stick (sdb)
+------------------------------------------
+Now before wiping out a disk its always a good idea to unmount it.
+Also make sure to type the correct disk name in every command with caution. As
+a single type and end up with messing up our system.
+
+To unmount the disk, the linux command used is umount (yes, n is missing)
+
+sudo umount disk-name or path to disk
+
+sudo umount /dev/sdb  or sudo umount /media/emkay/EMKAY
+
+
+we check whether the disk is unmounted or not using mount | grep "sdb" will
+show no results.
+
+Now we use the fdisk command for partioning!
+
+sudo fdisk /dev/sdb   ---> command open up the fdisk prompt  
+
+follow the prompts to create new partition.
+m - help
+p - to list all partition
+g - to create a gpt partition table
+n - to createa new partion
+follow prompts
+w - to actually create a partition.
+
+fdisk command ends. Now we have created a partition. But one important point to
+note here is, We can't actually use the storage device untill there is a
+filesystem on that device.  We just created a brand new partition table and
+parition. But we didn't actuallu format the partition. So right now the disk
+pretty much useless.
+
+sudo mkfs commmand
+------------------
+
+mkfs command allows us to format a partition. with whatever filesystem we want.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
