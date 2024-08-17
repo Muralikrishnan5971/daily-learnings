@@ -981,6 +981,88 @@ hash for the latest commit.
 Overall "git rev-parse" helps in scripts and automation by providing useful
 information about the repository's structure and state.
 
+GIT FETCH
+---------
+
+git fetch command gets all the new changes present in the remote repository,
+once git fetch is done, the changes are downloaded to your local repository,
+but they are not automatically merged into your working branch. 
+
+To check to differences between your current branch and the remote branch
+-------------------------------------------------------------------------
+
+We can compare our current branch with the reomote branch tto see what changes
+were fetched:
+
+git diff <branch-name> origin/<branch-name>
+
+git diff main origin/main
+
+View Fetched commits
+---------------------
+
+To see a list of commits that have been fetched but not yet merged:
+
+git log HEAD..origin/<branch-name>
+
+This will show the commits on the reomte branch that are not present in  your
+current branch.
+
+Important points to note about git fetch
+----------------------------------------
+
+the fetched changes are not directly placed in your working directory or staged
+area. Instead they are stored in the .git directory under remote-tracking
+branches. These branches are usually named 'origin/branch-name'
+
+the fetched changes are not automatically applied to you working directory.
+your working directory remains unchanged after a git fetch
+
+we wont to be able to see those changes in the working directory unless we
+merge those changes explicitly by running git merge orgin/main
+
+***Where exactly is the fetched changes stored in the .git folder***
+---------------------------------------------------------------------
+
+In the .git folder the fetched changes are stored in several key locations,
+primarily within the objects and refs directory.
+
+OBJECTS DIRECTORY (.git/objects/)
+----------------------------------
+This direcotory contains all the objects (blobs,trees, and commits) that git
+uses to represent the content of the repository. when we fetch changes, new
+objects are downloaded and stored in this directory.
+
+Files in this directory are named using a hash. where the first two characters
+form a subdirectory, and the remaining characters form the filename. For
+example, an object with hash
+'r4rfttr9fjoiejfgowejrfowejsdofhjqaweo409' would be stored in '.git/objects/r4/rfttr9fjoiejfgowejrfowejsdofhjqaweo409
+
+REFERENCES DIRECTORY (.git/refs/remote/)
+----------------------------------------
+location: .git/refs/remote/origin/
+
+this directory contains pointers to the heads of the remote branches we had
+fetched. when we run git fetch, these references get updated to point the
+latest commit from the remote repository.
+
+***REMOTE INFORMATION***
+------------------------
+location: .git/FETCH_HEAD
+
+This file temporarily stores the commit hashes and branch information of the
+fetched branches. it records the result of the last 'get fetch' operation,
+which is used by git to know what has been fetched.
+
+It lists the references fetched, the branch names, and their corresponding
+commit hashes. This file is overwritten with each fetch.
+
+
+
+
+
+
+
 
 
 
